@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    _______,
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    NAV,     KC_DEL,  _______, FUN,     KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    NAV,     KC_DEL,  NUMP,    FUN,     KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, _______,
                                  _______, NUM,     LMOD,    KC_SPC,  KC_ENT,  _______, KC_BSPC, RMOD,    NUM,     _______
     ),
     [_NUM] = LAYOUT(
@@ -65,9 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NUMP] = LAYOUT(
-      _______, KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS,                                     _______, _______, _______, _______, _______, _______,
-      _______, KC_EQL,  KC_4,    KC_5,    KC_6,    KC_MINS,                                     _______, _______, _______, _______, _______, _______,
-      _______, KC_SLSH, KC_1,    KC_2,    KC_3,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, KC_BSPC, KC_7,    KC_8,    KC_9,    KC_PLUS,                                     _______, _______, _______, _______, _______, _______,
+      _______, KC_ASTR, KC_4,    KC_5,    KC_6,    KC_MINS,                                     _______, _______, _______, _______, _______, _______,
+      _______, KC_SLSH, KC_1,    KC_2,    KC_3,    KC_EQL,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, KC_0,    KC_DOT,  _______, _______, _______, _______, _______, _______, _______
     ),
     /*
