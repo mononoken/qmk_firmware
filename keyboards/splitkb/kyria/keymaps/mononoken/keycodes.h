@@ -12,6 +12,7 @@ enum layers {
     _RMOD,
     _FUN,
     _OPT,
+    _NUMP,
 };
 
 enum custom_keycodes {
@@ -36,3 +37,4 @@ enum custom_keycodes {
 #define OPT OSL(_OPT)
 #define FUN OSL(_FUN)
 #define NAV MO(_NAV)
+#define NUMP MO(_NUMP)
