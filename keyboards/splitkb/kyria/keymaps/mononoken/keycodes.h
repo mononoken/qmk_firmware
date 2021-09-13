@@ -35,3 +35,4 @@ enum custom_keycodes {
 #define RMOD OSL(_RMOD)
 #define OPT OSL(_OPT)
 #define FUN OSL(_FUN)
+#define NAV MO(_NAV)
