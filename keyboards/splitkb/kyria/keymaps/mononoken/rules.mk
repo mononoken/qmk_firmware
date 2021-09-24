@@ -26,4 +26,6 @@ MAGIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 
+SRC += oneshot.c
 SRC += layermodes.c
+SRC += repeat.c

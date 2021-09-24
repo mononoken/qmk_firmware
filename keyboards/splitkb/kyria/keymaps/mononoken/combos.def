@@ -5,5 +5,7 @@ COMB(tab,               KC_TAB,         KC_R, KC_S)
 COMB(escape,            KC_ESC,         KC_S, KC_T)
 COMB(enter,             KC_ENT,         KC_E, KC_I)
 
-COMB(capsword,          KC_CAPS,        KC_S, KC_E)
-COMB(num,               KC_NLCK,        KC_A, KC_O)
+COMB(capslock,          KC_CAPS,        KC_S, KC_E)
+COMB(numlock,           KC_NLCK,        KC_A, KC_O)
+
+COMB(num,               NUMWORD,        KC_T, KC_N)
