@@ -25,3 +25,5 @@ DEBUG_MATRIX = no
 MAGIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
+
+SRC += layermodes.c
