@@ -112,6 +112,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case backsp:
         case capslock:
         case numlock:
+        case num:
             return false;
         default:
             return true;

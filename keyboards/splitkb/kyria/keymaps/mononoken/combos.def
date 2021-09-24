@@ -7,3 +7,5 @@ COMB(enter,             KC_ENT,         KC_E, KC_I)
 
 COMB(capslock,          KC_CAPS,        KC_S, KC_E)
 COMB(numlock,           KC_NLCK,        KC_A, KC_O)
+
+COMB(num,               NUMWORD,        KC_T, KC_N)
