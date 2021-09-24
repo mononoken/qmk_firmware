@@ -99,6 +99,8 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     switch (index) {
         case del:
         case backsp:
+        case capsword:
+        case num:
             return false;
         default:
             return true;
