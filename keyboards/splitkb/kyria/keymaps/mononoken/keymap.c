@@ -17,6 +17,8 @@
 
 #include "keycodes.h"
 
+#include "g/keymap_combo.h"
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
     * Base Layer: Colemak DH
@@ -79,3 +81,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     */
 };
+
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+    switch (index) {
+        // Home-row and other tight combos
+        case tab:
+        case escape:
+        case enter:
+            return COMBO_TERM;
+        // Regular combos, slightly relaxed
+        default:
+            return COMBO_TERM + 25;
+    }
+}
+
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+    switch (index) {
+        case del:
+        case backsp:
+            return false;
+        default:
+            return true;
+    }
+}
