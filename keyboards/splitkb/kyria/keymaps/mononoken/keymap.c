@@ -30,8 +30,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    _______,
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    NUM,     KC_DEL,  NUMP,    FUN,     KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-                                 xxxxxxx, NAV,     LMOD,    KC_SPC,  KC_ENT,  KC_BSPC, REPEAT, RMOD,    NUM,     xxxxxxx
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    NUM,     KC_DEL,  NUMP,    NUM,     KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+                                 xxxxxxx, NAV,     LMOD,    KC_SPC,  KC_ENT,  KC_BSPC, REPEAT,  RMOD,    NUM,     xxxxxxx
     ),
     [_NUM] = LAYOUT(
       _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, BASE,
