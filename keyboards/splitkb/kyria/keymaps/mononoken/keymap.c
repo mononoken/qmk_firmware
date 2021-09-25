@@ -19,6 +19,7 @@
 #include "oneshot.h"
 #include "layermodes.h"
 #include "repeat.h"
+#include "tap_hold.h"
 
 #include "g/keymap_combo.h"
 
@@ -91,6 +92,25 @@ void tap16_repeatable(uint16_t keycode) {
     register_key_to_repeat(keycode);
 }
 
+void tap_space_shift(uint16_t key, bool key_down) {
+    if (key_down) {
+        tap_code16(key);
+        tap_code(KC_SPC);
+        set_oneshot_mods(MOD_BIT(KC_LSFT));
+    }
+}
+
+void double_tap(uint16_t keycode) {
+    tap_code16(keycode);
+    tap_code16(keycode);
+}
+
+void double_tap_space(uint16_t keycode) {
+    tap_code16(KC_SPC);
+    double_tap(keycode);
+    tap_code16(KC_SPC);
+}
+
 // Combos
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -117,6 +137,71 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
             return false;
         default:
             return true;
+    }
+}
+
+// Tapping terms
+
+#ifdef TAPPING_TERM_PER_KEY
+
+#define THUMB_TERM 20
+#define INDEX_TERM -20
+#define MIDDLE_TERM 0
+#define RING_TERM 80
+#define PINKY_TERM 180
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MT_SPC:
+            return TAPPING_TERM + THUMB_TERM;
+        case DN_CTRL:
+            return TAPPING_TERM + MIDDLE_TERM;
+        default:
+            return TAPPING_TERM;
+    }
+}
+#endif
+
+// Tap hold
+
+uint16_t tap_hold_timeout(uint16_t keycode) {
+    switch (keycode) {
+        // Thumb
+        case KC_MINS:
+            return 120;
+        // Pinky
+        case KC_A:
+        case KC_Q:
+        case KC_Z:
+        case KC_EQL:
+        case KC_O:
+        case KC_SLSH:
+        case KC_6:
+        case KC_7:
+            return 135;
+        // Ring
+        case KC_X:
+        case KC_R:
+        case KC_W:
+        case KC_DOT:
+        case KC_I:
+        case KC_Y:
+        case KC_4:
+        case KC_5:
+            return 105;
+        // Middle
+        case KC_C:
+        case KC_S:
+        case KC_F:
+        case KC_COMM:
+        case KC_E:
+        case KC_U:
+        case KC_0:
+        case KC_1:
+            return 100;
+        // Index
+        default:
+            return 100;
     }
 }
 

@@ -29,3 +29,4 @@ GRAVE_ESC_ENABLE = no
 SRC += oneshot.c
 SRC += layermodes.c
 SRC += repeat.c
+SRC += tap_hold.c

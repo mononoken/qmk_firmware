@@ -17,15 +17,36 @@
 #pragma once
 
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLIGHT_HUE_STEP  8
-#    define RGBLIGHT_SAT_STEP  8
-#    define RGBLIGHT_VAL_STEP  8
-#    define RGBLIGHT_LIMIT_VAL 150
+    #define RGBLIGHT_DISABLE_KEYCODES
+    #define RGBLIGHT_LAYERS
 #endif
 
-// Lets you roll mod-tap keys
+// Home-row mods: https://precondition.github.io/home-row-mods#tap-hold-configuration-settings
+// Configure the global tapping term (default: 200ms)
+#define TAPPING_TERM_PER_KEY
+#ifdef TAPPING_TERM_PER_KEY
+#define TAPPING_TERM 170
+#else
+// Only for thumbs
+#define TAPPING_TERM 220
+#endif
+
+// Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
+// Apply the modifier on keys that are tapped during a short hold of a modtap
+#define PERMISSIVE_HOLD
+// Immediately turn on layer if key is pressed quickly
+#define HOLD_ON_OTHER_KEY_PRESS
+
+// Combos
+#undef COMBO_TERM
+#define COMBO_TERM 35
+#define COMBO_MUST_TAP_PER_COMBO
+#define COMBO_TERM_PER_COMBO
+// All combos are specified from the base layer, saves space
+#define COMBO_ONLY_FROM_LAYER 0
 
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
 #define SPLIT_USB_DETECT
@@ -35,10 +56,6 @@
 
 #define ENCODER_RESOLUTION 2
 
-// Combos
-#undef COMBO_TERM
-#define COMBO_TERM 35
-#define COMBO_MUST_TAP_PER_COMBO
-#define COMBO_TERM_PER_COMBO
-// All combos are specified from the base layer, saves space
-#define COMBO_ONLY_FROM_LAYER 0
+// Save space
+//#define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
