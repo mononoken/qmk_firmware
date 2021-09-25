@@ -1,14 +1,15 @@
 COMBO_ENABLE = yes
+ENCODER_ENABLE = yes        # One or more encoders
+
 VPATH += keyboards/gboards # Easy definition of combos
 
 OLED_ENABLE = yes
 OLED_DRIVER = SSD1306   # Enables the use of OLED displays
-ENCODER_ENABLE = yes       # Enables the use of one or more encoders
 AUTO_SHIFT_ENABLE = yes
 
 # Extra features that are nice but takes space
 WPM_ENABLE = no
-EXTRAKEY_ENABLE = no        # For volume keys and similar
+EXTRAKEY_ENABLE = yes        # For volume keys and similar
 MOUSEKEY_ENABLE = no        # Them mouse keys yo
 KEY_OVERRIDE_ENABLE = no
 LEADER_ENABLE = no
@@ -30,3 +31,7 @@ SRC += oneshot.c
 SRC += layermodes.c
 SRC += repeat.c
 SRC += tap_hold.c
+
+#ifeq ($(strip $(ENCODER_ENABLE)), yes)
+#	SRC += encoder_utils.c
+#endif

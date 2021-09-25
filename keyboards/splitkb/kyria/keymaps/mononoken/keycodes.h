@@ -77,5 +77,3 @@ enum custom_keycodes {
 #define NUMP TO(_NUMP)
 
 #define C_HOME C(KC_HOME)
-
-#define MT_SPC LT(_NAV, KC_SPC)
