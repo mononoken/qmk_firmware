@@ -30,8 +30,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_RCTL,
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_ENT,  KC_DEL,  NUMP,    KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
-                                 xxxxxxx, NAV,     LMOD,    KC_SPC,  NUMWORD, NUMWORD, REPEAT,  RMOD,    NUM,     xxxxxxx
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, NUMP,    KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
+                                 xxxxxxx, NUMWORD, LMOD,    KC_SPC,  NAV,     REPEAT,  KC_BSPC, RMOD,    NUMWORD, xxxxxxx
     ),
     [_NUM] = LAYOUT(
       _______, xxxxxxx, KC_PLUS, KC_ASTR, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, BASE,
@@ -110,6 +110,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     switch (index) {
         case del:
         case backsp:
+        case wbacksp:
         case capslock:
         case numlock:
         case num:

@@ -1,5 +1,6 @@
 COMB(del,               KC_DEL,         KC_W, KC_F, KC_P)
 COMB(backsp,            KC_BSPC,        KC_Y, KC_EQL)
+COMB(wbacksp,           C(KC_BSPC),     KC_U, KC_Y, KC_EQL)
 
 COMB(tab,               KC_TAB,         KC_R, KC_S)
 COMB(escape,            KC_ESC,         KC_S, KC_T)

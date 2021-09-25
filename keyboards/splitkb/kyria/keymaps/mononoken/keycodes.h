@@ -28,6 +28,9 @@ enum custom_keycodes {
     GRV,
     CIRC,
 
+    // Keycodes
+    C_HOME,
+
     // Custom keycodes for instant processing for NUMWORD
     NUM_G,
 
