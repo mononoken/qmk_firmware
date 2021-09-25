@@ -73,6 +73,6 @@ enum custom_keycodes {
 #define NAV MO(_NAV)
 #define NUMP TG(_NUMP)
 
-#define C_HOME S(KC_HOME)
+#define C_HOME C(KC_HOME)
 
 #define MT_SPC LT(_NAV, KC_SPC)
