@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_RCTL,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, NUMP,    KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
-                                 _______, NUMWORD, LMOD,    MT_SPC,  _______, REPEAT,  KC_MINS, RMOD,    NUMWORD, _______
+                                 _______, NUMWORD, LMOD,    KC_SPC,  NAV,     REPEAT,  KC_MINS, RMOD,    NUMWORD, _______
     ),
     [_NUM] = LAYOUT(
       _______, xxxxxxx, KC_PLUS, KC_ASTR, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, BASE,
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
       _______, _______, _______, KC_UP,   KC_PGUP, KC_HOME,                                     _______, _______, _______, _______, _______, BASE,
       _______, KC_LCTL, KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,                                      _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-      _______, C_HOME,  _______, _______, KC_PGDN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, C_HOME,  _______, C_HOME,  KC_PGDN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     // Important that the symbols on the base layer have the same positions as these symbols
