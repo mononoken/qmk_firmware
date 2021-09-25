@@ -74,7 +74,7 @@ enum custom_keycodes {
 #define OPT OSL(_OPT)
 #define FUN OSL(_FUN)
 #define NAV MO(_NAV)
-#define NUMP TG(_NUMP)
+#define NUMP TO(_NUMP)
 
 #define C_HOME C(KC_HOME)
 

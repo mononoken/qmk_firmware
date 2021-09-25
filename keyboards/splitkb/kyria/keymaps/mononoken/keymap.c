@@ -32,13 +32,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_RCTL,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, NUMP,    KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
-                                 _______, NUMWORD, LMOD,    KC_SPC,  NAV,     REPEAT,  KC_MINS, RMOD,    NUMWORD, _______
+                                 _______, NUMP,    LMOD,    KC_SPC,  NAV,     REPEAT,  KC_MINS, RMOD,    NUMP,    _______
     ),
     [_NUM] = LAYOUT(
       _______, xxxxxxx, KC_PLUS, KC_ASTR, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, BASE,
       _______, KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    _______,
       _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, _______, _______, _______, xxxxxxx, KC_9,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-                                 _______, _______, _______, _______, CANCEL,  CANCEL,  CANCEL,  _______, _______, _______
+                                 _______, _______, _______, _______, _______, CANCEL,  _______, _______, _______, _______
     ),
     [_NAV] = LAYOUT(
       _______, _______, _______, KC_UP,   KC_PGUP, KC_HOME,                                     _______, _______, _______, _______, _______, BASE,
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_BSPC, KC_7,    KC_8,    KC_9,    KC_PLUS,                                     KC_PLUS, KC_7,    KC_8,    KC_9,    KC_BSPC, BASE,
       _______, KC_ASTR, KC_4,    KC_5,    KC_6,    KC_MINS,                                     KC_MINS, KC_4,    KC_5,    KC_6,    KC_ASTR, _______,
       _______, KC_SLSH, KC_1,    KC_2,    KC_3,    KC_EQL,  _______, _______, _______, _______, KC_EQL,  KC_1,    KC_2,    KC_3,    KC_SLSH, _______,
-                                 _______, KC_0,    KC_DOT,  _______, _______, _______, _______, KC_0,    KC_DOT,  _______
+                                 _______, KC_0,    KC_DOT,  _______, BASE,    BASE,    _______, KC_0,    KC_DOT,  _______
     ),
     /*
     [_BLANK] = LAYOUT(
