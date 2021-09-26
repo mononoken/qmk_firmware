@@ -8,7 +8,7 @@ OLED_DRIVER = SSD1306   # Enables the use of OLED displays
 AUTO_SHIFT_ENABLE = yes
 
 # Extra features that are nice but takes space
-WPM_ENABLE = no
+WPM_ENABLE = yes
 EXTRAKEY_ENABLE = yes        # For volume keys and similar
 MOUSEKEY_ENABLE = no        # Them mouse keys yo
 KEY_OVERRIDE_ENABLE = no
