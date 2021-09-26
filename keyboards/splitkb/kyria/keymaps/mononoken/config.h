@@ -56,9 +56,6 @@
 
 #define ENCODER_RESOLUTION 2
 
-#define OLED_TIMEOUT 120000
-#define OLED_BRIGHTNESS 120
-
 // Save space
 //#define LAYER_STATE_8BIT
 #define LAYER_STATE_16BIT
