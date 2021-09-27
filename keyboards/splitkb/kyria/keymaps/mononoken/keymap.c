@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
       KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_EQL,  BASE,
       KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_RCTL,
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, NUMP,    KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_ENT,  _______, _______, KC_BSPC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
                                  KC_MPLY, NUMP,    LMOD,    KC_SPC,  NAV,     REPEAT,  KC_MINS, RMOD,    NUMP,    xxxxxxx
     ),
     [_NUM] = LAYOUT(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV] = LAYOUT(
       _______, _______, _______, KC_UP,   KC_PGUP, KC_HOME,                                     _______, _______, _______, _______, _______, BASE,
-      _______, KC_LCTL, KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,                                      _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+      _______, KC_LCTL, KC_LEFT, KC_DOWN, KC_RGHT, _______,                                     _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
       _______, C_HOME,  _______, C_HOME,  KC_PGDN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
@@ -78,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NUMP] = LAYOUT(
       _______, KC_BSPC, KC_7,    KC_8,    KC_9,    KC_PLUS,                                     KC_PLUS, KC_7,    KC_8,    KC_9,    KC_BSPC, BASE,
       _______, KC_ASTR, KC_4,    KC_5,    KC_6,    KC_MINS,                                     KC_MINS, KC_4,    KC_5,    KC_6,    KC_ASTR, _______,
-      _______, KC_SLSH, KC_1,    KC_2,    KC_3,    KC_EQL,  _______, _______, _______, _______, KC_EQL,  KC_1,    KC_2,    KC_3,    KC_SLSH, _______,
-                                 _______, KC_0,    KC_DOT,  _______, BASE,    BASE,    _______, KC_0,    KC_DOT,  _______
+      _______, KC_SLSH, KC_1,    KC_2,    KC_3,    KC_EQL,  _______, BASE,    _______, _______, KC_EQL,  KC_1,    KC_2,    KC_3,    KC_SLSH, _______,
+                                 _______, KC_0,    KC_DOT,  _______, NAV,     BASE,    _______, KC_0,    KC_DOT,  _______
     ),
     /*
     [_BLANK] = LAYOUT(
