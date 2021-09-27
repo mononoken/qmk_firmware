@@ -172,7 +172,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
     switch (keycode) {
         // Thumb
         case KC_MINS:
-            return 120;
+            return 175;
         // Pinky
         case KC_A:
         case KC_Q:
@@ -182,7 +182,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_SLSH:
         case KC_6:
         case KC_7:
-            return 135;
+            return 175;
         // Ring
         case KC_X:
         case KC_R:
@@ -192,7 +192,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_Y:
         case KC_4:
         case KC_5:
-            return 105;
+            return 175;
         // Middle
         case KC_C:
         case KC_S:
@@ -202,10 +202,10 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_U:
         case KC_0:
         case KC_1:
-            return 100;
+            return 175;
         // Index
         default:
-            return 100;
+            return 175;
     }
 }
 
