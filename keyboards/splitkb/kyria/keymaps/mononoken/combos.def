@@ -2,10 +2,10 @@ COMB(del,               KC_DEL,         KC_W, KC_F, KC_P)
 COMB(backsp,            KC_BSPC,        KC_Y, KC_EQL)
 COMB(wbacksp,           C(KC_BSPC),     KC_U, KC_Y, KC_EQL)
 
-COMB(tab,               KC_TAB,         KC_A, KC_R, KC_S)
+COMB(tab,               KC_TAB,         KC_R, KC_S)
 COMB(escape,            KC_ESC,         KC_R, KC_S, KC_T)
 COMB(enter,             KC_ENT,         KC_E, KC_I)
-COMB(enterleft,         KC_ENT,         KC_SPC, CLEAR)
+COMB(enterleft,         KC_ENT,         KC_A, KC_R, KC_S)
 
 COMB(capslock,          KC_CAPS,        KC_S, KC_E, KC_T, KC_N)
 COMB(numlock,           KC_NLCK,        KC_A, KC_O, KC_R, KC_I)

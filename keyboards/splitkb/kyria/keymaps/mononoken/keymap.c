@@ -129,6 +129,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case tab:
         case escape:
         case enter:
+        case enterleft:
             return COMBO_TERM;
         // Regular combos, slightly relaxed
         default:
