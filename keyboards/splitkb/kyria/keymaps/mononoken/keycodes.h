@@ -14,6 +14,7 @@ enum layers {
     _FUN,
     _OPT,
     _NUMP,
+    _RSTH
 };
 
 enum custom_keycodes {
@@ -75,5 +76,6 @@ enum custom_keycodes {
 #define FUN OSL(_FUN)
 #define NAV MO(_NAV)
 #define NUMP TO(_NUMP)
+#define RSTH TO(_RSTH)
 
 #define C_HOME C(KC_HOME)
