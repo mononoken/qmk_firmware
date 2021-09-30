@@ -144,6 +144,9 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case capslock:
         case numlock:
         case num:
+        case q_comb:
+        case z_comb:
+        case eql:
             return false;
         default:
             return true;

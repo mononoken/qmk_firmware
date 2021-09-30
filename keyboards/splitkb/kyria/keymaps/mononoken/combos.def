@@ -11,3 +11,7 @@ COMB(capslock,          KC_CAPS,        KC_S, KC_E, KC_T, KC_N)
 COMB(numlock,           KC_NLCK,        KC_A, KC_O, KC_R, KC_I)
 
 COMB(num,               NUMWORD,        KC_SPC, KC_MINS)
+
+COMB(q_comb,            KC_Q,           KC_J, KC_C)
+COMB(z_comb,            KC_Z,           KC_Y, KC_F)
+COMB(eql,               KC_EQL,         KC_W, KC_U)
