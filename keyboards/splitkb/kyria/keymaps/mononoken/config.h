@@ -35,3 +35,12 @@
 
 // Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
+
+#define AUTO_SHIFT_TIMEOUT 160
+#define NO_AUTO_SHIFT_SPECIAL
+
+// Combos
+#define COMBO_VARIABLE_LEN
+#define COMBO_TERM 35
+// All combos are specified from the base layer, saves space
+#define COMBO_ONLY_FROM_LAYER 0
