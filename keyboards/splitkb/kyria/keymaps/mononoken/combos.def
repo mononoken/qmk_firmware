@@ -1,31 +1,38 @@
 // Left
-COMB(q_comb,        KC_Q,             KC_LPRN, KC_W)
-COMB(z_comb,        KC_Z,             KC_F, KC_P)
+COMB(q_comb,        KC_Q,             KC_J, KC_C)
+COMB(z_comb,        KC_Z,             KC_Y, KC_F)
+COMB(del_combo,     KC_DEL,           KC_C, KC_Y, KC_F)
 
-COMB(ctrl_combo,    OSM(MOD_LCTL),    KC_R, KC_S)
-COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_V)
-COMB(lgui_combo,    OSM(MOD_LGUI),    KC_C, KC_D)
+COMB(lctrl_combo,   OSM(MOD_LCTL),    KC_G, KC_D)
+COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_B)
+COMB(lgui_combo,    OSM(MOD_LGUI),    KC_S, KC_T)
 
 // Right
-COMB(comb_eql,      KC_EQL,           KC_L, KC_U)
-COMB(backsp,        KC_BSPC,          KC_Y, KC_RPRN)
-COMB(ent,           KC_ENT,           KC_E, KC_I)
+SUBS(pbrack_combo,   "#{}",            KC_X, KC_W)
+COMB(comb_eql,      KC_EQL,           KC_W, KC_O)
+COMB(backsp,        KC_BSPC,          KC_U, KC_DOT)
+COMB(ent,           KC_ENT,           KC_N, KC_A, KC_I)
 
-COMB(rshft_combo,   OSM(MOD_RSFT),    KC_K, KC_H)
-COMB(rgui_combo,    OSM(MOD_RGUI),    KC_H, KC_COMM)
+COMB(rshft_combo,   OSM(MOD_RSFT),    KC_SLSH, KC_L)
+COMB(rgui_combo,    OSM(MOD_RGUI),    KC_A, KC_I)
+COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_LPRN)
+
+COMB(semic_combo,   KC_SCLN,          KC_T, KC_D)
+
 
 // Thumbs
-// COMB(num,           KC_0,             MT_SPC, KC_MINS)
+// COMB(num,            KC_0,           MT_SPC, KC_MINS)
 
 // Full
-COMB(swapos,        CG_SWAP,          KC_LPRN, KC_W, KC_Y, KC_RPRN)
+// COMB(swapos,         CG_SWAP,        KC_LPRN, KC_W, KC_Y, KC_RPRN)
+COMB(caps_combo,        KC_CAPS,        KC_S, KC_T, KC_H, KC_N, KC_A, KC_I)
 
 // Numbers with cross side thumb
-COMB(comb_6,            KC_6,           KC_MINS, KC_A)
-COMB(comb_4,            KC_4,           KC_MINS, KC_R)
-COMB(comb_0,            KC_0,           KC_MINS, KC_S)
-COMB(comb_2,            KC_2,           KC_MINS, KC_T)
-COMB(comb_8,            KC_8,           KC_MINS, KC_D)
+COMB(comb_6,            KC_6,           KC_E, KC_A)
+COMB(comb_4,            KC_4,           KC_E, KC_R)
+COMB(comb_0,            KC_0,           KC_E, KC_S)
+COMB(comb_2,            KC_2,           KC_E, KC_T)
+COMB(comb_8,            KC_8,           KC_E, KC_D)
 COMB(comb_9,            KC_9,           MT_SPC, KC_K)
 COMB(comb_3,            KC_3,           MT_SPC, KC_N)
 COMB(comb_1,            KC_1,           MT_SPC, KC_E)
@@ -34,28 +41,90 @@ COMB(comb_7,            KC_7,           MT_SPC, KC_O)
 
 // Symbols with same side thumb
 // Upper
-COMB(comb_tild,         KC_TILD,        MT_SPC, KC_LPRN)
-COMB(comb_plus,         KC_PLUS,        MT_SPC, KC_W)
-COMB(comb_astr,         KC_ASTR,        MT_SPC, KC_F)
-COMB(comb_exlm,         KC_EXLM,        MT_SPC, KC_P)
-COMB(comb_hash,         KC_HASH,        KC_MINS, KC_L)
-COMB(comb_at,           KC_AT,          KC_MINS, KC_U)
-COMB(comb_circ,         KC_CIRC,        KC_MINS, KC_Y)
+COMB(comb_tild,         KC_TILD,        MT_SPC, KC_J)
+COMB(comb_plus,         KC_PLUS,        MT_SPC, KC_C)
+COMB(comb_astr,         KC_ASTR,        MT_SPC, KC_Y)
+COMB(comb_exlm,         KC_EXLM,        MT_SPC, KC_F)
+COMB(comb_hash,         KC_HASH,        KC_E, KC_W)
+COMB(comb_at,           KC_AT,          KC_E, KC_O)
+COMB(comb_circ,         KC_CIRC,        KC_E, KC_U)
 // Home-row
-COMB(comb_pipe,         KC_PIPE,        MT_SPC, KC_A)
-COMB(comb_lcbr,         KC_LCBR,        MT_SPC, KC_R)
-COMB(comb_rcbr,         KC_RCBR,        MT_SPC, KC_S)
-COMB(comb_mins,         KC_MINS,        MT_SPC, KC_T)
-COMB(comb_bsls,         KC_BSLS,        MT_SPC, KC_G)
-COMB(comb_grv,          KC_GRV,         KC_MINS, KC_M)
-COMB(comb_ques,         KC_QUES,        KC_MINS, KC_N)
-COMB(comb_lbrc,         KC_LBRC,        KC_MINS, KC_E)
-COMB(comb_rbrc,         KC_RBRC,        KC_MINS, KC_I)
+COMB(comb_pipe,         KC_PIPE,        MT_SPC, KC_R)
+COMB(comb_lcbr,         KC_LCBR,        MT_SPC, KC_S)
+COMB(comb_rcbr,         KC_RCBR,        MT_SPC, KC_T)
+COMB(comb_mins,         KC_MINS,        MT_SPC, KC_H)
+COMB(comb_bsls,         KC_BSLS,        MT_SPC, KC_K)
+COMB(comb_grv,          KC_GRV,         KC_E, KC_M)
+COMB(comb_ques,         KC_QUES,        KC_E, KC_N)
+COMB(comb_lbrc,         KC_LBRC,        KC_E, KC_A)
+COMB(comb_rbrc,         KC_RBRC,        KC_E, KC_I)
 // Lower
-COMB(comb_labk,         KC_LABK,        MT_SPC, KC_X)
-COMB(comb_rabk,         KC_RABK,        MT_SPC, KC_C)
+COMB(comb_labk,         KC_LABK,        MT_SPC, KC_V)
+COMB(comb_rabk,         KC_RABK,        MT_SPC, KC_G)
 COMB(comb_perc,         KC_PERC,        MT_SPC, KC_D)
-COMB(comb_ampr,         KC_AMPR,        KC_MINS, KC_H)
-COMB(comb_lprn,         KC_LPRN,        KC_MINS, KC_COMM)
-COMB(comb_rprn,         KC_RPRN,        KC_MINS, KC_DOT)
-COMB(comb_unds,         KC_UNDS,        KC_MINS, KC_SLSH)
+COMB(comb_ampr,         KC_AMPR,        KC_E, KC_L)
+
+
+
+// These are Colemak-DH combos (might require tinkering if used)
+// Left
+// COMB(q_comb,        KC_Q,             KC_LPRN, KC_W)
+// COMB(z_comb,        KC_Z,             KC_F, KC_P)
+
+// COMB(ctrl_combo,    OSM(MOD_LCTL),    KC_R, KC_S)
+// COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_V)
+// COMB(lgui_combo,    OSM(MOD_LGUI),    KC_C, KC_D)
+
+// Right
+// COMB(comb_eql,      KC_EQL,           KC_L, KC_U)
+// COMB(backsp,        KC_BSPC,          KC_Y, KC_RPRN)
+// COMB(ent,           KC_ENT,           KC_E, KC_I)
+
+// COMB(rshft_combo,   OSM(MOD_RSFT),    KC_K, KC_H)
+// COMB(rgui_combo,    OSM(MOD_RGUI),    KC_H, KC_COMM)
+
+// Thumbs
+// COMB(num,           KC_0,             MT_SPC, KC_MINS)
+
+// Full
+// COMB(swapos,        CG_SWAP,          KC_LPRN, KC_W, KC_Y, KC_RPRN)
+
+// Numbers with cross side thumb
+// COMB(comb_6,            KC_6,           KC_MINS, KC_A)
+// COMB(comb_4,            KC_4,           KC_MINS, KC_R)
+// COMB(comb_0,            KC_0,           KC_MINS, KC_S)
+// COMB(comb_2,            KC_2,           KC_MINS, KC_T)
+// COMB(comb_8,            KC_8,           KC_MINS, KC_D)
+// COMB(comb_9,            KC_9,           MT_SPC, KC_K)
+// COMB(comb_3,            KC_3,           MT_SPC, KC_N)
+// COMB(comb_1,            KC_1,           MT_SPC, KC_E)
+// COMB(comb_5,            KC_5,           MT_SPC, KC_I)
+// COMB(comb_7,            KC_7,           MT_SPC, KC_O)
+
+// Symbols with same side thumb
+// Upper
+// COMB(comb_tild,         KC_TILD,        MT_SPC, KC_LPRN)
+// COMB(comb_plus,         KC_PLUS,        MT_SPC, KC_W)
+// COMB(comb_astr,         KC_ASTR,        MT_SPC, KC_F)
+// COMB(comb_exlm,         KC_EXLM,        MT_SPC, KC_P)
+// COMB(comb_hash,         KC_HASH,        KC_MINS, KC_L)
+// COMB(comb_at,           KC_AT,          KC_MINS, KC_U)
+// COMB(comb_circ,         KC_CIRC,        KC_MINS, KC_Y)
+// Home-row
+// COMB(comb_pipe,         KC_PIPE,        MT_SPC, KC_A)
+// COMB(comb_lcbr,         KC_LCBR,        MT_SPC, KC_R)
+// COMB(comb_rcbr,         KC_RCBR,        MT_SPC, KC_S)
+// COMB(comb_mins,         KC_MINS,        MT_SPC, KC_T)
+// COMB(comb_bsls,         KC_BSLS,        MT_SPC, KC_G)
+// COMB(comb_grv,          KC_GRV,         KC_MINS, KC_M)
+// COMB(comb_ques,         KC_QUES,        KC_MINS, KC_N)
+// COMB(comb_lbrc,         KC_LBRC,        KC_MINS, KC_E)
+// COMB(comb_rbrc,         KC_RBRC,        KC_MINS, KC_I)
+// Lower
+// COMB(comb_labk,         KC_LABK,        MT_SPC, KC_X)
+// COMB(comb_rabk,         KC_RABK,        MT_SPC, KC_C)
+// COMB(comb_perc,         KC_PERC,        MT_SPC, KC_D)
+// COMB(comb_ampr,         KC_AMPR,        KC_MINS, KC_H)
+// COMB(comb_lprn,         KC_LPRN,        KC_MINS, KC_COMM)
+// COMB(comb_rprn,         KC_RPRN,        KC_MINS, KC_DOT)
+// COMB(comb_unds,         KC_UNDS,        KC_MINS, KC_SLSH)
