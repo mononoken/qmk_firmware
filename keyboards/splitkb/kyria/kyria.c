@@ -44,25 +44,25 @@ bool oled_task_kb(void) {
         oled_write_P(PSTR("Layer: "), false);
         switch (get_highest_layer(layer_state | default_layer_state)) {
             case 0:
-                oled_write_P(PSTR("QWERTY\n"), false);
+                oled_write_P(PSTR("BASE\n"), false);
                 break;
             case 1:
-                oled_write_P(PSTR("Dvorak\n"), false);
+                oled_write_P(PSTR("NAVI\n"), false);
                 break;
             case 2:
-                oled_write_P(PSTR("Colemak-DH\n"), false);
+                oled_write_P(PSTR("LSYM\n"), false);
                 break;
             case 3:
-                oled_write_P(PSTR("Nav\n"), false);
+                oled_write_P(PSTR("RSYM\n"), false);
                 break;
             case 4:
-                oled_write_P(PSTR("Sym\n"), false);
+                oled_write_P(PSTR("SHRT\n"), false);
                 break;
             case 5:
-                oled_write_P(PSTR("Function\n"), false);
+                oled_write_P(PSTR("NUM\n"), false);
                 break;
             case 6:
-                oled_write_P(PSTR("Adjust\n"), false);
+                oled_write_P(PSTR("FUNC\n"), false);
                 break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);
