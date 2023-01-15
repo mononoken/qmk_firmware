@@ -3,6 +3,8 @@ COMB(q_comb,        KC_Q,             KC_J, KC_C)
 COMB(z_comb,        KC_Z,             KC_Y, KC_F)
 COMB(del_combo,     KC_DEL,           KC_C, KC_Y, KC_F)
 
+COMB(dquo_combo,     KC_DQUO,         KC_S, KC_H)
+
 COMB(lctrl_combo,   OSM(MOD_LCTL),    KC_G, KC_D)
 COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_B)
 COMB(lgui_combo,    OSM(MOD_LGUI),    KC_S, KC_T)
@@ -11,6 +13,8 @@ COMB(lgui_combo,    OSM(MOD_LGUI),    KC_S, KC_T)
 SUBS(pbrack_combo,   "#{}",            KC_X, KC_W)
 COMB(comb_eql,      KC_EQL,           KC_W, KC_O)
 COMB(backsp,        KC_BSPC,          KC_U, KC_DOT)
+
+COMB(quo_combo,     KC_QUOT,          KC_N, KC_I)
 COMB(ent,           KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(rshft_combo,   OSM(MOD_RSFT),    KC_SLSH, KC_L)

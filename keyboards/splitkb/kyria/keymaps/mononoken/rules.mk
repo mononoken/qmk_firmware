@@ -2,6 +2,7 @@ OLED_ENABLE = yes
 OLED_DRIVER = SSD1306   	# Enables the use of OLED displays
 ENCODER_ENABLE = no       # Enables the use of one or more encoders
 RGBLIGHT_ENABLE = no      # Enable keyboard RGB underglow
+SPLIT_KEYBOARD = yes
 
 # Custom settings
 AUTO_SHIFT_ENABLE = yes
@@ -12,6 +13,9 @@ VPATH  +=  keyboards/gboards/
 
 # Leader key
 LEADER_ENABLE = yes
+
+# Fixes issue where splitkb does not wake up second half after sleep \\ Did not work
+# NO_USB_STARTUP_CHECK = yes
 
 # Extra features that are nice but takes space
 WPM_ENABLE = no
