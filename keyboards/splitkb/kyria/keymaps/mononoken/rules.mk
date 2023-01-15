@@ -14,8 +14,8 @@ VPATH  +=  keyboards/gboards/
 # Leader key
 LEADER_ENABLE = yes
 
-# Fixes issue where splitkb does not wake up second half after sleep \\ Did not work
-# NO_USB_STARTUP_CHECK = yes
+# Repeat key
+SRC += repeat.c
 
 # Extra features that are nice but takes space
 WPM_ENABLE = no

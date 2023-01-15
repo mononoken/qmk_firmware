@@ -16,6 +16,7 @@
 #include QMK_KEYBOARD_H
 
 #include "keycodes.h"
+#include "repeat.h"
 
 #include "g/keymap_combo.h"
 
@@ -36,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ),
     [_BASE] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_COLN,                                     KC_X,    KC_W,    KC_DOT,  KC_U,    KC_UNDS, xxxxxxx,
-     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    xxxxxxx,
+     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    REPEAT,
      KC_LSFT, KC_COMM, KC_V,    KC_G,    KC_D,    KC_B,    BASE,    xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_LPRN, KC_RPRN, KC_SLSH, KC_RSFT,
                                 xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
@@ -211,6 +212,192 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 #endif
 DELETE THIS LINE TO UNCOMMENT (2/2) */
+
+static uint16_t last_key_down = KC_NO;
+static uint16_t last_key_up = KC_NO;
+
+bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // #ifdef CONSOLE_ENABLE
+    //     if (record->event.pressed) {
+    //         uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+    //              keycode,
+    //              record->event.key.row,
+    //              record->event.key.col,
+    //              get_highest_layer(layer_state),
+    //              record->event.pressed,
+    //              get_mods(),
+    //              get_oneshot_mods(),
+    //              record->tap.count
+    //              );
+    //     }
+    // #endif
+
+    // if (!process_leader(keycode, record)) {
+    //     return false;
+    // }
+    // if (!process_num_word(keycode, record)) {
+    //     return false;
+    // }
+    // if (!process_case_modes(keycode, record)) {
+    //     return false;
+    // }
+    // if (!process_roll(keycode, record)) {
+    //     return false;
+    // }
+    // if (!process_tap_hold(keycode, record)) {
+    //     // Extra register here to allow fast rolls without waiting for tap hold,
+    //     // (which will also overwrite this).
+    //     if (record->event.pressed) {
+    //         register_key_to_repeat(keycode);
+    //     }
+    //     return false;
+    // }
+
+    switch (keycode) {
+        // case ESC_SYM:
+        //     if (record->tap.count && record->event.pressed) {
+        //         tap_escape();
+        //         return false;
+        //     }
+        //     break;
+        // case KC_CAPS:
+        //     return process_caps(record->event.pressed);
+        // case CLEAR:
+        //     clear_oneshot_mods();
+        //     if (get_oneshot_layer() != 0) {
+        //         clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+        //     }
+        //     stop_leading();
+        //     layer_off(_NUM);
+        //     layer_off(_SYM);
+        //     layer_move(_BASE);
+        //     return false;
+        // case CANCEL:
+        //     layer_off(_NUM);
+        //     layer_off(_SYM);
+        //     stop_leading();
+        //     //disable_gaming();
+        //     return false;
+        // case TILD:
+        //     register_key_to_repeat(TILD);
+        //     return tap_undead_key(record->event.pressed, SE_TILD);
+        // case CIRC:
+        //     register_key_to_repeat(CIRC);
+        //     return tap_undead_key(record->event.pressed, SE_CIRC);
+        // case NUMWORD:
+        //     process_num_word_activation(record);
+        //     return false;
+        // case CAPSWORD:
+        //     if (record->event.pressed) {
+        //         enable_caps_word();
+        //     }
+        //     return false;
+        // case SAVE_VIM:
+        //     if (record->event.pressed) {
+        //         tap_escape();
+        //         tap_code16(SE_COLN);
+        //         tap_code(SE_W);
+        //         tap_code(KC_ENT);
+        //     }
+        //     return false;
+        // case VIM_SP:
+        //     if (record->event.pressed) {
+        //         tap_code16(C(SE_W));
+        //         tap_code(SE_S);
+        //     }
+        //     return false;
+        // case VIM_VS:
+        //     if (record->event.pressed) {
+        //         tap_code16(C(SE_W));
+        //         tap_code(SE_V);
+        //     }
+        //     return false;
+        // case NUM_G:
+        //     if (record->event.pressed) {
+        //         tap_code16(S(KC_G));
+        //     }
+        //     return false;
+        // case COLN_SYM:
+        //     if (record->tap.count && record->event.pressed) {
+        //         tap16_repeatable(SE_COLN);
+        //         return false;
+        //     }
+        //     break;
+        // case KC_ENT:
+        //     if (record->event.pressed) {
+        //         if (IS_LAYER_ON(_NUM)) {
+        //             tap16_repeatable(KC_PENT);
+        //         } else {
+        //             tap16_repeatable(KC_ENT);
+        //         }
+        //         disable_num_word();
+        //     }
+        //     return false;
+        // case TG_SWE:
+        //     if (record->event.pressed) {
+        //         uint16_t swe_key = corresponding_swe_key(last_key());
+        //         if (swe_key != KC_NO) {
+        //             tap_code16(KC_BSPACE);
+        //             tap_code16(swe_key);
+        //         }
+        //         layer_invert(_SWE);
+        //     }
+        //     return false;
+        // case WIN_ALT:
+        //     // Always start by sending Alt Tab to goto the next window with only a combo tap.
+        //     // We can then do Tab/S-Tab to continue moving around the windows if we want to.
+        //     if (record->event.pressed) {
+        //         register_code(KC_LALT);
+        //         tap_code16(KC_TAB);
+        //         layer_on(_WIN);
+        //     } else {
+        //         layer_off(_WIN);
+        //         unregister_code(KC_LALT);
+        //     }
+        //     return false;
+        // case LEADER:
+        //     start_leading();
+        //     return false;
+        case REPEAT:
+            // Enable fast UI rolls with repeat key
+            // end_tap_hold();
+            update_repeat_key(record);
+            return false;
+        // case REV_REP:
+        //     update_reverse_repeat_key(record);
+        //     return false;
+    }
+
+    return true;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // process_oneshot_pre(keycode, record);
+
+    // If `false` was returned, then we did something special and should register that manually.
+    // Otherwise register keyrepeat here by default.
+    bool res = _process_record_user(keycode, record);
+
+    // Space needs some special handling to not interfere with NAV toggling.
+    // Maybe there's a more general way to do this, but I dunno.
+    if (keycode == MT_SPC) {
+        if (!record->event.pressed && last_key_down == MT_SPC) {
+            register_key_to_repeat(KC_SPC);
+        }
+    } else if (res && record->event.pressed) {
+        register_key_to_repeat(keycode);
+    }
+
+    // process_oneshot_post(keycode, record);
+
+    if (record->event.pressed) {
+        last_key_down = keycode;
+    } else {
+        last_key_up = keycode;
+    }
+
+    return res;
+}
 
 LEADER_EXTERNS();
 

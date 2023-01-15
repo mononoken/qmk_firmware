@@ -20,6 +20,10 @@ enum layers {
 #define SHRT  OSL(_SHRT)
 #define FUNC  MO(_SHRT)
 
+enum custom_keycodes {
+  REPEAT,
+};
+
 #define xxxxxxx KC_NO
 
 #define MT_SPC  LT(_NAVI, KC_SPC)
