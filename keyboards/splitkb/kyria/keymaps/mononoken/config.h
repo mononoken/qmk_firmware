@@ -44,3 +44,6 @@
 #define COMBO_TERM 35
 // All combos are specified from the base layer, saves space
 #define COMBO_ONLY_FROM_LAYER 0
+
+// Leader key
+#define LEADER_TIMEOUT 300

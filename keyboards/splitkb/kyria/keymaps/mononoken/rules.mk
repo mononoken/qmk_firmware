@@ -10,12 +10,15 @@ AUTO_SHIFT_ENABLE = yes
 COMBO_ENABLE = yes
 VPATH  +=  keyboards/gboards/
 
+# Leader key
+LEADER_ENABLE = yes
+
 # Extra features that are nice but takes space
 WPM_ENABLE = no
 EXTRAKEY_ENABLE = no        # For volume keys and similar
 MOUSEKEY_ENABLE = no        # Them mouse keys yo
 KEY_OVERRIDE_ENABLE = no
-LEADER_ENABLE = no
+# LEADER_ENABLE = no
 TAP_DANCE_ENABLE = no
 RGB_MATRIX_ENABLE = no
 

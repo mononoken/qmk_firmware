@@ -19,6 +19,8 @@ COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_LPRN)
 
 COMB(semic_combo,   KC_SCLN,          KC_T, KC_D)
 
+COMB(lkey_combo,    QK_LEAD,          KC_L, KC_LPRN)
+
 
 // Thumbs
 // COMB(num,            KC_0,           MT_SPC, KC_MINS)
