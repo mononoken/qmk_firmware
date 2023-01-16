@@ -52,7 +52,7 @@
 #define COMBO_ONLY_FROM_LAYER 0
 
 // Leader key
-#define LEADER_TIMEOUT 300
+// #define LEADER_TIMEOUT 300
 
 // Fixes issue where splitkb does not wake up second half after sleep
 #define USB_SUSPEND_WAKEUP_DELAY 200

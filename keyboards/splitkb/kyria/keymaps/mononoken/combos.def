@@ -18,17 +18,17 @@ COMB(backsp,        KC_BSPC,          KC_U, KC_DOT)
 COMB(quo_combo,     KC_QUOT,          KC_N, KC_I)
 COMB(ent,           KC_ENT,           KC_N, KC_A, KC_I)
 
-COMB(rshft_combo,   OSM(MOD_RSFT),    KC_SLSH, KC_L)
+COMB(rshft_combo,   OSM(MOD_RSFT),    KC_K, KC_L)
 COMB(rgui_combo,    OSM(MOD_RGUI),    KC_A, KC_I)
-COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_LPRN)
+COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_COMM)
 
 COMB(semic_combo,   KC_SCLN,          KC_T, KC_D)
 
-COMB(lkey_combo,    QK_LEAD,          KC_L, KC_COMM)
+COMB(lkey_combo,    LEADER,           KC_L, KC_LPRN)
 
 
 // Thumbs
-COMB(numw,           NUM,           MT_SPC, KC_MINS)
+COMB(numw,           NUM,             MT_SPC, KC_E)
 
 // Full
 

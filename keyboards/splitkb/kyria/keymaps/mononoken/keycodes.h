@@ -15,16 +15,24 @@ enum layers {
 };
 
 #define BASE  DF(_BASE)
-#define NAVI   TO(_NAVI)
+#define NAVI  TO(_NAVI)
 #define LSYM  MO(_LSYM)
 #define RSYM  MO(_RSYM)
 #define SHRT  OSL(_SHRT)
 #define NUM   TO(_NUM)
 #define FUNC  MO(_SHRT)
 
+#define CLEAR TO(_BASE)
+
 enum custom_keycodes {
   // Multiple chars
   QU = SAFE_RANGE,
+
+  // Layer management
+  // CLEAR, // Clear all WORD, one-shots and reset to BASE
+
+  // Instant leader key
+  LEADER,
 
   // Repeat key
   REPEAT,

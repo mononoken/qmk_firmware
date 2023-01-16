@@ -13,12 +13,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include <stdint.h>
 #include "quantum.h"
 #include QMK_KEYBOARD_H
 
 #include "keycodes.h"
 #include "tap_hold.h"
 #include "repeat.h"
+#include "leader.h"
 
 #include "g/keymap_combo.h"
 
@@ -40,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_UNDS,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_DOT,  xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_SLSH, KC_V,    KC_G,    KC_D,    KC_B,    BASE,    xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_COMM, KC_LPRN, KC_RPRN, KC_RSFT,
+     KC_LSFT, KC_SLSH, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_COMM, KC_LPRN, KC_RPRN, KC_RSFT,
                                 xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
 
@@ -72,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, KC_UNDS,                                     KC_X,    xxxxxxx, _______, xxxxxxx, KC_DOT,  xxxxxxx,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_SLSH, KC_9,    KC_COMM, KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, BASE,    xxxxxxx, xxxxxxx, BASE,    xxxxxxx, xxxxxxx, xxxxxxx
+                                xxxxxxx, xxxxxxx, xxxxxxx, CLEAR,   xxxxxxx, xxxxxxx, CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -346,6 +348,7 @@ bool tap_hold(uint16_t keycode) {
         // case SE_LABK:
         // case SE_RABK:
         case KC_DOT:
+        case KC_COMM:
         // case SE_PERC:
         // case GRV:
         // case SE_AT:
@@ -358,7 +361,7 @@ bool tap_hold(uint16_t keycode) {
         // case SE_LCBR:
         // case SE_LBRC:
         // case SE_EQL:
-        // case SE_UNDS:
+        case KC_UNDS:
         // case SE_0:
         // case G(SE_0):
         // case G(SE_1):
@@ -457,6 +460,9 @@ void tap_hold_send_hold(uint16_t keycode) {
         case QU:
             send_string("Qu");
             return;
+        case KC_UNDS:
+            tap_code16(KC_MINS);
+            return;
         // case SC:
         //     send_string("Sc");
         //     return;
@@ -544,6 +550,39 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
     }
 }
 
+// https://github.com/andrewjrae/kyria-keymap#userspace-leader-sequences
+void *leader_toggles_func(uint16_t keycode) {
+    switch (keycode) {
+        // case KC_N:
+        //     layer_invert(_NUM);
+        //     return NULL;
+        // case KC_S:
+        //     layer_invert(_SYM);
+        //     return NULL;
+        // case KC_C:
+        //     swap_caps_esc();
+        //     return NULL;
+        default:
+            return NULL;
+    }
+}
+
+void *leader_start_func(uint16_t keycode) {
+    switch (keycode) {
+        // case KC_T:
+        //     return leader_toggles_func;
+        case KC_C:
+            tap_code(KC_CAPS);
+            // tap_caps_lock();
+            return NULL;
+        // case ESC_SYM:
+        //     tap_code16(C(S(KC_ESC)));
+        //     return NULL;
+        default:
+            return NULL;
+    }
+}
+
 bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     // #ifdef CONSOLE_ENABLE
     //     if (record->event.pressed) {
@@ -560,9 +599,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     //     }
     // #endif
 
-    // if (!process_leader(keycode, record)) {
-    //     return false;
-    // }
+    if (!process_leader(keycode, record)) {
+        return false;
+    }
     // if (!process_num_word(keycode, record)) {
     //     return false;
     // }
@@ -683,9 +722,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         //         unregister_code(KC_LALT);
         //     }
         //     return false;
-        // case LEADER:
-        //     start_leading();
-        //     return false;
+        case LEADER:
+            start_leading();
+            return false;
         case REPEAT:
             // Enable fast UI rolls with repeat key
             end_tap_hold();
@@ -727,17 +766,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return res;
 }
 
-LEADER_EXTERNS();
-
 void matrix_scan_user(void) {
   tap_hold_matrix_scan();
 
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
+  // LEADER_DICTIONARY() {
+  //   leading = false;
+  //   leader_end();
 
-    SEQ_ONE_KEY(KC_C) {
-      register_code(KC_CAPS);
-    }
-  }
+  //   SEQ_ONE_KEY(KC_C) {
+  //     register_code(KC_CAPS);
+  //     unregister_code(KC_CAPS);
+  //   }
+  // }
 }
