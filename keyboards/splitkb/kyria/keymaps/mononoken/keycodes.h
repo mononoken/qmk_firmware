@@ -15,9 +15,11 @@ enum layers {
 };
 
 #define BASE  DF(_BASE)
+#define NAVI   TO(_NAVI)
 #define LSYM  MO(_LSYM)
 #define RSYM  MO(_RSYM)
 #define SHRT  OSL(_SHRT)
+#define NUM   TO(_NUM)
 #define FUNC  MO(_SHRT)
 
 enum custom_keycodes {

@@ -4,8 +4,7 @@ ENCODER_ENABLE = no       # Enables the use of one or more encoders
 RGBLIGHT_ENABLE = no      # Enable keyboard RGB underglow
 SPLIT_KEYBOARD = yes
 
-# Custom settings
-AUTO_SHIFT_ENABLE = yes
+# AUTO_SHIFT_ENABLE = yes
 
 # Combos
 COMBO_ENABLE = yes
@@ -14,7 +13,8 @@ VPATH  +=  keyboards/gboards/
 # Leader key
 LEADER_ENABLE = yes
 
-# Repeat key
+# SRC += oneshot.c
+SRC += tap_hold.c
 SRC += repeat.c
 
 # Extra features that are nice but takes space

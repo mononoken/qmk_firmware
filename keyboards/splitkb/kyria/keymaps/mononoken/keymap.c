@@ -13,9 +13,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include "quantum.h"
 #include QMK_KEYBOARD_H
 
 #include "keycodes.h"
+#include "tap_hold.h"
 #include "repeat.h"
 
 #include "g/keymap_combo.h"
@@ -36,17 +38,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                             xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
     // ),
     [_BASE] = LAYOUT(
-     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_COLN,                                     KC_X,    KC_W,    KC_DOT,  KC_U,    KC_UNDS, xxxxxxx,
-     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    REPEAT,
-     KC_LSFT, KC_COMM, KC_V,    KC_G,    KC_D,    KC_B,    BASE,    xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_LPRN, KC_RPRN, KC_SLSH, KC_RSFT,
+     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_UNDS,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_DOT,  xxxxxxx,
+     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
+     KC_LSFT, KC_SLSH, KC_V,    KC_G,    KC_D,    KC_B,    BASE,    xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_COMM, KC_LPRN, KC_RPRN, KC_RSFT,
                                 xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
 
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, xxxxxxx, CS_TAB,  DN_CTRL, C_TAB,   xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
      xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, NAVI,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_LSYM] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -67,10 +69,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    xxxxxxx, xxxxxxx
     ),
     [_NUM] = LAYOUT(
-     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     KC_X,    xxxxxxx, xxxxxxx, xxxxxxx, KC_DOT,  xxxxxxx,
+     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, KC_UNDS,                                     KC_X,    xxxxxxx, _______, xxxxxxx, KC_DOT,  xxxxxxx,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_SLSH, KC_9,    xxxxxxx, xxxxxxx, KC_UNDS, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, BASE,    xxxxxxx, xxxxxxx, xxxxxxx
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_SLSH, KC_9,    KC_COMM, KC_LPRN, KC_RPRN, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, BASE,    xxxxxxx, xxxxxxx, BASE,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -216,6 +218,247 @@ DELETE THIS LINE TO UNCOMMENT (2/2) */
 static uint16_t last_key_down = KC_NO;
 static uint16_t last_key_up = KC_NO;
 
+bool tap_undead_key(bool key_down, uint16_t code) {
+    if (key_down) {
+        tap_code16(code);
+        tap_code16(KC_SPACE);
+    }
+    return false;
+}
+
+void tap16_repeatable(uint16_t keycode) {
+    tap_code16(keycode);
+    register_key_to_repeat(keycode);
+}
+
+// Tapping terms
+
+#ifdef TAPPING_TERM_PER_KEY
+
+#define THUMB_TERM 20
+#define INDEX_TERM -20
+#define MIDDLE_TERM 0
+#define RING_TERM 80
+#define PINKY_TERM 180
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MT_SPC:
+            return TAPPING_TERM + THUMB_TERM;
+        // case DN_CTRL:
+        //     return TAPPING_TERM + MIDDLE_TERM;
+        default:
+            return TAPPING_TERM;
+    }
+}
+#endif
+
+// Tap hold
+
+bool tap_hold(uint16_t keycode) {
+    switch (keycode) {
+        // case SE_DQUO:
+        // case SE_LABK:
+        // case SE_RABK:
+        case KC_DOT:
+        // case SE_PERC:
+        // case GRV:
+        // case SE_AT:
+        // case SE_PIPE:
+        // case SE_EXLM:
+        // case SE_AMPR:
+        // case SE_QUES:
+        // case SE_HASH:
+        // case SE_LPRN:
+        // case SE_LCBR:
+        // case SE_LBRC:
+        // case SE_EQL:
+        // case SE_UNDS:
+        // case SE_0:
+        // case G(SE_0):
+        // case G(SE_1):
+        // case G(SE_2):
+        // case G(SE_3):
+        // case G(SE_4):
+        // case G(SE_5):
+        // case G(SE_6):
+        // case G(SE_7):
+        // case G(SE_8):
+        // case G(SE_9):
+        // case G(SE_K):
+        // case G(SE_J):
+        // case G(SE_W):
+        // case G(SE_E):
+        // case G(SE_R):
+        // case G(SE_C):
+        case KC_A ... KC_Z:
+        // case SE_ARNG:
+        // case SE_ADIA:
+        // case SE_ODIA:
+        // case QU:
+        // case SC:
+        // case E_ACUT:
+        // case CLOSE_WIN:
+        // case C(SE_A):
+        // case C(SE_C):
+        // case C(SE_W):
+        // case C(SE_F):
+        // case C(SE_E):
+        // case C(SE_R):
+        // case C(SE_S):
+        // case C(SE_T):
+        // case C(SE_H):
+        // case C(SE_X):
+        // case C(SE_V):
+        // case C(SE_G):
+        // case C(SE_D):
+        // case C(SE_B):
+            return true;
+        default:
+            return false;
+    }
+}
+
+void tap_hold_send_tap(uint16_t keycode) {
+    switch (keycode) {
+        // case GRV:
+        //     register_key_to_repeat(keycode);
+        //     tap_undead_key(true, SE_GRV);
+        //     return;
+        // case QU:
+        //     send_string("qu");
+        //     return;
+        // case SC:
+        //     send_string("sc");
+        //     return;
+        // case SE_Q:
+        // case SE_Z:
+        //     if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+        //         tap16_repeatable(C(keycode));
+        //     } else {
+        //         tap16_repeatable(keycode);
+        //     }
+        //     return;
+        // case E_ACUT:
+        //     tap_code16(SE_ACUT);
+        //     tap_code16(SE_E);
+        //     return;
+        // case CLOSE_WIN:
+        //     tap_code16(C(SE_W));
+        //     tap_code(SE_Q);
+        //     /* tap_escape(); */
+        //     /* tap_code16(SE_COLN); */
+        //     /* tap_code(SE_Q); */
+        //     /* tap_code(KC_ENT); */
+        //     return;
+        default:
+            tap16_repeatable(keycode);
+    }
+}
+
+void tap_hold_send_hold(uint16_t keycode) {
+    // disable_caps_word();
+
+    switch (keycode) {
+        case KC_DOT:
+            tap_code16(KC_EXLM);
+            return;
+        case KC_SLSH:
+            tap_code16(KC_BSLS);
+            return;
+        case KC_COMM:
+            tap_code16(KC_QUES);
+            return;
+        // case QU:
+        //     send_string("Qu");
+        //     return;
+        // case SC:
+        //     send_string("Sc");
+        //     return;
+        // case SE_Q:
+        // case SE_Z:
+        //     if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+        //         tap16_repeatable(S(C(keycode)));
+        //     } else {
+        //         tap16_repeatable(S(keycode));
+        //     }
+        //     return;
+        default:
+            tap16_repeatable(S(keycode));
+    }
+}
+
+uint16_t tap_hold_timeout(uint16_t keycode) {
+    switch (keycode) {
+        // // Extra
+        // case CLOSE_WIN:
+        //     return 160;
+        // // Thumb
+        // case KC_E:
+        //     return 120;
+        // // Pinky
+        // case KC_R:
+        // case SE_COMM:
+        // case SE_UNDS:
+        // //case UNDS_ODIA:
+        // case SE_6:
+        // case G(SE_6):
+        // case SE_7:
+        // case G(SE_7):
+        // case C(SE_R):
+        // case C(SE_X):
+            // return 135;
+        // // Ring
+        // case SE_J:
+        // case SE_C:
+        // case SE_S:
+        // case SE_V:
+        // case SE_U:
+        // case SE_DOT:
+        // case SE_I:
+        // case SE_RPRN:
+        // //case RPRN_ADIA:
+        // case SE_Q:
+        // case QU:
+        // case SE_4:
+        // case G(SE_4):
+        // case SE_5:
+        // case G(SE_5):
+        // case G(SE_J):
+        // case G(SE_R):
+        // case C(SE_A):
+        // case C(SE_C):
+        // case C(SE_S):
+        // case C(SE_V):
+        //     return 105;
+        // // Middle
+        // case SE_Y:
+        // case SE_T:
+        // case SE_G:
+        // case SE_O:
+        // case SE_A:
+        // case SE_LPRN:
+        // //case LPRN_ARNG:
+        // case SE_Z:
+        // case SE_0:
+        // case G(SE_0):
+        // case SE_1:
+        // case G(SE_1):
+        // case C(SE_W):
+        // case C(SE_T):
+        // case C(SE_G):
+        //     return 100;
+        // // Slow index
+        // case SE_P:
+        // case SE_X:
+        // case C(SE_E):
+        //     return 105;
+        // Index
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     // #ifdef CONSOLE_ENABLE
     //     if (record->event.pressed) {
@@ -244,14 +487,14 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     // if (!process_roll(keycode, record)) {
     //     return false;
     // }
-    // if (!process_tap_hold(keycode, record)) {
-    //     // Extra register here to allow fast rolls without waiting for tap hold,
-    //     // (which will also overwrite this).
-    //     if (record->event.pressed) {
-    //         register_key_to_repeat(keycode);
-    //     }
-    //     return false;
-    // }
+    if (!process_tap_hold(keycode, record)) {
+        // Extra register here to allow fast rolls without waiting for tap hold,
+        // (which will also overwrite this).
+        if (record->event.pressed) {
+            register_key_to_repeat(keycode);
+        }
+        return false;
+    }
 
     switch (keycode) {
         // case ESC_SYM:
@@ -360,7 +603,7 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         //     return false;
         case REPEAT:
             // Enable fast UI rolls with repeat key
-            // end_tap_hold();
+            end_tap_hold();
             update_repeat_key(record);
             return false;
         // case REV_REP:
@@ -402,6 +645,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
+  tap_hold_matrix_scan();
+
   LEADER_DICTIONARY() {
     leading = false;
     leader_end();
