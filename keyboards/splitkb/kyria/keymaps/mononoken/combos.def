@@ -35,7 +35,7 @@ COMB(numw,           NUM,             MT_SPC, KC_E)
 // Numbers with cross side thumb
 COMB(comb_6,            KC_6,           KC_E, KC_R)
 COMB(comb_4,            KC_4,           KC_E, KC_S)
-COMB(comb_0,            KC_0,           KC_E, KC_F)
+COMB(comb_0,            KC_0,           KC_E, KC_T)
 COMB(comb_2,            KC_2,           KC_E, KC_H)
 COMB(comb_8,            KC_8,           KC_E, KC_D)
 COMB(comb_9,            KC_9,           MT_SPC, KC_L)

@@ -41,8 +41,8 @@ enum custom_keycodes {
 #define xxxxxxx KC_NO
 
 #define MT_SPC  LT(_NAVI, KC_SPC)
-#define C_TAB   G(KC_TAB)
-#define CS_TAB  SGUI(KC_TAB)
+#define C_TAB   C(KC_TAB)
+#define CS_TAB  RCS(KC_TAB)
 #define DN_CTRL MT(MOD_LCTL, KC_DOWN)
 
 #define OS_CTRL  OSM(MOD_LCTL)

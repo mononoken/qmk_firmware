@@ -21,9 +21,6 @@
     #define RGBLIGHT_LAYERS
 #endif
 
-// #define AUTO_SHIFT_TIMEOUT 160
-// #define NO_AUTO_SHIFT_SPECIAL
-
 // Home-row mods: https://precondition.github.io/home-row-mods#tap-hold-configuration-settings
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM_PER_KEY
@@ -67,4 +64,3 @@
 // These are a bit iffy, as I don't know what they're doing, but it "works fine" according to Discord people
 // #undef LOCKING_SUPPORT_ENABLE
 // #undef LOCKING_RESYNC_ENABLE
-

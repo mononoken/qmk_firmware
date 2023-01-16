@@ -193,6 +193,8 @@ bool oled_task_user(void) {
     return false;
 }
 #endif
+DELETE THIS LINE TO UNCOMMENT (2/2) */
+
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
@@ -215,7 +217,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return false;
 }
 #endif
-DELETE THIS LINE TO UNCOMMENT (2/2) */
 
 static uint16_t last_key_down = KC_NO;
 static uint16_t last_key_up = KC_NO;
