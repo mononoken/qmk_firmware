@@ -17,20 +17,8 @@
 #pragma once
 
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLIGHT_EFFECT_BREATHING
-#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#    define RGBLIGHT_EFFECT_SNAKE
-#    define RGBLIGHT_EFFECT_KNIGHT
-#    define RGBLIGHT_EFFECT_CHRISTMAS
-#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
-#    define RGBLIGHT_EFFECT_RGB_TEST
-#    define RGBLIGHT_EFFECT_ALTERNATING
-#    define RGBLIGHT_EFFECT_TWINKLE
-#    define RGBLIGHT_HUE_STEP 8
-#    define RGBLIGHT_SAT_STEP 8
-#    define RGBLIGHT_VAL_STEP 8
-#    define RGBLIGHT_LIMIT_VAL 150
+    #define RGBLIGHT_DISABLE_KEYCODES
+    #define RGBLIGHT_LAYERS
 #endif
 
 // #define AUTO_SHIFT_TIMEOUT 160
@@ -58,6 +46,8 @@
 // Combos
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 35
+#define COMBO_MUST_TAP_PER_COMBO
+#define COMBO_TERM_PER_COMBO
 // All combos are specified from the base layer, saves space
 #define COMBO_ONLY_FROM_LAYER 0
 
@@ -66,3 +56,15 @@
 
 // Fixes issue where splitkb does not wake up second half after sleep
 #define USB_SUSPEND_WAKEUP_DELAY 200
+
+// Not supported without flto
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
+// Save space
+//#define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
+// These are a bit iffy, as I don't know what they're doing, but it "works fine" according to Discord people
+// #undef LOCKING_SUPPORT_ENABLE
+// #undef LOCKING_RESYNC_ENABLE
+

@@ -1,6 +1,6 @@
 // Left
 COMB(q_comb,        KC_Q,             KC_J, KC_C)
-SUBS(qu_comb,       "qu",             KC_C, KC_Y)
+COMB(qu_comb,       QU,               KC_C, KC_Y)
 COMB(z_comb,        KC_Z,             KC_Y, KC_F)
 COMB(del_combo,     KC_DEL,           KC_C, KC_Y, KC_F)
 

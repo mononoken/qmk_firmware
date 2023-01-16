@@ -231,6 +231,91 @@ void tap16_repeatable(uint16_t keycode) {
     register_key_to_repeat(keycode);
 }
 
+// Combos
+
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+    switch (index) {
+        // // Home-row and other tight combos
+        // case ctrl_combo_l:
+        // case escape_sym:
+        // case tab_mod:
+        // case del:
+        // case dquo:
+        // case coln_sym:
+        // case ctrl_combo_r:
+        // case quot:
+        // case ent:
+        // case vsp:
+        // case gui_combo_l:
+        // case gui_combo_r:
+        // case dlr:
+        //     return COMBO_TERM;
+        // // Vertical combos, very relaxed
+        // case small_left_arrow:
+        // case lt_eq:
+        // case large_right_arrow:
+        // case small_right_arrow:
+        // case pipe_to:
+        // case sp:
+        // case gt_eq:
+        //     return COMBO_TERM + 55;
+        // Regular combos, slightly relaxed
+        default:
+            return COMBO_TERM + 25;
+    }
+}
+
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+    switch (index) {
+        // case del:
+        // case backsp:
+        // case q_comb:
+        // case qu_comb:
+        // case z_comb:
+        // case num:
+        // case comb_perc:
+        // case comb_grv:
+        // case comb_hash:
+        // case comb_pipe:
+        // case comb_ques:
+        // case comb_exlm:
+        // case comb_ampr:
+        // case comb_labk:
+        // case comb_rabk:
+        // case comb_lcbr:
+        // case comb_lbrc:
+        // case comb_at:
+        // case comb_0:
+        // case comb_e_acut:
+        // case rev_rep:
+        // case arng:
+        // case adia:
+        // case odia:
+        // case eql:
+        // case gui_combo_l:
+        // case gui_combo_r:
+        // case ctrl_combo_l:
+        // case ctrl_combo_r:
+        // case shift_combo_l:
+        // case shift_combo_r:
+        // case close_win:
+        // case escape_sym:
+        // case tab_mod:
+        // case coln_sym:
+        // case dquo:
+        // case lalt:
+        // case win_alt:
+            // return false;
+        default:
+            return true;
+    }
+}
+
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo) {
+    // FIXME this doesn't seem to work?
+    return true;
+}
+
 // Tapping terms
 
 #ifdef TAPPING_TERM_PER_KEY
@@ -295,7 +380,7 @@ bool tap_hold(uint16_t keycode) {
         // case SE_ARNG:
         // case SE_ADIA:
         // case SE_ODIA:
-        // case QU:
+        case QU:
         // case SC:
         // case E_ACUT:
         // case CLOSE_WIN:
@@ -325,9 +410,9 @@ void tap_hold_send_tap(uint16_t keycode) {
         //     register_key_to_repeat(keycode);
         //     tap_undead_key(true, SE_GRV);
         //     return;
-        // case QU:
-        //     send_string("qu");
-        //     return;
+        case QU:
+            send_string("qu");
+            return;
         // case SC:
         //     send_string("sc");
         //     return;
@@ -369,9 +454,9 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_COMM:
             tap_code16(KC_QUES);
             return;
-        // case QU:
-        //     send_string("Qu");
-        //     return;
+        case QU:
+            send_string("Qu");
+            return;
         // case SC:
         //     send_string("Sc");
         //     return;
@@ -419,7 +504,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         // case SE_RPRN:
         // //case RPRN_ADIA:
         // case SE_Q:
-        // case QU:
+        case QU:
         // case SE_4:
         // case G(SE_4):
         // case SE_5:
@@ -430,7 +515,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         // case C(SE_C):
         // case C(SE_S):
         // case C(SE_V):
-        //     return 105;
+            return 105;
         // // Middle
         // case SE_Y:
         // case SE_T:

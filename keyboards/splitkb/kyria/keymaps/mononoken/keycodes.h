@@ -23,6 +23,10 @@ enum layers {
 #define FUNC  MO(_SHRT)
 
 enum custom_keycodes {
+  // Multiple chars
+  QU = SAFE_RANGE,
+
+  // Repeat key
   REPEAT,
 };
 
