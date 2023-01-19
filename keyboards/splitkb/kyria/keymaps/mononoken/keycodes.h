@@ -28,6 +28,10 @@ enum custom_keycodes {
   // Multiple chars
   QU = SAFE_RANGE,
 
+  // Smart caps lock and layers that turn off on certain keys
+  // CAPSWORD,
+  NUMWORD,
+
   // Layer management
   // CLEAR, // Clear all WORD, one-shots and reset to BASE
 

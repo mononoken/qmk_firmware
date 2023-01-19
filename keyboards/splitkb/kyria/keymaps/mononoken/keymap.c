@@ -18,6 +18,7 @@
 #include QMK_KEYBOARD_H
 
 #include "keycodes.h"
+#include "layermodes.h"
 #include "tap_hold.h"
 #include "repeat.h"
 #include "leader.h"
@@ -33,22 +34,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Base Layer: BASE (Modified RSTHD)
 */
-    // [_BASE] = LAYOUT(
-    //  KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_P,                                        KC_X,    KC_W,    KC_O,    KC_U,    KC_DOT,  xxxxxxx,
-    //  KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_K,                                        KC_M,    KC_N,    KC_A,    KC_I,    xxxxxxx, xxxxxxx,
-    //  KC_LSFT, KC_COMM, KC_V,    KC_G,    KC_D,    KC_B,    BASE,    xxxxxxx, xxxxxxx, xxxxxxx, KC_SLSH, KC_L,    KC_LPRN, KC_RPRN, KC_UNDS, KC_RSFT,
-    //                             xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
-    // ),
     [_BASE] = LAYOUT(
-     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_UNDS,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_DOT,  xxxxxxx,
+     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_SLSH, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_COMM, KC_LPRN, KC_RPRN, KC_RSFT,
-                                xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, xxxxxxx, xxxxxxx
+     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+                                xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, KC_MPLY, KC_MUTE
     ),
-
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, CS_TAB,  DN_CTRL, C_TAB,   xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
+     _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
      xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, NAVI,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
@@ -64,6 +58,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
     ),
+    // [_SYMB] = LAYOUT(
+    //  _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
+    //  xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
+    //  xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+    //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
+    // ),
+    // [_OMOD] = LAYOUT(
+    //  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+    //  xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
+    //  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+    //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
+    // ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -71,10 +77,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    xxxxxxx, xxxxxxx
     ),
     [_NUM] = LAYOUT(
-     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, KC_UNDS,                                     KC_X,    xxxxxxx, _______, xxxxxxx, KC_DOT,  xxxxxxx,
+     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, KC_SLSH,                                     KC_X,    xxxxxxx, _______, xxxxxxx, KC_COMM, xxxxxxx,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_SLSH, KC_9,    KC_COMM, KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, CLEAR,   xxxxxxx, xxxxxxx, CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx
+     xxxxxxx, KC_UNDS, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -200,18 +206,18 @@ DELETE THIS LINE TO UNCOMMENT (2/2) */
 bool encoder_update_user(uint8_t index, bool clockwise) {
 
     if (index == 0) {
-        // Volume control
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    } else if (index == 1) {
         // Page up/Page down
         if (clockwise) {
             tap_code(KC_PGDN);
         } else {
             tap_code(KC_PGUP);
+        }
+    } else if (index == 1) {
+        // Volume control
+                if (clockwise) {
+            tap_code(KC_VOLU);
+        } else {
+            tap_code(KC_VOLD);
         }
     }
     return false;
@@ -603,9 +609,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_leader(keycode, record)) {
         return false;
     }
-    // if (!process_num_word(keycode, record)) {
-    //     return false;
-    // }
+    if (!process_num_word(keycode, record)) {
+        return false;
+    }
     // if (!process_case_modes(keycode, record)) {
     //     return false;
     // }
@@ -652,9 +658,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         // case CIRC:
         //     register_key_to_repeat(CIRC);
         //     return tap_undead_key(record->event.pressed, SE_CIRC);
-        // case NUMWORD:
-        //     process_num_word_activation(record);
-        //     return false;
+        case NUMWORD:
+            process_num_word_activation(record);
+            return false;
         // case CAPSWORD:
         //     if (record->event.pressed) {
         //         enable_caps_word();
@@ -691,16 +697,16 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         //         return false;
         //     }
         //     break;
-        // case KC_ENT:
-        //     if (record->event.pressed) {
-        //         if (IS_LAYER_ON(_NUM)) {
-        //             tap16_repeatable(KC_PENT);
-        //         } else {
-        //             tap16_repeatable(KC_ENT);
-        //         }
-        //         disable_num_word();
-        //     }
-        //     return false;
+        case KC_ENT:
+            if (record->event.pressed) {
+                if (IS_LAYER_ON(_NUM)) {
+                    tap16_repeatable(KC_PENT);
+                } else {
+                    tap16_repeatable(KC_ENT);
+                }
+                disable_num_word();
+            }
+            return false;
         // case TG_SWE:
         //     if (record->event.pressed) {
         //         uint16_t swe_key = corresponding_swe_key(last_key());
