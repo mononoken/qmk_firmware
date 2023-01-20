@@ -16,13 +16,6 @@ enum layers {
     _GAME,
 };
 
-#define BASE  DF(_BASE)
-#define NAVI  TO(_NAVI)
-#define SYMB  OSL(_SYMB)
-#define OMOD  OSL(_OMOD)
-#define SHRT  OSL(_SHRT)
-#define FUNC  MO(_SHRT)
-
 enum custom_keycodes {
   // Multiple chars
   QU = SAFE_RANGE,
@@ -34,7 +27,7 @@ enum custom_keycodes {
   OS_GUI,
 
   // Smart caps lock and layers that turn off on certain keys
-  // CAPSWORD,
+  CAPSWORD,
   NUMWORD,
 
   // Layer management
@@ -49,6 +42,12 @@ enum custom_keycodes {
 };
 
 #define xxxxxxx KC_NO
+
+#define BASE  DF(_BASE)
+#define SYMB  OSL(_SYMB)
+#define OMOD  OSL(_OMOD)
+#define SHRT  OSL(_SHRT)
+#define FUNC  OSL(_FUNC)
 
 #define MT_SPC  LT(_NAVI, KC_SPC)
 #define C_TAB   C(KC_TAB)

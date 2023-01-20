@@ -31,6 +31,7 @@ COMB(leader,        LEADER,           KC_L, KC_LPRN)
 COMB(num,           NUMWORD,          MT_SPC, KC_E)
 
 // Full
+COMB(capsword,          CAPSWORD,       KC_T, KC_A)
 
 // Numbers with cross side thumb
 COMB(comb_6,            KC_6,           KC_E, KC_R)

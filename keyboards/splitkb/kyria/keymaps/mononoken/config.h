@@ -48,11 +48,8 @@
 // All combos are specified from the base layer, saves space
 #define COMBO_ONLY_FROM_LAYER 0
 
-// Leader key
-// #define LEADER_TIMEOUT 300
-
-// Fixes issue where splitkb does not wake up second half after sleep
-#define USB_SUSPEND_WAKEUP_DELAY 200
+#define DEFAULT_XCASE_SEPARATOR KC_MINS
+#define XCASE_DELIMITER_KEY KC_UNDS
 
 // Not supported without flto
 #define NO_ACTION_MACRO
@@ -64,3 +61,6 @@
 // These are a bit iffy, as I don't know what they're doing, but it "works fine" according to Discord people
 // #undef LOCKING_SUPPORT_ENABLE
 // #undef LOCKING_RESYNC_ENABLE
+
+// Fixes issue where splitkb does not wake up second half after sleep
+#define USB_SUSPEND_WAKEUP_DELAY 200

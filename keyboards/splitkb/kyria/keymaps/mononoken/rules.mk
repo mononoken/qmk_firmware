@@ -12,6 +12,7 @@ VPATH  +=  keyboards/gboards/
 
 SRC += oneshot.c
 SRC += layermodes.c
+SRC += casemodes.c
 SRC += tap_hold.c
 SRC += repeat.c
 SRC += leader.c

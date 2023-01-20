@@ -19,6 +19,7 @@
 
 #include "keycodes.h"
 #include "oneshot.h"
+#include "casemodes.h"
 #include "layermodes.h"
 #include "tap_hold.h"
 #include "repeat.h"
@@ -38,50 +39,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   KC_PSCR, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
                                 xxxxxxx, OMOD,    SHRT,    MT_SPC,  CLEAR,   CLEAR,   KC_E,    SYMB,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, xxxxxxx, KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
-     xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, NAVI,    xxxxxxx, xxxxxxx, xxxxxxx
+     xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx
+     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_OMOD] = LAYOUT(
      _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    xxxxxxx, xxxxxxx
+     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    _______, _______
     ),
     [_NUM] = LAYOUT(
-     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, KC_SLSH,                                     KC_X,    xxxxxxx, _______, xxxxxxx, KC_COMM, xxxxxxx,
-     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, KC_UNDS, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
+     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     KC_X,    _______, _______, xxxxxxx, _______, _______,
+     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
+     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,                                      KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,   xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_GAME] = LAYOUT(
      KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
      KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                xxxxxxx, xxxxxxx, KC_LCTL, KC_SPC,  _______, _______, xxxxxxx, FUNC,    _______, _______
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    xxxxxxx, _______, CLEAR,   xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                                xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     // TEMPLATE
     // [_XXXX] = LAYOUT(
@@ -334,6 +335,50 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 #endif
+
+// Case modes
+
+bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
+    switch (keycode) {
+        // Keycodes to ignore (don't disable caps word)
+        case REPEAT:
+        // case REV_REP:
+            return false;
+        case KC_A ... KC_Z:
+        case KC_1 ... KC_0:
+        // case KC_ARNG:
+        // case KC_ADIA:
+        // case KC_ODIA:
+        case QU:
+        // case SC:
+        case KC_MINS:
+        case KC_UNDS:
+        case KC_BSPC:
+            // If mod chording disable the mods
+            if (record->event.pressed && (get_mods() != 0)) {
+                return true;
+            }
+            break;
+        default:
+            if (record->event.pressed) {
+                return true;
+            }
+            break;
+    }
+    return false;
+}
+
+// void triple_tap(uint16_t keycode) {
+//     tap_code16(keycode);
+//     tap_code16(keycode);
+//     tap_code16(keycode);
+// }
+
+// void double_parens_left(uint16_t left, uint16_t right) {
+//     tap_code16(left);
+//     tap_code16(right);
+//     tap_code16(KC_LEFT);
+// }
 
 // One-shot mods
 
@@ -686,9 +731,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_num_word(keycode, record)) {
         return false;
     }
-    // if (!process_case_modes(keycode, record)) {
-    //     return false;
-    // }
+    if (!process_case_modes(keycode, record)) {
+        return false;
+    }
     // if (!process_roll(keycode, record)) {
     //     return false;
     // }
@@ -735,11 +780,11 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         case NUMWORD:
             process_num_word_activation(record);
             return false;
-        // case CAPSWORD:
-        //     if (record->event.pressed) {
-        //         enable_caps_word();
-        //     }
-        //     return false;
+        case CAPSWORD:
+            if (record->event.pressed) {
+                enable_caps_word();
+            }
+            return false;
         // case SAVE_VIM:
         //     if (record->event.pressed) {
         //         tap_escape();
