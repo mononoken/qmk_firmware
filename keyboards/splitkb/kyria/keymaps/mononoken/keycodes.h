@@ -3,6 +3,7 @@
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+#include "oneshot.h"
 
 enum layers {
     _BASE = 0,
@@ -21,20 +22,24 @@ enum layers {
 #define OMOD  OSL(_OMOD)
 #define SHRT  OSL(_SHRT)
 #define FUNC  MO(_SHRT)
-#define GAME  TO(_GAME)
-
-#define CLEAR TO(_BASE)
 
 enum custom_keycodes {
   // Multiple chars
   QU = SAFE_RANGE,
+
+  // Instant oneshot mods
+  OS_SHFT,
+  OS_CTRL,
+  OS_ALT,
+  OS_GUI,
 
   // Smart caps lock and layers that turn off on certain keys
   // CAPSWORD,
   NUMWORD,
 
   // Layer management
-  // CLEAR, // Clear all WORD, one-shots and reset to BASE
+  // CANCEL, // Cancel SYMWORD and NUMWORD
+  CLEAR, // Clear all WORD, one-shots and reset to BASE
 
   // Instant leader key
   LEADER,
@@ -49,8 +54,3 @@ enum custom_keycodes {
 #define C_TAB   C(KC_TAB)
 #define CS_TAB  RCS(KC_TAB)
 #define DN_CTRL MT(MOD_LCTL, KC_DOWN)
-
-#define OS_CTRL  OSM(MOD_LCTL)
-#define OS_SHFT  OSM(MOD_LSFT)
-#define OS_ALT   OSM(MOD_LALT)
-#define OS_GUI   OSM(MOD_LGUI)

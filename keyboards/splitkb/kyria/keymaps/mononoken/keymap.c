@@ -18,6 +18,7 @@
 #include QMK_KEYBOARD_H
 
 #include "keycodes.h"
+#include "oneshot.h"
 #include "layermodes.h"
 #include "tap_hold.h"
 #include "repeat.h"
@@ -38,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
      KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
-                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  xxxxxxx, xxxxxxx, KC_E,    SYMB,    KC_MPLY, KC_MUTE
+                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  CLEAR,   CLEAR,   KC_E,    SYMB,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -80,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
      KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                xxxxxxx, xxxxxxx, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    _______, _______
+                                xxxxxxx, xxxxxxx, KC_LCTL, KC_SPC,  _______, _______, xxxxxxx, FUNC,    _______, _______
     ),
     // TEMPLATE
     // [_XXXX] = LAYOUT(
@@ -333,6 +334,85 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 #endif
+
+// One-shot mods
+
+bool is_oneshot_cancel_key(uint16_t keycode) {
+    switch (keycode) {
+        case CLEAR:
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool is_oneshot_ignored_key(uint16_t keycode) {
+    switch (keycode) {
+        case CLEAR:
+        case OS_SHFT:
+        case OS_CTRL:
+        case OS_ALT:
+        case OS_GUI:
+        // case TAB_MOD:
+            return true;
+        default:
+            return false;
+    }
+}
+
+oneshot_state os_shft_state = os_up_unqueued;
+oneshot_state os_ctrl_state = os_up_unqueued;
+oneshot_state os_alt_state = os_up_unqueued;
+oneshot_state os_gui_state = os_up_unqueued;
+
+void process_oneshot_pre(uint16_t keycode, keyrecord_t *record) {
+    update_oneshot_pre(
+        &os_shft_state, KC_LSFT, OS_SHFT,
+        keycode, record
+    );
+    update_oneshot_pre(
+        &os_ctrl_state, KC_LCTL, OS_CTRL,
+        keycode, record
+    );
+    update_oneshot_pre(
+        &os_alt_state, KC_LALT, OS_ALT,
+        keycode, record
+    );
+    update_oneshot_pre(
+        &os_gui_state, KC_LGUI, OS_GUI,
+        keycode, record
+    );
+}
+
+void process_oneshot_post(uint16_t keycode, keyrecord_t *record) {
+    update_oneshot_post(
+        &os_shft_state, KC_LSFT, OS_SHFT,
+        keycode, record
+    );
+    update_oneshot_post(
+        &os_ctrl_state, KC_LCTL, OS_CTRL,
+        keycode, record
+    );
+    update_oneshot_post(
+        &os_alt_state, KC_LALT, OS_ALT,
+        keycode, record
+    );
+    update_oneshot_post(
+        &os_gui_state, KC_LGUI, OS_GUI,
+        keycode, record
+    );
+}
+
+void process_oneshot_key(uint16_t keycode, keyrecord_t *record) {
+    update_oneshot_pre(
+        &os_shft_state, KC_LSFT, OS_SHFT,
+        keycode, record
+    );
+    update_oneshot_post(
+        &os_ctrl_state, KC_LCTL, OS_CTRL,
+        keycode, record
+    );
+}
 
 // Tap hold
 
@@ -630,16 +710,16 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         //     break;
         // case KC_CAPS:
         //     return process_caps(record->event.pressed);
-        // case CLEAR:
-        //     clear_oneshot_mods();
-        //     if (get_oneshot_layer() != 0) {
-        //         clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
-        //     }
-        //     stop_leading();
-        //     layer_off(_NUM);
-        //     layer_off(_SYM);
-        //     layer_move(_BASE);
-        //     return false;
+        case CLEAR:
+            clear_oneshot_mods();
+            if (get_oneshot_layer() != 0) {
+                clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+            }
+            stop_leading();
+            layer_off(_NUM);
+            layer_off(_SYMB);
+            layer_move(_BASE);
+            return false;
         // case CANCEL:
         //     layer_off(_NUM);
         //     layer_off(_SYM);
@@ -740,7 +820,7 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    // process_oneshot_pre(keycode, record);
+    process_oneshot_pre(keycode, record);
 
     // If `false` was returned, then we did something special and should register that manually.
     // Otherwise register keyrepeat here by default.
@@ -756,7 +836,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         register_key_to_repeat(keycode);
     }
 
-    // process_oneshot_post(keycode, record);
+    process_oneshot_post(keycode, record);
 
     if (record->event.pressed) {
         last_key_down = keycode;

@@ -6,9 +6,9 @@ COMB(del,           KC_DEL,           KC_C, KC_Y, KC_F)
 
 COMB(dquo,          KC_DQUO,          KC_S, KC_H)
 
-COMB(lctrl_combo,   OSM(MOD_LCTL),    KC_G, KC_D)
-COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_B)
-COMB(lgui_combo,    OSM(MOD_LGUI),    KC_S, KC_T)
+COMB(ctrl_combo_l,      OS_CTRL,        KC_G, KC_D)
+COMB(gui_combo_l,       OS_GUI,         KC_S, KC_T)
+COMB(shift_combo_l,     OS_SHFT,        KC_D, KC_B)
 
 // Right
 SUBS(pbrack_combo,  "#{}",            KC_X, KC_W)
@@ -18,9 +18,9 @@ COMB(backsp,        KC_BSPC,          KC_U, KC_COMM)
 COMB(quot,          KC_QUOT,          KC_N, KC_I)
 COMB(ent,           KC_ENT,           KC_N, KC_A, KC_I)
 
-COMB(rshft_combo,   OSM(MOD_RSFT),    KC_K, KC_L)
-COMB(rgui_combo,    OSM(MOD_RGUI),    KC_A, KC_I)
-COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_DOT)
+COMB(ctrl_combo_r,      OS_CTRL,        KC_L, KC_DOT)
+COMB(gui_combo_r,       OS_GUI,         KC_A, KC_I)
+COMB(shift_combo_r,     OS_SHFT,        KC_K, KC_L)
 
 COMB(scln,          KC_SCLN,          KC_T, KC_D)
 

@@ -10,7 +10,7 @@ SPLIT_KEYBOARD = yes
 COMBO_ENABLE = yes
 VPATH  +=  keyboards/gboards/
 
-# SRC += oneshot.c
+SRC += oneshot.c
 SRC += layermodes.c
 SRC += tap_hold.c
 SRC += repeat.c
