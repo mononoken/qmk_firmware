@@ -2,9 +2,9 @@
 COMB(q_comb,        KC_Q,             KC_J, KC_C)
 COMB(qu_comb,       QU,               KC_C, KC_Y)
 COMB(z_comb,        KC_Z,             KC_Y, KC_F)
-COMB(del_combo,     KC_DEL,           KC_C, KC_Y, KC_F)
+COMB(del,           KC_DEL,           KC_C, KC_Y, KC_F)
 
-COMB(dquo_combo,    KC_DQUO,          KC_S, KC_H)
+COMB(dquo,          KC_DQUO,          KC_S, KC_H)
 
 COMB(lctrl_combo,   OSM(MOD_LCTL),    KC_G, KC_D)
 COMB(lshft_combo,   OSM(MOD_LSFT),    KC_D, KC_B)
@@ -12,23 +12,23 @@ COMB(lgui_combo,    OSM(MOD_LGUI),    KC_S, KC_T)
 
 // Right
 SUBS(pbrack_combo,  "#{}",            KC_X, KC_W)
-COMB(comb_eql,      KC_EQL,           KC_W, REPEAT)
+COMB(eql,           KC_EQL,           KC_W, REPEAT)
 COMB(backsp,        KC_BSPC,          KC_U, KC_COMM)
 
-COMB(quo_combo,     KC_QUOT,          KC_N, KC_I)
+COMB(quot,          KC_QUOT,          KC_N, KC_I)
 COMB(ent,           KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(rshft_combo,   OSM(MOD_RSFT),    KC_K, KC_L)
 COMB(rgui_combo,    OSM(MOD_RGUI),    KC_A, KC_I)
 COMB(rctrl_combo,   OSM(MOD_RCTL),    KC_L, KC_DOT)
 
-COMB(semic_combo,   KC_SCLN,          KC_T, KC_D)
+COMB(scln,          KC_SCLN,          KC_T, KC_D)
 
-COMB(lkey_combo,    LEADER,           KC_L, KC_LPRN)
+COMB(leader,        LEADER,           KC_L, KC_LPRN)
 
 
 // Thumbs
-COMB(numw,           NUMWORD,         MT_SPC, KC_E)
+COMB(num,           NUMWORD,          MT_SPC, KC_E)
 
 // Full
 

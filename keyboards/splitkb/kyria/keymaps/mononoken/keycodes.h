@@ -7,20 +7,21 @@
 enum layers {
     _BASE = 0,
     _NAVI,
-    _LSYM,
-    _RSYM,
+    _SYMB,
+    _OMOD,
     _SHRT,
     _NUM,
     _FUNC,
+    _GAME,
 };
 
 #define BASE  DF(_BASE)
 #define NAVI  TO(_NAVI)
-#define LSYM  MO(_LSYM)
-#define RSYM  MO(_RSYM)
+#define SYMB  OSL(_SYMB)
+#define OMOD  OSL(_OMOD)
 #define SHRT  OSL(_SHRT)
-#define NUM   TO(_NUM)
 #define FUNC  MO(_SHRT)
+#define GAME  TO(_GAME)
 
 #define CLEAR TO(_BASE)
 

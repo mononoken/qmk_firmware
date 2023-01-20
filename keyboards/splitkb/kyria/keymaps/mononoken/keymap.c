@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
      KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
-                                xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  RSYM,    LSYM,    KC_E,    xxxxxxx, KC_MPLY, KC_MUTE
+                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  xxxxxxx, xxxxxxx, KC_E,    SYMB,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -46,30 +46,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, NAVI,    xxxxxxx, xxxxxxx, xxxxxxx
     ),
-    [_LSYM] = LAYOUT(
-     _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+    [_SYMB] = LAYOUT(
+     _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx
+    ),
+    [_OMOD] = LAYOUT(
+     _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
     ),
-    [_RSYM] = LAYOUT(
-     _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
-     xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
-    ),
-    // [_SYMB] = LAYOUT(
-    //  _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
-    //  xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
-    //  xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-    //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
-    // ),
-    // [_OMOD] = LAYOUT(
-    //  _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-    //  xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-    //  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-    //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx
-    // ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -88,13 +76,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx
     ),
-    // [_COLE] = LAYOUT(
-    //  KC_ESC,  KC_LPRN, KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,    KC_RPRN, xxxxxxx,
-    //  KC_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    xxxxxxx,
-    //  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    //                             xxxxxxx, xxxxxxx, SHRT,    MT_SPC,  LSYM,    KC_UNDS, KC_MINS, xxxxxxx, xxxxxxx, KC_APP
-    // ),
-
+    [_GAME] = LAYOUT(
+     KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+     KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                                xxxxxxx, xxxxxxx, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    _______, _______
+    ),
     // TEMPLATE
     // [_XXXX] = LAYOUT(
     //  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -276,31 +263,31 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
 bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     switch (index) {
-        // case del:
-        // case backsp:
-        // case q_comb:
-        // case qu_comb:
-        // case z_comb:
-        // case num:
-        // case comb_perc:
-        // case comb_grv:
-        // case comb_hash:
-        // case comb_pipe:
-        // case comb_ques:
-        // case comb_exlm:
-        // case comb_ampr:
-        // case comb_labk:
-        // case comb_rabk:
-        // case comb_lcbr:
-        // case comb_lbrc:
-        // case comb_at:
-        // case comb_0:
+        case del:
+        case backsp:
+        case q_comb:
+        case qu_comb:
+        case z_comb:
+        case num:
+        case comb_perc:
+        case comb_grv:
+        case comb_hash:
+        case comb_pipe:
+        case comb_ques:
+        case comb_exlm:
+        case comb_ampr:
+        case comb_labk:
+        case comb_rabk:
+        case comb_lcbr:
+        case comb_lbrc:
+        case comb_at:
+        case comb_0:
         // case comb_e_acut:
         // case rev_rep:
         // case arng:
         // case adia:
         // case odia:
-        // case eql:
+        case eql:
         // case gui_combo_l:
         // case gui_combo_r:
         // case ctrl_combo_l:
@@ -311,10 +298,10 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         // case escape_sym:
         // case tab_mod:
         // case coln_sym:
-        // case dquo:
+        case dquo:
         // case lalt:
         // case win_alt:
-            // return false;
+            return false;
         default:
             return true;
     }
@@ -356,6 +343,7 @@ bool tap_hold(uint16_t keycode) {
         // case SE_RABK:
         case KC_DOT:
         case KC_COMM:
+        case KC_COLN:
         // case SE_PERC:
         // case GRV:
         // case SE_AT:
@@ -426,14 +414,14 @@ void tap_hold_send_tap(uint16_t keycode) {
         // case SC:
         //     send_string("sc");
         //     return;
-        // case SE_Q:
-        // case SE_Z:
-        //     if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
-        //         tap16_repeatable(C(keycode));
-        //     } else {
-        //         tap16_repeatable(keycode);
-        //     }
-        //     return;
+        case KC_Q:
+        case KC_Z:
+            if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+                tap16_repeatable(C(keycode));
+            } else {
+                tap16_repeatable(keycode);
+            }
+            return;
         // case E_ACUT:
         //     tap_code16(SE_ACUT);
         //     tap_code16(SE_E);
@@ -470,17 +458,20 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_UNDS:
             tap_code16(KC_MINS);
             return;
+        case KC_COLN:
+            tap_code16(KC_SCLN);
+            return;
         // case SC:
         //     send_string("Sc");
         //     return;
-        // case SE_Q:
-        // case SE_Z:
-        //     if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
-        //         tap16_repeatable(S(C(keycode)));
-        //     } else {
-        //         tap16_repeatable(S(keycode));
-        //     }
-        //     return;
+        case KC_Q:
+        case KC_Z:
+            if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+                tap16_repeatable(S(C(keycode)));
+            } else {
+                tap16_repeatable(S(keycode));
+            }
+            return;
         default:
             tap16_repeatable(S(keycode));
     }
@@ -517,7 +508,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         // case SE_RPRN:
         // //case RPRN_ADIA:
         // case SE_Q:
-        case QU:
+        // case QU:
         // case SE_4:
         // case G(SE_4):
         // case SE_5:
@@ -528,7 +519,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         // case C(SE_C):
         // case C(SE_S):
         // case C(SE_V):
-            return 105;
+            // return 105;
         // // Middle
         // case SE_Y:
         // case SE_T:
@@ -560,15 +551,18 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
 // https://github.com/andrewjrae/kyria-keymap#userspace-leader-sequences
 void *leader_toggles_func(uint16_t keycode) {
     switch (keycode) {
-        // case KC_N:
-        //     layer_invert(_NUM);
-        //     return NULL;
-        // case KC_S:
-        //     layer_invert(_SYM);
-        //     return NULL;
+        case KC_N:
+            layer_invert(_NUM);
+            return NULL;
+        case KC_S:
+            layer_invert(_SYMB);
+            return NULL;
         // case KC_C:
         //     swap_caps_esc();
         //     return NULL;
+        case KC_G:
+            layer_invert(_GAME);
+            return NULL;
         default:
             return NULL;
     }
@@ -576,8 +570,8 @@ void *leader_toggles_func(uint16_t keycode) {
 
 void *leader_start_func(uint16_t keycode) {
     switch (keycode) {
-        // case KC_T:
-        //     return leader_toggles_func;
+        case KC_T:
+            return leader_toggles_func;
         case KC_C:
             tap_code(KC_CAPS);
             // tap_caps_lock();
@@ -775,14 +769,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
   tap_hold_matrix_scan();
-
-  // LEADER_DICTIONARY() {
-  //   leading = false;
-  //   leader_end();
-
-  //   SEQ_ONE_KEY(KC_C) {
-  //     register_code(KC_CAPS);
-  //     unregister_code(KC_CAPS);
-  //   }
-  // }
 }
