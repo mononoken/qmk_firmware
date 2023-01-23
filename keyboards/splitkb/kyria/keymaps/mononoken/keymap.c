@@ -46,37 +46,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, xxxxxxx, KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
      xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
      xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_OMOD] = LAYOUT(
      _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, FUNC,    _______, _______
+                                xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
     ),
     [_NUM] = LAYOUT(
      xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     KC_X,    _______, _______, xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
      xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,                                      KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,   xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+                                xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_GAME] = LAYOUT(
      KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
@@ -216,13 +216,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 static uint16_t last_key_down = KC_NO;
 static uint16_t last_key_up = KC_NO;
 
-bool tap_undead_key(bool key_down, uint16_t code) {
-    if (key_down) {
-        tap_code16(code);
-        tap_code16(KC_SPACE);
-    }
-    return false;
-}
+// bool tap_undead_key(bool key_down, uint16_t code) {
+//     if (key_down) {
+//         tap_code16(code);
+//         tap_code16(KC_SPACE);
+//     }
+//     return false;
+// }
 
 void tap16_repeatable(uint16_t keycode) {
     tap_code16(keycode);
@@ -234,20 +234,20 @@ void tap16_repeatable(uint16_t keycode) {
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch (index) {
         // // Home-row and other tight combos
-        // case ctrl_combo_l:
+        case ctrl_combo_l:
         // case escape_sym:
         // case tab_mod:
-        // case del:
-        // case dquo:
+        case del:
+        case dquo:
         // case coln_sym:
-        // case ctrl_combo_r:
-        // case quot:
-        // case ent:
+        case ctrl_combo_r:
+        case quot:
+        case ent:
         // case vsp:
-        // case gui_combo_l:
-        // case gui_combo_r:
+        case gui_combo_l:
+        case gui_combo_r:
         // case dlr:
-        //     return COMBO_TERM;
+            return COMBO_TERM;
         // // Vertical combos, very relaxed
         // case small_left_arrow:
         // case lt_eq:
@@ -318,11 +318,11 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo) {
 
 #ifdef TAPPING_TERM_PER_KEY
 
-#define THUMB_TERM 20
-#define INDEX_TERM -20
-#define MIDDLE_TERM 0
-#define RING_TERM 80
-#define PINKY_TERM 180
+#define THUMB_TERM 40
+// #define INDEX_TERM -20
+// #define MIDDLE_TERM 0
+// #define RING_TERM 80
+// #define PINKY_TERM 180
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
