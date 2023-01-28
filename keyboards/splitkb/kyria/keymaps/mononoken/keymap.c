@@ -493,68 +493,73 @@ void process_oneshot_key(uint16_t keycode, keyrecord_t *record) {
 // Tap hold
 
 bool tap_hold(uint16_t keycode) {
-    switch (keycode) {
-        // case SE_DQUO:
-        // case SE_LABK:
-        // case SE_RABK:
-        case KC_DOT:
-        case KC_COMM:
-        case KC_COLN:
-        // case SE_PERC:
-        // case GRV:
-        // case SE_AT:
-        // case SE_PIPE:
-        // case SE_EXLM:
-        // case SE_AMPR:
-        // case SE_QUES:
-        // case SE_HASH:
-        // case SE_LPRN:
-        // case SE_LCBR:
-        // case SE_LBRC:
-        // case SE_EQL:
-        case KC_UNDS:
-        // case SE_0:
-        // case G(SE_0):
-        // case G(SE_1):
-        // case G(SE_2):
-        // case G(SE_3):
-        // case G(SE_4):
-        // case G(SE_5):
-        // case G(SE_6):
-        // case G(SE_7):
-        // case G(SE_8):
-        // case G(SE_9):
-        // case G(SE_K):
-        // case G(SE_J):
-        // case G(SE_W):
-        // case G(SE_E):
-        // case G(SE_R):
-        // case G(SE_C):
-        case KC_A ... KC_Z:
-        // case SE_ARNG:
-        // case SE_ADIA:
-        // case SE_ODIA:
-        case QU:
-        // case SC:
-        // case E_ACUT:
-        // case CLOSE_WIN:
-        // case C(SE_A):
-        // case C(SE_C):
-        // case C(SE_W):
-        // case C(SE_F):
-        // case C(SE_E):
-        // case C(SE_R):
-        // case C(SE_S):
-        // case C(SE_T):
-        // case C(SE_H):
-        // case C(SE_X):
-        // case C(SE_V):
-        // case C(SE_G):
-        // case C(SE_D):
-        // case C(SE_B):
-            return true;
-        default:
-            return false;
+    // Turn off tap hold on _GAME
+    if (layer_state_is(_GAME)) {
+        return false;
+    } else {
+        switch (keycode) {
+            // case SE_DQUO:
+            // case SE_LABK:
+            // case SE_RABK:
+            case KC_DOT:
+            case KC_COMM:
+            case KC_COLN:
+            // case SE_PERC:
+            // case GRV:
+            // case SE_AT:
+            // case SE_PIPE:
+            // case SE_EXLM:
+            // case SE_AMPR:
+            // case SE_QUES:
+            // case SE_HASH:
+            // case SE_LPRN:
+            // case SE_LCBR:
+            // case SE_LBRC:
+            // case SE_EQL:
+            case KC_UNDS:
+            // case SE_0:
+            // case G(SE_0):
+            // case G(SE_1):
+            // case G(SE_2):
+            // case G(SE_3):
+            // case G(SE_4):
+            // case G(SE_5):
+            // case G(SE_6):
+            // case G(SE_7):
+            // case G(SE_8):
+            // case G(SE_9):
+            // case G(SE_K):
+            // case G(SE_J):
+            // case G(SE_W):
+            // case G(SE_E):
+            // case G(SE_R):
+            // case G(SE_C):
+            case KC_A ... KC_Z:
+            // case SE_ARNG:
+            // case SE_ADIA:
+            // case SE_ODIA:
+            case QU:
+            // case SC:
+            // case E_ACUT:
+            // case CLOSE_WIN:
+            // case C(SE_A):
+            // case C(SE_C):
+            // case C(SE_W):
+            // case C(SE_F):
+            // case C(SE_E):
+            // case C(SE_R):
+            // case C(SE_S):
+            // case C(SE_T):
+            // case C(SE_H):
+            // case C(SE_X):
+            // case C(SE_V):
+            // case C(SE_G):
+            // case C(SE_D):
+            // case C(SE_B):
+                return true;
+            default:
+                return false;
+        }
     }
 }
 
