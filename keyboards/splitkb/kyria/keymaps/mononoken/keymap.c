@@ -504,6 +504,7 @@ bool tap_hold(uint16_t keycode) {
             case KC_DOT:
             case KC_COMM:
             case KC_COLN:
+            case KC_SLSH:
             // case SE_PERC:
             // case GRV:
             // case SE_AT:
