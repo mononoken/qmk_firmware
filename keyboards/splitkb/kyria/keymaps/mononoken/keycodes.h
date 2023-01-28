@@ -14,6 +14,7 @@ enum layers {
     _NUM,
     _FUNC,
     _GAME,
+    _QWER
 };
 
 enum custom_keycodes {
@@ -33,6 +34,8 @@ enum custom_keycodes {
   // Layer management
   // CANCEL, // Cancel SYMWORD and NUMWORD
   CLEAR, // Clear all WORD, one-shots and reset to BASE
+  L_CLEAR,
+  R_CLEAR,
 
   // Instant leader key
   LEADER,

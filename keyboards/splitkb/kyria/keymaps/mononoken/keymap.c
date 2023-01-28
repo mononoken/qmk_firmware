@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
      KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   KC_PSCR, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
-                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  CLEAR,   CLEAR,   KC_E,    SYMB,    KC_MPLY, KC_MUTE
+                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  L_CLEAR, R_CLEAR,   KC_E,    SYMB,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -79,6 +79,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_GAME] = LAYOUT(
+     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_Q,                                        KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, KC_BSPC,
+     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
+     KC_LSFT, KC_Z,    KC_V,    KC_G,    KC_D,    KC_B,    KC_MINS, _______, CLEAR,   xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+                                xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  KC_SLSH, xxxxxxx, KC_E,    _______, _______, _______
+    ),
+    [_QWER] = LAYOUT(
      KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
      KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    xxxxxxx, _______, CLEAR,   xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
@@ -228,6 +234,16 @@ void tap16_repeatable(uint16_t keycode) {
     tap_code16(keycode);
     register_key_to_repeat(keycode);
 }
+
+// void enable_gaming(void) {
+//     /* autoshift_disable(); */
+//     /* layer_on(_GAME); */
+// }
+// void disable_gaming(void) {
+//     /* autoshift_enable(); */
+//     /* layer_off(_GAME); */
+//     /* layer_off(_GAME2); */
+// }
 
 // Combos
 
@@ -386,6 +402,10 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
         case CLEAR:
             return true;
+        case L_CLEAR:
+            return true;
+        case R_CLEAR:
+            return true;
         default:
             return false;
     }
@@ -394,6 +414,8 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
 bool is_oneshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
         case CLEAR:
+        case L_CLEAR:
+        case R_CLEAR:
         case OS_SHFT:
         case OS_CTRL:
         case OS_ALT:
@@ -688,6 +710,9 @@ void *leader_toggles_func(uint16_t keycode) {
         case KC_G:
             layer_invert(_GAME);
             return NULL;
+        case KC_Q:
+            layer_invert(_QWER);
+            return NULL;
         default:
             return NULL;
     }
@@ -756,6 +781,8 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         // case KC_CAPS:
         //     return process_caps(record->event.pressed);
         case CLEAR:
+        case L_CLEAR:
+        case R_CLEAR:
             clear_oneshot_mods();
             if (get_oneshot_layer() != 0) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
