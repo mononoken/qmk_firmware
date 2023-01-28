@@ -325,8 +325,17 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     }
 }
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo) {
-    // FIXME this doesn't seem to work?
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    /* Disable all combos except specified ones on layer `_GAME` */
+    if (layer_state_is(_GAME)) {
+        switch (combo_index) {
+            // FIX_ME: This does not turn combo on in the layer as expected.
+            // case num:
+            //     return true;
+            default:
+                return false;
+            }
+    }
     return true;
 }
 

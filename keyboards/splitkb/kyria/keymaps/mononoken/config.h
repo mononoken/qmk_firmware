@@ -48,6 +48,9 @@
 // All combos are specified from the base layer, saves space
 #define COMBO_ONLY_FROM_LAYER 0
 
+// Handle combo trigger behavior for triggering combos based on active layer
+#define COMBO_SHOULD_TRIGGER
+
 #define DEFAULT_XCASE_SEPARATOR KC_MINS
 #define XCASE_DELIMITER_KEY KC_UNDS
 
