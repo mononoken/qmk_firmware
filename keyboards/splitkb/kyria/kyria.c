@@ -53,21 +53,27 @@ bool oled_task_kb(void) {
                 oled_write_P(PSTR("SYMB\n"), false);
                 break;
             case 3:
-                oled_write_P(PSTR("OMOD\n"), false);
+                oled_write_P(PSTR("LSYM\n"), false);
                 break;
             case 4:
-                oled_write_P(PSTR("SHRT\n"), false);
+                oled_write_P(PSTR("RSYM\n"), false);
                 break;
             case 5:
-                oled_write_P(PSTR("NUM\n"), false);
+                oled_write_P(PSTR("OMOD\n"), false);
                 break;
             case 6:
-                oled_write_P(PSTR("FUNC\n"), false);
+                oled_write_P(PSTR("SHRT\n"), false);
                 break;
             case 7:
-                oled_write_P(PSTR("GAME\n"), false);
+                oled_write_P(PSTR("NUM\n"), false);
                 break;
             case 8:
+                oled_write_P(PSTR("FUNC\n"), false);
+                break;
+            case 9:
+                oled_write_P(PSTR("GAME\n"), false);
+                break;
+            case 10:
                 oled_write_P(PSTR("QWER\n"), false);
                 break;
             default:

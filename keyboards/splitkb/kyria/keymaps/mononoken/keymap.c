@@ -39,44 +39,56 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   KC_PSCR, xxxxxxx, xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
-                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  L_CLEAR, R_CLEAR,   KC_E,    SYMB,    KC_MPLY, KC_MUTE
+     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   KC_PSCR, CLEAR,   xxxxxxx, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+                                xxxxxxx, OMOD,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, xxxxxxx, KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
-     xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, KC_ENT,  xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, _______, _______, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
+    ),
+    [_LSYM] = LAYOUT(
+     _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, xxxxxxx,
+     _______, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    _______,
+     _______, _______, KC_LABK, KC_RABK, KC_PERC, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    _______, _______, _______, _______,
+                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
+    ),
+    [_RSYM] = LAYOUT(
+     _______, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
+     _______, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, xxxxxxx, xxxxxxx,
+     _______, _______, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, _______,
+                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_OMOD] = LAYOUT(
      _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
+     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
     ),
     [_NUM] = LAYOUT(
      xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     KC_X,    _______, _______, xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
+                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,                                      KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,   xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, _______, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_GAME] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_Q,                                        KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, KC_BSPC,
@@ -262,7 +274,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         // case vsp:
         case gui_combo_l:
         case gui_combo_r:
-        // case dlr:
             return COMBO_TERM;
         // // Vertical combos, very relaxed
         // case small_left_arrow:
@@ -300,25 +311,8 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case comb_lbrc:
         case comb_at:
         case comb_0:
-        // case comb_e_acut:
-        // case rev_rep:
-        // case arng:
-        // case adia:
-        // case odia:
         case eql:
-        // case gui_combo_l:
-        // case gui_combo_r:
-        // case ctrl_combo_l:
-        // case ctrl_combo_r:
-        // case shift_combo_l:
-        // case shift_combo_r:
-        // case close_win:
-        // case escape_sym:
-        // case tab_mod:
-        // case coln_sym:
         case dquo:
-        // case lalt:
-        // case win_alt:
             return false;
         default:
             return true;
@@ -411,10 +405,10 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
         case CLEAR:
             return true;
-        case L_CLEAR:
-            return true;
-        case R_CLEAR:
-            return true;
+        // case L_CLEAR:
+        //     return true;
+        // case R_CLEAR:
+        //     return true;
         default:
             return false;
     }
@@ -423,8 +417,8 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
 bool is_oneshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
         case CLEAR:
-        case L_CLEAR:
-        case R_CLEAR:
+        // case L_CLEAR:
+        // case R_CLEAR:
         case OS_SHFT:
         case OS_CTRL:
         case OS_ALT:
@@ -602,7 +596,7 @@ void tap_hold_send_tap(uint16_t keycode) {
 }
 
 void tap_hold_send_hold(uint16_t keycode) {
-    // disable_caps_word();
+    disable_caps_word();
 
     switch (keycode) {
         case KC_DOT:
@@ -796,8 +790,8 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         // case KC_CAPS:
         //     return process_caps(record->event.pressed);
         case CLEAR:
-        case L_CLEAR:
-        case R_CLEAR:
+        // case L_CLEAR:
+        // case R_CLEAR:
             clear_oneshot_mods();
             if (get_oneshot_layer() != 0) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);

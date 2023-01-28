@@ -9,6 +9,8 @@ enum layers {
     _BASE = 0,
     _NAVI,
     _SYMB,
+    _LSYM,
+    _RSYM,
     _OMOD,
     _SHRT,
     _NUM,
@@ -34,8 +36,8 @@ enum custom_keycodes {
   // Layer management
   // CANCEL, // Cancel SYMWORD and NUMWORD
   CLEAR, // Clear all WORD, one-shots and reset to BASE
-  L_CLEAR,
-  R_CLEAR,
+  // L_CLEAR,
+  // R_CLEAR,
 
   // Instant leader key
   LEADER,
@@ -46,11 +48,13 @@ enum custom_keycodes {
 
 #define xxxxxxx KC_NO
 
-#define BASE  DF(_BASE)
-#define SYMB  OSL(_SYMB)
-#define OMOD  OSL(_OMOD)
-#define SHRT  OSL(_SHRT)
-#define FUNC  OSL(_FUNC)
+#define BASE    DF(_BASE)
+#define SYMB    OSL(_SYMB)
+#define L_SYMB  OSL(_LSYM)
+#define R_SYMB  OSL(_RSYM)
+#define OMOD    OSL(_OMOD)
+#define SHRT    OSL(_SHRT)
+#define FUNC    OSL(_FUNC)
 
 #define MT_SPC  LT(_NAVI, KC_SPC)
 #define C_TAB   C(KC_TAB)
