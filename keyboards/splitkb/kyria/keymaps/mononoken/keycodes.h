@@ -8,7 +8,8 @@
 enum layers {
     _BASE = 0,
     _NAVI,
-    _SYMB,
+    _LSYM,
+    _RSYM,
     _OMOD,
     _SHRT,
     _NUM,
@@ -47,7 +48,8 @@ enum custom_keycodes {
 #define xxxxxxx KC_NO
 
 #define BASE  DF(_BASE)
-#define SYMB  OSL(_SYMB)
+#define LSYM  OSL(_LSYM)
+#define RSYM  OSL(_RSYM)
 #define OMOD  OSL(_OMOD)
 #define SHRT  OSL(_SHRT)
 #define FUNC  OSL(_FUNC)

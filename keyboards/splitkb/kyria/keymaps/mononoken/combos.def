@@ -28,7 +28,7 @@ COMB(leader,            LEADER,           KC_L, KC_LPRN)
 
 
 // Thumbs
-COMB(num,               NUMWORD,          L_CLEAR, R_CLEAR)
+COMB(num,               NUMWORD,          L_SYM, R_SYM)
 
 // Full
 COMB(capsword,          CAPSWORD,         KC_T, KC_A)
