@@ -71,9 +71,12 @@ bool oled_task_kb(void) {
                 oled_write_P(PSTR("FUNC\n"), false);
                 break;
             case 9:
-                oled_write_P(PSTR("GAME\n"), false);
+                oled_write_P(PSTR("CODE\n"), false);
                 break;
             case 10:
+                oled_write_P(PSTR("GAME\n"), false);
+                break;
+            case 11:
                 oled_write_P(PSTR("QWER\n"), false);
                 break;
             default:
