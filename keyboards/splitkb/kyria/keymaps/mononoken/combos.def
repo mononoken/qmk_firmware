@@ -7,7 +7,7 @@ COMB(del,               KC_DEL,           KC_C, KC_Y, KC_F)
 COMB(dquo,              KC_DQUO,          KC_S, KC_H)
 
 COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
-COMB(gui_combo_l,       OS_GUI,           KC_S, KC_T)
+COMB(gui_combo_l,       OS_GUI,           KC_V, KC_G)
 COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_B)
 
 // Right
@@ -19,7 +19,7 @@ COMB(quot,              KC_QUOT,          KC_N, KC_I)
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_DOT)
-COMB(gui_combo_r,       OS_GUI,           KC_A, KC_I)
+COMB(gui_combo_r,       OS_GUI,           KC_DOT, KC_LPRN)
 COMB(shift_combo_r,     OS_SHFT,          KC_K, KC_L)
 
 COMB(scln,              KC_SCLN,          KC_T, KC_D)

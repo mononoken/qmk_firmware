@@ -66,6 +66,8 @@ enum custom_keycodes {
 #define CS_TAB    RCS(KC_TAB)
 #define DN_CTRL   MT(MOD_LCTL, KC_DOWN)
 
+#define LST_TAB   LSG(KC_T) // Open last closed tab in Firefox
+
 // For _CODE
 // Navigation
 #define GT_SYM    LSG(KC_O) // Go to symbol
