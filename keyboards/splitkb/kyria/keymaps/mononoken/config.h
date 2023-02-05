@@ -42,7 +42,7 @@
 
 // Combos
 #define COMBO_VARIABLE_LEN
-#define COMBO_TERM 45
+#define COMBO_TERM 64
 #define COMBO_MUST_TAP_PER_COMBO
 #define COMBO_TERM_PER_COMBO
 // All combos are specified from the base layer, saves space
