@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, CLEAR,   KC_PSCR, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
@@ -69,67 +69,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_OMOD] = LAYOUT(
      _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-<<<<<<< HEAD
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
-=======
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
->>>>>>> small_changes
     ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-<<<<<<< HEAD
-     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, _______, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
-=======
-     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, xxxxxxx, _______, KC_PSCR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
->>>>>>> small_changes
     ),
     [_NUM] = LAYOUT(
      xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     _______, xxxxxxx, _______, xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-<<<<<<< HEAD
-     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, xxxxxxx, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
+     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, _______, xxxxxxx, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______, xxxxxxx, _______, _______, _______
-=======
-     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, _______, _______, _______, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
->>>>>>> small_changes
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,                                      KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,   xxxxxxx,
-<<<<<<< HEAD
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, _______, xxxxxxx, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, _______, _______, _______, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
-=======
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
-    ),
-    [_CODE] = LAYOUT(
-     xxxxxxx, GT_SYM,  GT_REF,  PK_DEF,  xxxxxxx, GO_BRKT,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, GT_SYMW, F_ALREF, GT_DEF,  CMD_PAL, QK_OPEN,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, SW_HIER, GO_LEDT, GO_BACK, TG_MINM, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, KC_LGUI, xxxxxxx, xxxxxxx, KC_RGUI, _______, _______
->>>>>>> small_changes
     ),
     [_GAME] = LAYOUT(
      KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_Q,                                        KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, KC_BSPC,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_ENT,
-     KC_LSFT, KC_Z,    KC_V,    KC_G,    KC_D,    KC_B,    KC_MINS, KC_BSLS, CLEAR,   _______, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+     KC_LSFT, KC_Z,    KC_V,    KC_G,    KC_D,    KC_B,    KC_MINS, KC_BSLS, _______, _______, KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
                                 xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  KC_SLSH, xxxxxxx, KC_E,    _______, _______, _______
     ),
     [_QWER] = LAYOUT(
      KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
      KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-<<<<<<< HEAD
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    xxxxxxx, _______, _______, xxxxxxx, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-=======
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    xxxxxxx, xxxxxxx, CLEAR,   _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
->>>>>>> small_changes
                                 xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     // TEMPLATE

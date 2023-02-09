@@ -8,10 +8,6 @@
 enum layers {
     _BASE = 0,
     _NAVI,
-<<<<<<< HEAD
-=======
-    _SYMB,
->>>>>>> small_changes
     _LSYM,
     _RSYM,
     _OMOD,
