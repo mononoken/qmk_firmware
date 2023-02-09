@@ -8,10 +8,7 @@
 enum layers {
     _BASE = 0,
     _NAVI,
-<<<<<<< HEAD
-=======
     _SYMB,
->>>>>>> small_changes
     _LSYM,
     _RSYM,
     _OMOD,
@@ -83,6 +80,7 @@ enum custom_keycodes {
 #define TG_MINM   LSA(KC_M) // Toggle minimap
 #define GO_BACK   C(KC_MINS) // Go back
 #define GO_BRKT   LSG(KC_BSLS)
+#define F_INFIL   LSG(KC_F) // Find in files
 
 #define CMD_PAL   LSG(KC_P) // Open command palette
 #define QK_OPEN   G(KC_P) // Quick open
