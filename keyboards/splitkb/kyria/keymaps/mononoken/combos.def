@@ -4,7 +4,7 @@ COMB(qu_comb,           QU,               KC_C, KC_Y)
 COMB(z_comb,            KC_Z,             KC_Y, KC_F)
 COMB(del,               KC_DEL,           KC_C, KC_Y, KC_F)
 
-COMB(dquo,              KC_DQUO,          KC_S, KC_H)
+COMB(dquo,              KC_DQUO,          KC_R, KC_S, KC_H)
 
 COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
 COMB(gui_combo_l,       OS_GUI,           KC_V, KC_G)
@@ -15,7 +15,7 @@ SUBS(pbrack_combo,      "#{}",            KC_X, KC_W)
 COMB(eql,               KC_EQL,           KC_W, REPEAT)
 COMB(backsp,            KC_BSPC,          KC_U, KC_COMM)
 
-COMB(quot,              KC_QUOT,          KC_N, KC_I)
+COMB(quot,              KC_QUOT,          KC_N, KC_I, KC_O)
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_DOT)
@@ -31,7 +31,7 @@ COMB(leader,            LEADER,           KC_L, KC_LPRN)
 COMB(num,               NUMWORD,          L_SYMB, R_SYMB)
 
 // Full
-COMB(capsword,          CAPSWORD,         KC_T, KC_A)
+COMB(capsword,          CAPSWORD,         KC_S, KC_T, KC_A, KC_I)
 
 // Numbers with cross side thumb
 COMB(comb_6,            KC_6,             R_SYMB, KC_R)
