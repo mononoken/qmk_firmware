@@ -3,28 +3,35 @@ COMB(q_comb,            KC_Q,             KC_J, KC_C)
 COMB(qu_comb,           QU,               KC_C, KC_Y)
 COMB(z_comb,            KC_Z,             KC_Y, KC_F)
 COMB(del,               KC_DEL,           KC_C, KC_Y, KC_F)
+COMB(clear_comb,        CLEAR,            KC_F, KC_SLSH)
 
-COMB(dquo,              KC_DQUO,          KC_R, KC_S, KC_H)
+// COMB(dquo,              KC_DQUO,          KC_R, KC_S, KC_H)
 
 COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
 COMB(gui_combo_l,       OS_GUI,           KC_V, KC_G)
 COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_B)
+COMB(opt_combo_l,       OS_ALT,           KC_V, KC_D)
 
 // Right
 SUBS(pbrack_combo,      "#{}",            KC_X, KC_W)
 COMB(eql,               KC_EQL,           KC_W, REPEAT)
 COMB(backsp,            KC_BSPC,          KC_U, KC_COMM)
 
-COMB(quot,              KC_QUOT,          KC_N, KC_I, KC_O)
+// COMB(quot,              KC_QUOT,          KC_N, KC_I, KC_O)
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_DOT)
 COMB(gui_combo_r,       OS_GUI,           KC_DOT, KC_LPRN)
 COMB(shift_combo_r,     OS_SHFT,          KC_K, KC_L)
 
+
 COMB(scln,              KC_SCLN,          KC_T, KC_D)
 
 COMB(leader,            LEADER,           KC_L, KC_LPRN)
+
+// Verticals
+COMB(dquo,             KC_DQUO,          KC_H, KC_D)
+COMB(quot,              KC_QUOT,          KC_N, KC_L)
 
 
 // Thumbs

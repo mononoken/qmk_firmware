@@ -318,6 +318,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case comb_at:
         case comb_0:
         case eql:
+        case quot:
         case dquo:
             return false;
         default:
