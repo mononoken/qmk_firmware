@@ -1,37 +1,34 @@
 // Left
-COMB(q_comb,            KC_Q,             KC_J, KC_C)
+COMB(q_comb,            KC_Q,             KC_UNDS, KC_C)
 COMB(qu_comb,           QU,               KC_C, KC_Y)
 COMB(z_comb,            KC_Z,             KC_Y, KC_F)
 COMB(del,               KC_DEL,           KC_C, KC_Y, KC_F)
-COMB(clear_comb,        CLEAR,            KC_F, KC_SLSH)
-
-// COMB(dquo,              KC_DQUO,          KC_R, KC_S, KC_H)
+COMB(clear_comb,        CLEAR,            KC_F, KC_B)
 
 COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
 COMB(gui_combo_l,       OS_GUI,           KC_V, KC_G)
-COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_B)
+COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_SLSH)
 COMB(opt_combo_l,       OS_ALT,           KC_V, KC_D)
 
 // Right
-SUBS(pbrack_combo,      "#{}",            KC_X, KC_W)
-COMB(eql,               KC_EQL,           KC_W, REPEAT)
-COMB(backsp,            KC_BSPC,          KC_U, KC_COMM)
+SUBS(pbrack_combo,      "#{}",            KC_X, KC_L)
+COMB(eql,               KC_EQL,           KC_L, REPEAT)
+COMB(backsp,            KC_BSPC,          KC_U, KC_MINS)
 
-// COMB(quot,              KC_QUOT,          KC_N, KC_I, KC_O)
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
-COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_DOT)
-COMB(gui_combo_r,       OS_GUI,           KC_DOT, KC_LPRN)
-COMB(shift_combo_r,     OS_SHFT,          KC_K, KC_L)
+COMB(ctrl_combo_r,      OS_CTRL,          KC_W, KC_COMM)
+COMB(gui_combo_r,       OS_GUI,           KC_COMM, KC_DOT)
+COMB(shift_combo_r,     OS_SHFT,          KC_K, KC_W)
 
 
 COMB(scln,              KC_SCLN,          KC_T, KC_D)
 
-COMB(leader,            LEADER,           KC_L, KC_LPRN)
+COMB(leader,            LEADER,           KC_W, KC_DOT)
 
 // Verticals
-COMB(dquo,             KC_DQUO,          KC_H, KC_D)
-COMB(quot,              KC_QUOT,          KC_N, KC_L)
+COMB(dquo,              KC_DQUO,          KC_H, KC_D)
+COMB(quot,              KC_QUOT,          KC_N, KC_W)
 
 
 // Thumbs
@@ -54,25 +51,25 @@ COMB(comb_7,            KC_7,             L_SYMB, KC_O)
 
 // Symbols with same side thumb
 // Upper
-COMB(comb_tild,         KC_TILD,          L_SYMB, KC_J)
-COMB(comb_plus,         KC_PLUS,          L_SYMB, KC_C)
-COMB(comb_astr,         KC_ASTR,          L_SYMB, KC_Y)
-COMB(comb_exlm,         KC_EXLM,          L_SYMB, KC_F)
-COMB(comb_hash,         KC_HASH,          R_SYMB, KC_W)
-COMB(comb_at,           KC_AT,            R_SYMB, REPEAT)
-COMB(comb_circ,         KC_CIRC,          R_SYMB, KC_U)
+// COMB(comb_tild,         KC_TILD,          L_SYMB, KC_J)
+// COMB(comb_plus,         KC_PLUS,          L_SYMB, KC_C)
+// COMB(comb_astr,         KC_ASTR,          L_SYMB, KC_Y)
+// COMB(comb_exlm,         KC_EXLM,          L_SYMB, KC_F)
+// COMB(comb_hash,         KC_HASH,          R_SYMB, KC_W)
+// COMB(comb_at,           KC_AT,            R_SYMB, REPEAT)
+// COMB(comb_circ,         KC_CIRC,          R_SYMB, KC_U)
 // Home-row
-COMB(comb_pipe,         KC_PIPE,          L_SYMB, KC_R)
-COMB(comb_lcbr,         KC_LCBR,          L_SYMB, KC_S)
-COMB(comb_rcbr,         KC_RCBR,          L_SYMB, KC_T)
-COMB(comb_mins,         KC_MINS,          L_SYMB, KC_H)
-COMB(comb_bsls,         KC_BSLS,          L_SYMB, KC_P)
-COMB(comb_grv,          KC_GRV,           R_SYMB, KC_M)
-COMB(comb_ques,         KC_QUES,          R_SYMB, KC_N)
-COMB(comb_lbrc,         KC_LBRC,          R_SYMB, KC_A)
-COMB(comb_rbrc,         KC_RBRC,          R_SYMB, KC_I)
+// COMB(comb_pipe,         KC_PIPE,          L_SYMB, KC_R)
+// COMB(comb_lcbr,         KC_LCBR,          L_SYMB, KC_S)
+// COMB(comb_rcbr,         KC_RCBR,          L_SYMB, KC_T)
+// COMB(comb_mins,         KC_MINS,          L_SYMB, KC_H)
+// COMB(comb_bsls,         KC_BSLS,          L_SYMB, KC_P)
+// COMB(comb_grv,          KC_GRV,           R_SYMB, KC_M)
+// COMB(comb_ques,         KC_QUES,          R_SYMB, KC_N)
+// COMB(comb_lbrc,         KC_LBRC,          R_SYMB, KC_A)
+// COMB(comb_rbrc,         KC_RBRC,          R_SYMB, KC_I)
 // Lower
-COMB(comb_labk,         KC_LABK,          L_SYMB, KC_V)
-COMB(comb_rabk,         KC_RABK,          L_SYMB, KC_G)
-COMB(comb_perc,         KC_PERC,          L_SYMB, KC_D)
-COMB(comb_ampr,         KC_AMPR,          R_SYMB, KC_L)
+// COMB(comb_labk,         KC_LABK,          L_SYMB, KC_V)
+// COMB(comb_rabk,         KC_RABK,          L_SYMB, KC_G)
+// COMB(comb_perc,         KC_PERC,          L_SYMB, KC_D)
+// COMB(comb_ampr,         KC_AMPR,          R_SYMB, KC_L)

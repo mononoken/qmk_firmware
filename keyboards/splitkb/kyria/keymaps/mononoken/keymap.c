@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: BASE (Modified RSTHD)
 */
     [_BASE] = LAYOUT(
-     KC_ESC,  KC_UNDS, KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_L,    REPEAT,  KC_U,    xxxxxxx, AMAK,
+     KC_ESC,  KC_UNDS, KC_C,    KC_Y,    KC_F,    KC_B,                                        KC_X,    KC_L,    REPEAT,  KC_U,    KC_MINS, AMAK,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_J,    KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_W,    KC_COMM, KC_DOT,  KC_LPRN, KC_RSFT,
+     KC_LSFT, KC_J,    KC_V,    KC_G,    KC_D,    KC_LPRN, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_W,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     // [_BASE] = LAYOUT(
@@ -115,9 +115,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
     ),
     [_AMAK] = LAYOUT(
-     KC_ESC,  KC_UNDS, KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_O,    KC_U,    KC_LPRN, xxxxxxx,
+     KC_ESC,  KC_UNDS, KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_O,    KC_U,    KC_MINS, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_K,                                        KC_X,    KC_N,    KC_A,    KC_I,    REPEAT,  KC_COLN,
-     KC_LSFT, KC_V,    KC_C,    KC_G,    KC_D,    KC_UNDS, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_SLSH, KC_M,    KC_COMM, KC_DOT,  KC_Y,    KC_RSFT,
+     KC_LSFT, KC_V,    KC_C,    KC_G,    KC_D,    KC_LPRN, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_SLSH, KC_M,    KC_COMM, KC_DOT,  KC_Y,    KC_RSFT,
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     // TEMPLATE
@@ -316,18 +316,18 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case qu_comb:
         case z_comb:
         case num:
-        case comb_perc:
-        case comb_grv:
-        case comb_hash:
-        case comb_pipe:
-        case comb_ques:
-        case comb_exlm:
-        case comb_ampr:
-        case comb_labk:
-        case comb_rabk:
-        case comb_lcbr:
-        case comb_lbrc:
-        case comb_at:
+        // case comb_perc:
+        // case comb_grv:
+        // case comb_hash:
+        // case comb_pipe:
+        // case comb_ques:
+        // case comb_exlm:
+        // case comb_ampr:
+        // case comb_labk:
+        // case comb_rabk:
+        // case comb_lcbr:
+        // case comb_lbrc:
+        // case comb_at:
         case comb_0:
         case eql:
         case quot:
