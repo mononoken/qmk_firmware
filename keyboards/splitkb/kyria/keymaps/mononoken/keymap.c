@@ -37,11 +37,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: BASE (Modified RSTHD)
 */
     [_BASE] = LAYOUT(
-     KC_ESC,  KC_J,    KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    KC_COMM, xxxxxxx,
+     KC_ESC,  KC_UNDS, KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_L,    REPEAT,  KC_U,    xxxxxxx, AMAK,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
-     KC_LSFT, KC_UNDS, KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_L,    KC_DOT,  KC_LPRN, KC_RPRN, KC_RSFT,
+     KC_LSFT, KC_J,    KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_W,    KC_COMM, KC_DOT,  KC_LPRN, KC_RSFT,
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
+    // [_BASE] = LAYOUT(
+    //  KC_ESC,  KC_UNDS, KC_C,    KC_Y,    KC_F,    KC_SLSH,                                     KC_X,    KC_W,    REPEAT,  KC_U,    xxxxxxx, AMAK,
+    //  KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    KC_O,    KC_COLN,
+    //  KC_LSFT, KC_J,    KC_V,    KC_G,    KC_D,    KC_B,    CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_K,    KC_L,    KC_COMM, KC_DOT,  KC_LPRN, KC_RSFT,
+    //                             xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
+    // ),
     [_NAVI] = LAYOUT(
      _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_ENT,  KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
@@ -107,6 +113,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    xxxxxxx, xxxxxxx, CLEAR,   _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                                 xxxxxxx, KC_LOPT, KC_LCTL, KC_SPC,  xxxxxxx, xxxxxxx, xxxxxxx, _______, _______, _______
+    ),
+    [_AMAK] = LAYOUT(
+     KC_ESC,  KC_UNDS, KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_O,    KC_U,    KC_LPRN, xxxxxxx,
+     KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_K,                                        KC_X,    KC_N,    KC_A,    KC_I,    REPEAT,  KC_COLN,
+     KC_LSFT, KC_V,    KC_C,    KC_G,    KC_D,    KC_UNDS, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_SLSH, KC_M,    KC_COMM, KC_DOT,  KC_Y,    KC_RSFT,
+                                xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     // TEMPLATE
     // [_XXXX] = LAYOUT(
