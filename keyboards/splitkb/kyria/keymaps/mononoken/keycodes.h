@@ -18,7 +18,6 @@ enum layers {
     _CODE,
     _GAME,
     _QWER,
-    _AMAK
 };
 
 enum custom_keycodes {
@@ -61,7 +60,6 @@ enum custom_keycodes {
 #define SHRT      OSL(_SHRT)
 #define FUNC      OSL(_FUNC)
 #define CODE      OSL(_CODE)
-#define AMAK      TG(_AMAK)
 
 
 #define MT_SPC    LT(_NAVI, KC_SPC)
