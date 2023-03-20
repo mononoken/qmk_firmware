@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, KC_ENT,  KC_LEFT, DN_CTRL, KC_RGHT, xxxxxxx,                                     xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
-     xxxxxxx, LST_TAB, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     _______, KC_ENT,  CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
+     xxxxxxx, LST_TAB, xxxxxxx, KC_PGUP, KC_PGDN, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SYMB] = LAYOUT(
@@ -79,10 +79,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
     ),
     [_NUM] = LAYOUT(
-     xxxxxxx, xxxxxxx, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     _______, xxxxxxx, _______, xxxxxxx, _______, _______,
-     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, _______, xxxxxxx, xxxxxxx, KC_8,    xxxxxxx, _______, xxxxxxx, _______, _______, _______, KC_9,    KC_DOT,  KC_LPRN, KC_RPRN, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
+     xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, xxxxxxx, REPEAT,  xxxxxxx, _______, _______,
+     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
