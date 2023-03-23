@@ -585,18 +585,6 @@ void tap_hold_send_tap(uint16_t keycode) {
                 tap16_repeatable(keycode);
             }
             return;
-        // case E_ACUT:
-        //     tap_code16(SE_ACUT);
-        //     tap_code16(SE_E);
-        //     return;
-        // case CLOSE_WIN:
-        //     tap_code16(C(SE_W));
-        //     tap_code(SE_Q);
-        //     /* tap_escape(); */
-        //     /* tap_code16(SE_COLN); */
-        //     /* tap_code(SE_Q); */
-        //     /* tap_code(KC_ENT); */
-        //     return;
         default:
             tap16_repeatable(keycode);
     }
@@ -828,26 +816,40 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                 enable_caps_word();
             }
             return false;
-        // case SAVE_VIM:
-        //     if (record->event.pressed) {
-        //         tap_escape();
-        //         tap_code16(SE_COLN);
-        //         tap_code(SE_W);
-        //         tap_code(KC_ENT);
-        //     }
-        //     return false;
-        // case VIM_SP:
-        //     if (record->event.pressed) {
-        //         tap_code16(C(SE_W));
-        //         tap_code(SE_S);
-        //     }
-        //     return false;
-        // case VIM_VS:
-        //     if (record->event.pressed) {
-        //         tap_code16(C(SE_W));
-        //         tap_code(SE_V);
-        //     }
-        //     return false;
+        case SAVE_VIM:
+            if (record->event.pressed) {
+                tap_code16(KC_ESC);
+                tap_code16(KC_COLN);
+                tap_code(KC_W);
+                tap_code(KC_ENT);
+            }
+            return false;
+        case VIM_SP:
+            if (record->event.pressed) {
+                tap_code16(KC_ESC);
+                tap_code16(KC_COLN);
+                tap_code16(KC_S);
+                tap_code16(KC_P);
+                tap_code(KC_ENT);
+            }
+            return false;
+        case VIM_VS:
+            if (record->event.pressed) {
+                tap_code16(KC_ESC);
+                tap_code16(KC_COLN);
+                tap_code16(KC_V);
+                tap_code16(KC_S);
+                tap_code(KC_ENT);
+            }
+            return false;
+        case CLOSE_WIN:
+            if (record->event.pressed) {
+                tap_code16(KC_ESC);
+                tap_code16(KC_COLN);
+                tap_code16(KC_Q);
+                tap_code16(KC_ENT);
+            }
+            return false;
         // case NUM_G:
         //     if (record->event.pressed) {
         //         tap_code16(S(KC_G));

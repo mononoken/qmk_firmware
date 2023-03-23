@@ -24,6 +24,12 @@ enum custom_keycodes {
   // Multiple chars
   QU = SAFE_RANGE,
 
+    // Vim
+  SAVE_VIM,
+  VIM_VS,
+  VIM_SP,
+  CLOSE_WIN,
+
   // Instant oneshot mods
   OS_SHFT,
   OS_CTRL,

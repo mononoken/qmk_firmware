@@ -10,10 +10,17 @@ COMB(gui_combo_l,       OS_GUI,           KC_W, KC_G)
 COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_LPRN)
 COMB(opt_combo_l,       OS_ALT,           KC_W, KC_D)
 
+COMB(close_win,         CLOSE_WIN,        KC_W, KC_G, KC_D)
+COMB(vsp,               VIM_VS,           KC_V, KC_W)
+
+COMB(esc,               KC_ESC,           KC_W, KC_T)
+
+
 // Right
 SUBS(pbrack_combo,      "#{}",            KC_X, KC_J)
 COMB(eql,               KC_EQL,           KC_J, KC_O)
 COMB(backsp,            KC_BSPC,          KC_U, KC_MINS)
+COMB(dlr,               KC_DLR,           KC_DOT, KC_Y)
 
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
@@ -21,6 +28,7 @@ COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_COMM)
 COMB(gui_combo_r,       OS_GUI,           KC_COMM, KC_DOT)
 COMB(shift_combo_r,     OS_SHFT,          KC_SLSH, KC_L)
 
+COMB(save_vim,          SAVE_VIM,         KC_N, KC_A, KC_I, REPEAT)
 
 COMB(scln,              KC_SCLN,          KC_T, KC_D)
 
@@ -34,6 +42,8 @@ SUBS(leql,              "<=",             KC_K, KC_H)
 SUBS(lmin,              "<-",             KC_F, KC_T)
 SUBS(rckt,              "=>",             KC_J, KC_N)
 SUBS(arrw,              "->",             KC_O, KC_A)
+
+COMB(sp,                VIM_SP,           KC_S, KC_W)
 
 // Thumbs
 COMB(num,               NUMWORD,          L_SYMB, R_SYMB)
