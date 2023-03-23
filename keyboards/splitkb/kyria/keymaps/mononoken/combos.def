@@ -30,6 +30,10 @@ COMB(leader,            LEADER,           KC_L, KC_DOT)
 COMB(dquo,              KC_DQUO,          KC_H, KC_D)
 COMB(quot,              KC_QUOT,          KC_N, KC_L)
 
+SUBS(leql,              "<=",             KC_K, KC_H)
+SUBS(lmin,              "<-",             KC_F, KC_T)
+SUBS(rckt,              "=>",             KC_J, KC_N)
+SUBS(arrw,              "->",             KC_O, KC_A)
 
 // Thumbs
 COMB(num,               NUMWORD,          L_SYMB, R_SYMB)

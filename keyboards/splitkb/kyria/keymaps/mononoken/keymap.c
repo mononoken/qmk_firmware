@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, FUNC,    _______, _______
     ),
     [_NUM] = LAYOUT(
-     xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, xxxxxxx, REPEAT,  xxxxxxx, _______, _______,
+     xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
