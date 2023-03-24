@@ -28,6 +28,7 @@ COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_COMM)
 COMB(gui_combo_r,       OS_GUI,           KC_COMM, KC_DOT)
 COMB(shift_combo_r,     OS_SHFT,          KC_SLSH, KC_L)
 
+COMB(ctrl_w,            C(KC_W),          KC_J, KC_O, KC_U)
 COMB(save_vim,          SAVE_VIM,         KC_N, KC_A, KC_I, REPEAT)
 
 COMB(scln,              KC_SCLN,          KC_T, KC_D)
