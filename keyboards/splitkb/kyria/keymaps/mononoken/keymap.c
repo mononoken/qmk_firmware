@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NUM] = LAYOUT(
      xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, NUM_G,   KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
@@ -850,11 +850,11 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(KC_ENT);
             }
             return false;
-        // case NUM_G:
-        //     if (record->event.pressed) {
-        //         tap_code16(S(KC_G));
-        //     }
-        //     return false;
+        case NUM_G:
+            if (record->event.pressed) {
+                tap_code16(S(KC_G));
+            }
+            return false;
         // case COLN_SYM:
         //     if (record->tap.count && record->event.pressed) {
         //         tap16_repeatable(SE_COLN);

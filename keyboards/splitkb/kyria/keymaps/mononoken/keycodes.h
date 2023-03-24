@@ -30,6 +30,9 @@ enum custom_keycodes {
   VIM_SP,
   CLOSE_WIN,
 
+  // Custom keycodes for instant processing for NUMWORD
+  NUM_G,
+
   // Instant oneshot mods
   OS_SHFT,
   OS_CTRL,
