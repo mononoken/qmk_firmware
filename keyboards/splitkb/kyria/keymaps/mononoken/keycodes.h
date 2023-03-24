@@ -77,6 +77,7 @@ enum custom_keycodes {
 #define DN_CTRL   MT(MOD_LCTL, KC_DOWN)
 
 #define LST_TAB   LSG(KC_T) // Open last closed tab in Firefox
+#define F_SCRN    C(G(KC_F)) // Full screen mode for MacOS
 
 // For _CODE
 // Navigation

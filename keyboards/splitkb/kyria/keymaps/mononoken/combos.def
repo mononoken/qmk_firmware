@@ -4,7 +4,8 @@ COMB(qu_comb,           QU,               KC_C, KC_F)
 COMB(z_comb,            KC_Z,             KC_F, KC_K)
 COMB(del,               KC_DEL,           KC_C, KC_F, KC_K)
 COMB(clear_comb,        CLEAR,            KC_K, KC_B)
-
+// COMB(del2,              KC_DEL,           KC_H, KC_P)
+ 
 COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
 COMB(gui_combo_l,       OS_GUI,           KC_W, KC_G)
 COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_LPRN)
