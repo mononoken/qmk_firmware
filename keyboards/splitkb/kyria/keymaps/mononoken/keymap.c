@@ -506,6 +506,7 @@ bool tap_hold(uint16_t keycode) {
             case KC_COMM:
             case KC_COLN:
             case KC_SLSH:
+            case KC_TAB: // Allows for S(TAB) which reverse tabs in most programs.
             // case SE_PERC:
             // case GRV:
             // case SE_AT:
