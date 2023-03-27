@@ -78,6 +78,7 @@ enum custom_keycodes {
 
 #define LST_TAB   LSG(KC_T) // Open last closed tab in Firefox
 #define F_SCRN    C(G(KC_F)) // Full screen mode for MacOS
+#define M_SCRN    C(A(KC_ENT)) // Maximize screen using Rectangle defaults
 
 // For _CODE
 // Navigation
@@ -95,5 +96,3 @@ enum custom_keycodes {
 
 #define CMD_PAL   LSG(KC_P) // Open command palette
 #define QK_OPEN   G(KC_P) // Quick open
-
-
