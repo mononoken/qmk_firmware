@@ -43,10 +43,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
     [_NAVI] = LAYOUT(
-     _______, F_SCRN,  CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, xxxxxxx,
+     _______, F_SCRN,  CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
      xxxxxxx, LST_TAB, M_SCRN,  KC_PGUP, KC_PGDN, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
+                                xxxxxxx, _______, _______, _______, _______, _______, C(KC_E), _______, _______, _______
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
