@@ -570,16 +570,9 @@ bool tap_hold(uint16_t keycode) {
 
 void tap_hold_send_tap(uint16_t keycode) {
     switch (keycode) {
-        // case GRV:
-        //     register_key_to_repeat(keycode);
-        //     tap_undead_key(true, SE_GRV);
-        //     return;
         case QU:
             send_string("qu");
             return;
-        // case SC:
-        //     send_string("sc");
-        //     return;
         case KC_Q:
         case KC_Z:
             if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
@@ -615,9 +608,6 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_COLN:
             tap_code16(KC_SCLN);
             return;
-        // case SC:
-        //     send_string("Sc");
-        //     return;
         case KC_Q:
         case KC_Z:
             if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
@@ -733,9 +723,6 @@ void *leader_start_func(uint16_t keycode) {
             tap_code(KC_CAPS);
             // tap_caps_lock();
             return NULL;
-        // case ESC_SYM:
-        //     tap_code16(C(S(KC_ESC)));
-        //     return NULL;
         default:
             return NULL;
     }
@@ -779,14 +766,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-        // case ESC_SYM:
-        //     if (record->tap.count && record->event.pressed) {
-        //         tap_escape();
-        //         return false;
-        //     }
-        //     break;
-        // case KC_CAPS:
-        //     return process_caps(record->event.pressed);
         case CLEAR:
             clear_oneshot_mods();
             if (get_oneshot_layer() != 0) {
@@ -797,18 +776,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_SYMB);
             layer_move(_BASE);
             return false;
-        // case CANCEL:
-        //     layer_off(_NUM);
-        //     layer_off(_SYM);
-        //     stop_leading();
-        //     //disable_gaming();
-        //     return false;
-        // case TILD:
-        //     register_key_to_repeat(TILD);
-        //     return tap_undead_key(record->event.pressed, SE_TILD);
-        // case CIRC:
-        //     register_key_to_repeat(CIRC);
-        //     return tap_undead_key(record->event.pressed, SE_CIRC);
         case NUMWORD:
             process_num_word_activation(record);
             return false;
@@ -856,12 +823,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(S(KC_G));
             }
             return false;
-        // case COLN_SYM:
-        //     if (record->tap.count && record->event.pressed) {
-        //         tap16_repeatable(SE_COLN);
-        //         return false;
-        //     }
-        //     break;
         case KC_ENT:
             if (record->event.pressed) {
                 if (IS_LAYER_ON(_NUM)) {
@@ -872,16 +833,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                 disable_num_word();
             }
             return false;
-        // case TG_SWE:
-        //     if (record->event.pressed) {
-        //         uint16_t swe_key = corresponding_swe_key(last_key());
-        //         if (swe_key != KC_NO) {
-        //             tap_code16(KC_BSPACE);
-        //             tap_code16(swe_key);
-        //         }
-        //         layer_invert(_SWE);
-        //     }
-        //     return false;
         // case WIN_ALT:
         //     // Always start by sending Alt Tab to goto the next window with only a combo tap.
         //     // We can then do Tab/S-Tab to continue moving around the windows if we want to.
@@ -902,9 +853,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
             end_tap_hold();
             update_repeat_key(record);
             return false;
-        // case REV_REP:
-        //     update_reverse_repeat_key(record);
-        //     return false;
         case GO_LEDT:
             if (record->event.pressed) {
               SEND_STRING(SS_LGUI("kq"));

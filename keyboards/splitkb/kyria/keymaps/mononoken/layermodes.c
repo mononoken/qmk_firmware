@@ -54,16 +54,10 @@ bool process_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_BSPC:
         case KC_X:
         case REPEAT:
-        // case REV_REP:
         case KC_ENT:
         case xxxxxxx:
             // Don't disable for above keycodes
             break;
-        // case CANCEL:
-        //     if (record->event.pressed) {
-        //         disable_num_word();
-        //     }
-        //     return false;
         default:
             if (record->event.pressed) {
                 disable_num_word();
