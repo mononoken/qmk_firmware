@@ -788,8 +788,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         // case KC_CAPS:
         //     return process_caps(record->event.pressed);
         case CLEAR:
-        // case L_CLEAR:
-        // case R_CLEAR:
             clear_oneshot_mods();
             if (get_oneshot_layer() != 0) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
