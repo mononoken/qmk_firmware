@@ -42,11 +42,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LSFT, KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,    KC_RSFT,
                                 xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
     ),
+    [_NUM] = LAYOUT(
+     xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
+     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, NUM_G,   KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
+                                xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
     [_NAVI] = LAYOUT(
      _______, F_SCRN,  CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
      xxxxxxx, LST_TAB, M_SCRN,  KC_PGUP, KC_PGDN, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
+                                xxxxxxx, _______, _______, _______, _______, _______, WNAV,    _______, _______, _______
+    ),
+    [_WNAV] = LAYOUT(
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, S_TAB,   KC_LGUI, KC_TAB,  xxxxxxx,                                     xxxxxxx, L_HALF,  F_SCRN,  M_SCRN,  R_HALF,  xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
@@ -77,12 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, xxxxxxx, _______, _______, C(KC_E), FUNC,    _______, _______
-    ),
-    [_NUM] = LAYOUT(
-     xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
-     xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, NUM_G,   KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_FUNC] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -509,6 +515,7 @@ bool tap_hold(uint16_t keycode) {
             case KC_COLN:
             case KC_SLSH:
             case KC_TAB: // Allows for S(TAB) which reverse tabs in most programs.
+            case KC_LPRN:
             // case SE_PERC:
             // case GRV:
             // case SE_AT:
@@ -607,6 +614,9 @@ void tap_hold_send_hold(uint16_t keycode) {
             return;
         case KC_COLN:
             tap_code16(KC_SCLN);
+            return;
+        case KC_LPRN:
+            tap_code16(KC_RPRN);
             return;
         case KC_Q:
         case KC_Z:
