@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NUM] = LAYOUT(
      xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
      xxxxxxx, KC_6,    KC_4,    KC_0,    KC_2,    _______,                                     _______, KC_3,    KC_1,    KC_5,    KC_7,    xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, NUM_G,   KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_PERC, xxxxxxx, NUM_G,   KC_8,    _______, _______, _______, _______, _______, _______, KC_9,    _______, _______, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NAVI] = LAYOUT(
@@ -62,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYMB] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,                                     xxxxxxx, KC_HASH, KC_AT,   KC_CIRC, xxxxxxx, xxxxxxx,
-     xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_PERC,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, KC_DLR,  xxxxxxx,
-     xxxxxxx, xxxxxxx, KC_LABK, KC_RABK, KC_BSLS, KC_RPRN, _______, xxxxxxx, _______, _______, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, xxxxxxx,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, KC_DLR,  xxxxxxx,
+     xxxxxxx, KC_PERC, KC_LABK, KC_RABK, KC_BSLS, KC_RPRN, _______, xxxxxxx, _______, _______, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_LSYM] = LAYOUT(
      _______, KC_TILD, KC_PLUS, KC_ASTR, KC_EXLM, _______,                                     xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, xxxxxxx,
-     _______, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    _______,
-     _______, _______, KC_LABK, KC_RABK, KC_PERC, KC_RPRN, _______, xxxxxxx, _______, _______, xxxxxxx, KC_9,    _______, _______, _______, _______,
+     _______, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, xxxxxxx,                                     xxxxxxx, KC_3,    KC_1,    KC_5,    KC_7,    _______,
+     _______, KC_PERC, KC_LABK, KC_RABK, KC_BSLS, KC_RPRN, _______, xxxxxxx, _______, _______, xxxxxxx, KC_9,    _______, _______, _______, _______,
                                 xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_RSYM] = LAYOUT(
