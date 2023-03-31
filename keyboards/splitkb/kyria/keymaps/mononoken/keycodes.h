@@ -13,7 +13,6 @@ enum layers {
     _SYMB,
     _LSYM,
     _RSYM,
-    _OMOD,
     _SHRT,
     _FUNC,
     _CODE,
@@ -67,7 +66,6 @@ enum custom_keycodes {
 #define SYMB      OSL(_SYMB)
 #define L_SYMB    OSL(_LSYM)
 #define R_SYMB    OSL(_RSYM)
-#define OMOD      OSL(_OMOD)
 #define SHRT      OSL(_SHRT)
 #define FUNC      OSL(_FUNC)
 #define CODE      OSL(_CODE)
@@ -80,7 +78,7 @@ enum custom_keycodes {
 #define LST_TAB   LSG(KC_T) // Open last closed tab in Firefox
 #define F_SCRN    C(G(KC_F)) // Full screen mode for MacOS
 #define M_SCRN    C(A(KC_ENT)) // Maximize screen using Rectangle defaults
-#define S_TAB     S(KC_TAB)
+#define S_TAB     S(KC_TAB) // For Alt-Tab
 #define L_HALF    C(A(KC_H)) // Left half screen using Rectangle
 #define R_HALF    C(A(KC_L)) // Rigth half screen using Rectangle
 

@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC,  KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,                                        KC_X,    KC_J,    KC_O,    KC_U,    KC_MINS, xxxxxxx,
      KC_TAB,  KC_R,    KC_S,    KC_T,    KC_H,    KC_P,                                        KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,  KC_COLN,
      KC_LSFT, KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN, CLEAR,   xxxxxxx, KC_PSCR, CLEAR,   KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,    KC_RSFT,
-                                xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    OMOD,    KC_MPLY, KC_MUTE
+                                xxxxxxx, CODE,    SHRT,    MT_SPC,  L_SYMB,  R_SYMB,  KC_E,    KC_LALT, KC_MPLY, KC_MUTE
     ),
     [_NUM] = LAYOUT(
      xxxxxxx, _______, KC_PLUS, KC_ASTR, _______, xxxxxxx,                                     _______, _______, REPEAT,  xxxxxxx, _______, _______,
@@ -49,14 +49,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NAVI] = LAYOUT(
-     _______, F_SCRN,  CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
-     xxxxxxx, LST_TAB, M_SCRN,  KC_PGUP, KC_PGDN, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     xxxxxxx, LST_TAB, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, KC_PGDN, KC_PGUP, xxxxxxx, xxxxxxx,
                                 xxxxxxx, _______, _______, _______, _______, _______, WNAV,    _______, _______, _______
     ),
     [_WNAV] = LAYOUT(
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, S_TAB,   KC_LGUI, KC_TAB,  xxxxxxx,                                     xxxxxxx, L_HALF,  F_SCRN,  M_SCRN,  R_HALF,  xxxxxxx,
+     xxxxxxx, xxxxxxx, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx,                                     xxxxxxx, L_HALF,  F_SCRN,  M_SCRN,  R_HALF,  xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
     ),
@@ -77,12 +77,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,                                     KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, KC_DLR,  xxxxxxx,
      _______, _______, xxxxxxx, xxxxxxx, KC_8,    KC_RPRN, _______, xxxxxxx, _______, _______, xxxxxxx, KC_AMPR, xxxxxxx, xxxxxxx, xxxxxxx, _______,
                                 xxxxxxx, _______, _______, _______, _______, _______, xxxxxxx, _______, _______, _______
-    ),
-    [_OMOD] = LAYOUT(
-     _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, OS_ALT,  OS_SHFT, OS_GUI,  OS_CTRL, xxxxxxx,                                     xxxxxxx, OS_CTRL, OS_GUI,  OS_SHFT, OS_ALT,  xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                xxxxxxx, _______, _______, xxxxxxx, _______, _______, xxxxxxx, _______, _______, _______
     ),
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
