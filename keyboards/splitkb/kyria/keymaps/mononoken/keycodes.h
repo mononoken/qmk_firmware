@@ -82,6 +82,12 @@ enum custom_keycodes {
 #define L_HALF    C(A(KC_H)) // Left half screen using Rectangle
 #define R_HALF    C(A(KC_L)) // Rigth half screen using Rectangle
 
+// For Charmstone
+#define L_CHRM    G(A(KC_LEFT))
+#define R_CHRM    G(A(KC_RGHT))
+#define U_CHRM    G(A(KC_UP))
+#define D_CHRM    G(A(KC_DOWN))
+
 // For _CODE
 // Navigation
 #define GT_SYM    LSG(KC_O) // Go to symbol
