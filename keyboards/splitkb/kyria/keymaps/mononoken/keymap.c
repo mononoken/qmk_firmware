@@ -49,9 +49,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+     _______, xxxxxxx, CS_TAB,  KC_UP,   C_TAB,   KC_HOME,                                     xxxxxxx, xxxxxxx, KC_PGDN, KC_PGUP, xxxxxxx, xxxxxxx,
      xxxxxxx, KC_END,  KC_LEFT, DN_CTRL, KC_RGHT, KC_END,                                      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
-     xxxxxxx, LST_TAB, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, KC_PGDN, KC_PGUP, xxxxxxx, _______,
+     xxxxxxx, LST_TAB, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, C(KC_H), C(KC_J), C(KC_K), C(KC_L), _______,
                                 xxxxxxx, _______, _______, _______, _______, _______, WNAV,    _______, _______, _______
     ),
     [_WNAV] = LAYOUT(
@@ -498,7 +498,7 @@ bool tap_hold(uint16_t keycode) {
     if (layer_state_is(_GAME)) {
         return false;
     } else if (layer_state_is(_NAVI)) {
-        return false; 
+        return false;
     } else {
         switch (keycode) {
             // case SE_DQUO:
