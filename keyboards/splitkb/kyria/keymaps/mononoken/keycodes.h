@@ -62,7 +62,7 @@ enum custom_keycodes {
 #define xxxxxxx KC_NO
 
 #define BASE      DF(_BASE)
-#define WNAV      OSL(_WNAV)
+#define WNAV      MO(_WNAV)
 #define SYMB      OSL(_SYMB)
 #define L_SYMB    OSL(_LSYM)
 #define R_SYMB    OSL(_RSYM)

@@ -6,8 +6,8 @@ COMB(del,               KC_DEL,           KC_C, KC_F, KC_K)
 COMB(clear_comb,        CLEAR,            KC_K, KC_B)
 // COMB(del2,              KC_DEL,           KC_H, KC_P)
  
-COMB(ctrl_combo_l,      OS_CTRL,          KC_G, KC_D)
-COMB(gui_combo_l,       OS_GUI,           KC_W, KC_G)
+COMB(ctrl_combo_l,      OS_CTRL,          KC_W, KC_G)
+COMB(gui_combo_l,       OS_GUI,           KC_G, KC_D)
 COMB(shift_combo_l,     OS_SHFT,          KC_D, KC_LPRN)
 COMB(opt_combo_l,       OS_ALT,           KC_W, KC_D)
 
@@ -25,18 +25,19 @@ COMB(dlr,               KC_DLR,           KC_DOT, KC_Y)
 
 COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
-COMB(ctrl_combo_r,      OS_CTRL,          KC_L, KC_COMM)
-COMB(gui_combo_r,       OS_GUI,           KC_COMM, KC_DOT)
+COMB(ctrl_combo_r,      OS_CTRL,          KC_COMM, KC_DOT)
+COMB(gui_combo_r,       OS_GUI,           KC_L, KC_COMM)
 COMB(shift_combo_r,     OS_SHFT,          KC_SLSH, KC_L)
 
 COMB(ctrl_w,            C(KC_W),          KC_J, KC_O, KC_U)
 COMB(save_vim,          SAVE_VIM,         KC_N, KC_A, KC_I, REPEAT)
 
-COMB(scln,              KC_SCLN,          KC_T, KC_D)
-
 COMB(leader,            LEADER,           KC_L, KC_DOT)
 
 // Verticals
+COMB(scln,              KC_SCLN,          KC_T, KC_D)
+COMB(cln,               KC_COLN,          KC_L, KC_A)
+
 COMB(dquo,              KC_DQUO,          KC_H, KC_D)
 COMB(quot,              KC_QUOT,          KC_N, KC_L)
 
