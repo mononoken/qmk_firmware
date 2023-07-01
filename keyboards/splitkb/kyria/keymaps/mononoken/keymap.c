@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     LCA(KC_T),LCA(KC_E),A(KC_S), A(KC_G),LCA(KC_M), xxxxxxx,
+     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     LCA(KC_W),LCA(KC_E),A(KC_S), A(KC_G),LCA(KC_M), xxxxxxx,
      xxxxxxx, KC_END,  CS_TAB,  DN_CTRL, C_TAB,   xxxxxxx,                                     xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
      xxxxxxx, xxxxxxx, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, _______, _______, xxxxxxx, A(KC_H), A(KC_J), A(KC_K), A(KC_L), _______,
                                 xxxxxxx, _______, _______, _______, _______, _______, WNAV,    _______, _______, _______
