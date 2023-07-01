@@ -61,9 +61,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
     // ),
     [_WNAV] = LAYOUT(
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, A(KC_S), A(KC_G), xxxxxxx, xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     LCA(KC_W),LCA(KC_E),A(KC_S), A(KC_G),LCA(KC_M), xxxxxxx,
      xxxxxxx, A(KC_6), A(KC_4), A(KC_0), A(KC_2), xxxxxxx,                                     xxxxxxx, A(KC_3), A(KC_1), A(KC_5), A(KC_7), xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, C(KC_H), C(KC_J), C(KC_K), C(KC_L), _______,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, LCA(KC_LEFT),LCA(KC_DOWN),LCA(KC_UP),LCA(KC_RGHT), _______,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_SYMB] = LAYOUT(
