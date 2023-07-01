@@ -49,15 +49,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 xxxxxxx, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_NAVI] = LAYOUT(
-     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     xxxxxxx, xxxxxxx, KC_PGDN, KC_PGUP, xxxxxxx, xxxxxxx,
-     xxxxxxx, KC_END,  CS_TAB,  DN_CTRL, C_TAB,   KC_END,                                      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
-     xxxxxxx, LST_TAB, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx, _______, xxxxxxx, _______, _______, xxxxxxx, C(KC_H), C(KC_J), C(KC_K), C(KC_L), _______,
+     _______, xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,                                     xxxxxxx, xxxxxxx, A(KC_S), A(KC_G), xxxxxxx, xxxxxxx,
+     xxxxxxx, KC_END,  CS_TAB,  DN_CTRL, C_TAB,   xxxxxxx,                                     xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,    xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,  _______, xxxxxxx, _______, _______, xxxxxxx, C(KC_H), C(KC_J), C(KC_K), C(KC_L), _______,
                                 xxxxxxx, _______, _______, _______, _______, _______, WNAV,    _______, _______, _______
     ),
+    // [_WNAV] = LAYOUT(
+    //  xxxxxxx, xxxxxxx, xxxxxxx, U_CHRM,  xxxxxxx, xxxxxxx,                                     xxxxxxx, L_THRD,  G(KC_M), R_THRD,  xxxxxxx, xxxxxxx,
+    //  xxxxxxx, xxxxxxx, L_CHRM,  D_CHRM,  R_CHRM,  xxxxxxx,                                     xxxxxxx, L_HALF,  F_SCRN,  M_SCRN,  R_HALF,  xxxxxxx,
+    //  xxxxxxx, xxxxxxx, S_TAB,   xxxxxxx, KC_TAB,  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, A(KC_H), A(KC_J), A(KC_K), A(KC_L), _______,
+    //                             xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
+    // ),
     [_WNAV] = LAYOUT(
-     xxxxxxx, xxxxxxx, xxxxxxx, U_CHRM,  xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, xxxxxxx, L_CHRM,  D_CHRM,  R_CHRM,  xxxxxxx,                                     xxxxxxx, L_HALF,  F_SCRN,  M_SCRN,  R_HALF,  xxxxxxx,
-     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, G(KC_M), xxxxxxx, xxxxxxx, _______,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                                     xxxxxxx, xxxxxxx, A(KC_S), A(KC_G), xxxxxxx, xxxxxxx,
+     xxxxxxx, A(KC_6), A(KC_4), A(KC_0), A(KC_2), xxxxxxx,                                     xxxxxxx, A(KC_3), A(KC_1), A(KC_5), A(KC_7), xxxxxxx,
+     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, A(KC_H), A(KC_J), A(KC_K), A(KC_L), _______,
                                 xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______, xxxxxxx, xxxxxxx, xxxxxxx
     ),
     [_SYMB] = LAYOUT(
@@ -81,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SHRT] = LAYOUT(
      xxxxxxx, G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
      xxxxxxx, G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),                                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-     xxxxxxx, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______,
+     LST_TAB, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B), _______, xxxxxxx, _______, _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______,
                                 xxxxxxx, _______, _______, xxxxxxx, _______, _______, C(KC_E), FUNC,    _______, _______
     ),
     [_FUNC] = LAYOUT(
@@ -280,6 +286,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         // case vsp:
         case gui_combo_l:
         case gui_combo_r:
+        case opt_combo_l:
             return COMBO_TERM;
         // // Vertical combos, very relaxed
         // case small_left_arrow:
@@ -498,7 +505,38 @@ bool tap_hold(uint16_t keycode) {
     if (layer_state_is(_GAME)) {
         return false;
     } else if (layer_state_is(_NAVI)) {
-        return false;
+        switch (keycode) {
+          case A(KC_H):
+          case A(KC_J):
+          case A(KC_K):
+          case A(KC_L):
+          case A(KC_S):
+          case A(KC_G):
+              return true;
+          default:
+              return false;
+        }
+    } else if (layer_state_is(_WNAV)) {
+        switch (keycode) {
+          case A(KC_0):
+          case A(KC_1):
+          case A(KC_2):
+          case A(KC_3):
+          case A(KC_4):
+          case A(KC_5):
+          case A(KC_6):
+          case A(KC_7):
+          case A(KC_8):
+          case A(KC_H):
+          case A(KC_J):
+          case A(KC_K):
+          case A(KC_L):
+          case A(KC_S):
+          case A(KC_G):
+              return true;
+          default:
+              return false;
+        }
     } else {
         switch (keycode) {
             // case SE_DQUO:
@@ -524,22 +562,21 @@ bool tap_hold(uint16_t keycode) {
             // case SE_EQL:
             case KC_UNDS:
             // case SE_0:
-            // case G(SE_0):
-            // case G(SE_1):
-            // case G(SE_2):
-            // case G(SE_3):
-            // case G(SE_4):
-            // case G(SE_5):
-            // case G(SE_6):
-            // case G(SE_7):
-            // case G(SE_8):
-            // case G(SE_9):
-            // case G(SE_K):
-            // case G(SE_J):
-            // case G(SE_W):
-            // case G(SE_E):
-            // case G(SE_R):
-            // case G(SE_C):
+            case A(KC_0):
+            case A(KC_1):
+            case A(KC_2):
+            case A(KC_3):
+            case A(KC_4):
+            case A(KC_5):
+            case A(KC_6):
+            case A(KC_7):
+            case A(KC_8):
+            case A(KC_K):
+            case A(KC_J):
+            case A(KC_S):
+            case A(KC_G):
+            case A(KC_R):
+            case A(KC_C):
             case KC_A ... KC_Z:
             // case SE_ARNG:
             // case SE_ADIA:

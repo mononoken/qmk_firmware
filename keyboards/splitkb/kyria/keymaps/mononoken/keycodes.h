@@ -76,17 +76,6 @@ enum custom_keycodes {
 #define DN_CTRL   MT(MOD_LCTL, KC_DOWN)
 
 #define LST_TAB   LSG(KC_T) // Open last closed tab in Firefox
-#define F_SCRN    C(G(KC_F)) // Full screen mode for MacOS
-#define M_SCRN    C(A(KC_ENT)) // Maximize screen using Rectangle defaults
-#define S_TAB     S(KC_TAB) // For Alt-Tab
-#define L_HALF    C(A(KC_H)) // Left half screen using Rectangle
-#define R_HALF    C(A(KC_L)) // Rigth half screen using Rectangle
-
-// For Charmstone
-#define L_CHRM    G(A(KC_LEFT))
-#define R_CHRM    G(A(KC_RGHT))
-#define U_CHRM    G(A(KC_UP))
-#define D_CHRM    G(A(KC_DOWN))
 
 // For _CODE
 // Navigation
