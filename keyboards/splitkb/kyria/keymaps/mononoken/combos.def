@@ -23,7 +23,7 @@ COMB(eql,               KC_EQL,           KC_M, KC_N)
 COMB(backsp,            KC_BSPC,          KC_U, KC_MINS)
 COMB(dlr,               KC_DLR,           KC_DOT, KC_Y)
 
-COMB(ent,               KC_ENT,           KC_N, KC_A, KC_DOT)
+COMB(ent,               KC_ENT,           KC_N, KC_A, KC_I)
 
 COMB(ctrl_combo_r,      OS_CTRL,          KC_COMM, KC_DOT)
 COMB(gui_combo_r,       OS_GUI,           KC_L, KC_COMM)

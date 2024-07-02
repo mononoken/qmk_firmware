@@ -282,12 +282,14 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         // case coln_sym:
         case ctrl_combo_r:
         case quot:
-        case ent:
+        // case ent:
         // case vsp:
         case gui_combo_l:
         case gui_combo_r:
         case opt_combo_l:
             return COMBO_TERM;
+        case ent:
+            return COMBO_TERM - 10;
         // // Vertical combos, very relaxed
         // case small_left_arrow:
         // case lt_eq:
