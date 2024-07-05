@@ -289,7 +289,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case opt_combo_l:
             return COMBO_TERM;
         case ent:
-            return COMBO_TERM - 10;
+            return COMBO_TERM - 20;
         // // Vertical combos, very relaxed
         // case small_left_arrow:
         // case lt_eq:
