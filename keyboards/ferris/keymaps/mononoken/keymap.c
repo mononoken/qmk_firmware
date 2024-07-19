@@ -48,20 +48,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_SLSH,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
-                                 SHRT,    MT_SPC,       KC_E,    SPEC
+                                 SHRT,    MT_SPC,       KC_E,    SYM
     ),
     [_NUM]  = LAYOUT(
-      _______, KC_PLUS, KC_ASTR, KC_MINS, xxxxxxx,      KC_X,    xxxxxxx, AT_U,    REPEAT,  _______,
-      KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
+      KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
       KC_PERC, xxxxxxx, NUM_G,   KC_8,    _______,      _______, KC_9,    KC_COMM, KC_DOT,  xxxxxxx,
                                  _______, _______,      CANCEL,  _______
     ),
     // Important that the symbols on the base layer have the same positions as these symbols
     [_SYM]  = LAYOUT(
-      KC_UNDS, KC_PLUS, KC_ASTR, KC_MINS, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
-      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_QUES,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
       xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
-                                 _______, _______,      CANCEL,  _______
+                                 NUM,     _______,      CANCEL,  _______
     ),
     [_NAV]  = LAYOUT(
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -79,13 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
       G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
       G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, _______,
-                                 _______, _______,      _______, FUN
-    ),
-    [_SPEC] = LAYOUT(
-      KC_TILD, SYM_LQO, _______, SYM_RQO, _______,      _______, _______, _______, KC_CIRC, _______,
-      _______, SYM_LDQ, _______, SYM_RDQ, _______,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
-      _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
-                                 FUN,     _______,      _______, _______
+                                 _______, _______,      _______, NUM
     ),
     [_FUN]  = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPLY, KC_MPRV, KC_MNXT, KC_MUTE,

@@ -14,7 +14,6 @@ enum layers {
     _NAV,
     _WNAV,
     _SHRT,
-    _SPEC,
     _FUN,
 };
 
@@ -78,12 +77,12 @@ enum custom_keycodes {
 
 #define MY_LALT OSM(MOD_LALT)
 
+#define SYM OSL(_SYM)
 #define SHRT OSL(_SHRT)
+#define FUN OSL(_FUN)
+#define NUM MO(_NUM)
 #define WNAV MO(_WNAV)
 #define TG_WNAV TG(_WNAV)
-#define OPT OSL(_OPT)
-#define SPEC OSL(_SPEC)
-#define FUN OSL(_FUN)
 
 #define GAME2 OSL(_GAME2)
 
