@@ -22,7 +22,7 @@
 #include "oneshot.h"
 #include "casemodes.h"
 #include "layermodes.h"
-#include "tap_hold.h"
+// #include "tap_hold.h"
 #include "repeat.h"
 #include "roll.h"
 #include "leader.h"
@@ -361,238 +361,238 @@ void process_oneshot_key(uint16_t keycode, keyrecord_t *record) {
 
 // Tap hold
 
-bool tap_hold(uint16_t keycode) {
-    switch (keycode) {
-        case KC_DQUO:
-        case KC_LABK:
-        case KC_RABK:
-        case KC_DOT:
-        case KC_PERC:
-        case GRV:
-        case KC_AT:
-        case KC_PIPE:
-        case KC_EXLM:
-        case KC_AMPR:
-        case KC_QUES:
-        case KC_HASH:
-        case KC_LPRN:
-        case KC_LCBR:
-        case KC_LBRC:
-        case KC_EQL:
-        case KC_UNDS:
-        case KC_0:
-        case G(KC_0):
-        case G(KC_1):
-        case G(KC_2):
-        case G(KC_3):
-        case G(KC_4):
-        case G(KC_5):
-        case G(KC_6):
-        case G(KC_7):
-        case G(KC_8):
-        case G(KC_9):
-        case G(KC_K):
-        case G(KC_J):
-        case G(KC_W):
-        case G(KC_E):
-        case G(KC_R):
-        case G(KC_C):
-        case KC_A ... KC_Z:
-        case QU:
-        case SC:
-        case CLOSE_WIN:
-        case C(KC_A):
-        case C(KC_C):
-        case C(KC_W):
-        case C(KC_F):
-        case C(KC_E):
-        case C(KC_R):
-        case C(KC_S):
-        case C(KC_T):
-        case C(KC_H):
-        case C(KC_X):
-        case C(KC_V):
-        case C(KC_G):
-        case C(KC_D):
-        case C(KC_B):
-            return true;
-        default:
-            return false;
-    }
-}
+// bool tap_hold(uint16_t keycode) {
+//     switch (keycode) {
+//         case KC_DQUO:
+//         case KC_LABK:
+//         case KC_RABK:
+//         case KC_DOT:
+//         case KC_PERC:
+//         case GRV:
+//         case KC_AT:
+//         case KC_PIPE:
+//         case KC_EXLM:
+//         case KC_AMPR:
+//         case KC_QUES:
+//         case KC_HASH:
+//         case KC_LPRN:
+//         case KC_LCBR:
+//         case KC_LBRC:
+//         case KC_EQL:
+//         case KC_UNDS:
+//         case KC_0:
+//         case G(KC_0):
+//         case G(KC_1):
+//         case G(KC_2):
+//         case G(KC_3):
+//         case G(KC_4):
+//         case G(KC_5):
+//         case G(KC_6):
+//         case G(KC_7):
+//         case G(KC_8):
+//         case G(KC_9):
+//         case G(KC_K):
+//         case G(KC_J):
+//         case G(KC_W):
+//         case G(KC_E):
+//         case G(KC_R):
+//         case G(KC_C):
+//         case KC_A ... KC_Z:
+//         case QU:
+//         case SC:
+//         case CLOSE_WIN:
+//         case C(KC_A):
+//         case C(KC_C):
+//         case C(KC_W):
+//         case C(KC_F):
+//         case C(KC_E):
+//         case C(KC_R):
+//         case C(KC_S):
+//         case C(KC_T):
+//         case C(KC_H):
+//         case C(KC_X):
+//         case C(KC_V):
+//         case C(KC_G):
+//         case C(KC_D):
+//         case C(KC_B):
+//             return true;
+//         default:
+//             return false;
+//     }
+// }
 
-void tap_hold_send_tap(uint16_t keycode) {
-    switch (keycode) {
-        case GRV:
-            register_key_to_repeat(keycode);
-            tap_undead_key(true, KC_GRV);
-            return;
-        case QU:
-            send_string("qu");
-            return;
-        case SC:
-            send_string("sc");
-            return;
-        case KC_Q:
-        case KC_Z:
-            if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
-                tap16_repeatable(C(keycode));
-            } else {
-                tap16_repeatable(keycode);
-            }
-            return;
-        case CLOSE_WIN:
-            tap_code16(C(KC_W));
-            tap_code(KC_Q);
-            /* tap_escape(); */
-            /* tap_code16(KC_COLN); */
-            /* tap_code(KC_Q); */
-            /* tap_code(KC_ENT); */
-            return;
-        default:
-            tap16_repeatable(keycode);
-    }
-}
+// void tap_hold_send_tap(uint16_t keycode) {
+//     switch (keycode) {
+//         case GRV:
+//             register_key_to_repeat(keycode);
+//             tap_undead_key(true, KC_GRV);
+//             return;
+//         case QU:
+//             send_string("qu");
+//             return;
+//         case SC:
+//             send_string("sc");
+//             return;
+//         case KC_Q:
+//         case KC_Z:
+//             if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+//                 tap16_repeatable(C(keycode));
+//             } else {
+//                 tap16_repeatable(keycode);
+//             }
+//             return;
+//         case CLOSE_WIN:
+//             tap_code16(C(KC_W));
+//             tap_code(KC_Q);
+//             /* tap_escape(); */
+//             /* tap_code16(KC_COLN); */
+//             /* tap_code(KC_Q); */
+//             /* tap_code(KC_ENT); */
+//             return;
+//         default:
+//             tap16_repeatable(keycode);
+//     }
+// }
 
-void tap_hold_send_hold(uint16_t keycode) {
-    disable_caps_word();
+// void tap_hold_send_hold(uint16_t keycode) {
+//     disable_caps_word();
+//
+//     switch (keycode) {
+//         case KC_LABK:
+//         case KC_RABK:
+//         case KC_UNDS:
+//             // FIXME should be repeatable
+//             double_tap(keycode);
+//             return;
+//         case KC_DQUO:
+//         case KC_DOT:
+//         case KC_0:
+//             triple_tap(keycode);
+//             return;
+//         case KC_PERC:
+//             send_string("%{}");
+//             return;
+//         case GRV:
+//             tap_undead_key(true, KC_GRV);
+//             tap_undead_key(true, KC_GRV);
+//             tap_undead_key(true, KC_GRV);
+//             return;
+//         case KC_AT:
+//             tap_code16(KC_AT);
+//             tap16_repeatable(KC_U);
+//             return;
+//         case KC_PIPE:
+//         case KC_AMPR:
+//         case KC_EQL:
+//             double_tap_space(keycode);
+//             return;
+//         case KC_EXLM:
+//             send_string(" != ");
+//             return;
+//         case KC_QUES:
+//             send_string("{:?}");
+//             return;
+//         case KC_HASH:
+//             send_string("{:#?}");
+//             return;
+//         case KC_LPRN:
+//             double_parens_left(keycode, KC_RPRN);
+//             return;
+//         case KC_LCBR:
+//             double_parens_left(keycode, KC_RCBR);
+//             return;
+//         case KC_LBRC:
+//             double_parens_left(keycode, KC_RBRC);
+//             return;
+//         case QU:
+//             send_string("Qu");
+//             return;
+//         case SC:
+//             send_string("Sc");
+//             return;
+//         case CLOSE_WIN:
+//             tap16_repeatable(S(G(KC_C)));
+//             return;
+//         case KC_Q:
+//         case KC_Z:
+//             if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
+//                 tap16_repeatable(S(C(keycode)));
+//             } else {
+//                 tap16_repeatable(S(keycode));
+//             }
+//             return;
+//         default:
+//             tap16_repeatable(S(keycode));
+//     }
+// }
 
-    switch (keycode) {
-        case KC_LABK:
-        case KC_RABK:
-        case KC_UNDS:
-            // FIXME should be repeatable
-            double_tap(keycode);
-            return;
-        case KC_DQUO:
-        case KC_DOT:
-        case KC_0:
-            triple_tap(keycode);
-            return;
-        case KC_PERC:
-            send_string("%{}");
-            return;
-        case GRV:
-            tap_undead_key(true, KC_GRV);
-            tap_undead_key(true, KC_GRV);
-            tap_undead_key(true, KC_GRV);
-            return;
-        case KC_AT:
-            tap_code16(KC_AT);
-            tap16_repeatable(KC_U);
-            return;
-        case KC_PIPE:
-        case KC_AMPR:
-        case KC_EQL:
-            double_tap_space(keycode);
-            return;
-        case KC_EXLM:
-            send_string(" != ");
-            return;
-        case KC_QUES:
-            send_string("{:?}");
-            return;
-        case KC_HASH:
-            send_string("{:#?}");
-            return;
-        case KC_LPRN:
-            double_parens_left(keycode, KC_RPRN);
-            return;
-        case KC_LCBR:
-            double_parens_left(keycode, KC_RCBR);
-            return;
-        case KC_LBRC:
-            double_parens_left(keycode, KC_RBRC);
-            return;
-        case QU:
-            send_string("Qu");
-            return;
-        case SC:
-            send_string("Sc");
-            return;
-        case CLOSE_WIN:
-            tap16_repeatable(S(G(KC_C)));
-            return;
-        case KC_Q:
-        case KC_Z:
-            if (IS_LAYER_ON(_SHRT) || last_key_up == SHRT) {
-                tap16_repeatable(S(C(keycode)));
-            } else {
-                tap16_repeatable(S(keycode));
-            }
-            return;
-        default:
-            tap16_repeatable(S(keycode));
-    }
-}
-
-uint16_t tap_hold_timeout(uint16_t keycode) {
-    switch (keycode) {
-        // Extra
-        case CLOSE_WIN:
-            return 160;
-        // Thumb
-        case KC_E:
-            return 120;
-        // Pinky
-        case KC_R:
-        case KC_COMM:
-        case KC_UNDS:
-        case KC_6:
-        case G(KC_6):
-        case KC_7:
-        case G(KC_7):
-        case C(KC_R):
-        case C(KC_X):
-            return 135;
-        // Ring
-        case KC_J:
-        case KC_C:
-        case KC_S:
-        case KC_V:
-        case KC_U:
-        case KC_DOT:
-        case KC_I:
-        case KC_RPRN:
-        case KC_Q:
-        case QU:
-        case KC_4:
-        case G(KC_4):
-        case KC_5:
-        case G(KC_5):
-        case G(KC_J):
-        case G(KC_R):
-        case C(KC_A):
-        case C(KC_C):
-        case C(KC_S):
-        case C(KC_V):
-            return 105;
-        // Middle
-        case KC_Y:
-        case KC_T:
-        case KC_G:
-        case KC_O:
-        case KC_A:
-        case KC_LPRN:
-        case KC_Z:
-        case KC_0:
-        case G(KC_0):
-        case KC_1:
-        case G(KC_1):
-        case C(KC_W):
-        case C(KC_T):
-        case C(KC_G):
-            return 100;
-        // Slow index
-        case KC_P:
-        case KC_X:
-        case C(KC_E):
-            return 105;
-        // Index
-        default:
-            return 100;
-    }
-}
+// uint16_t tap_hold_timeout(uint16_t keycode) {
+//     switch (keycode) {
+//         // Extra
+//         case CLOSE_WIN:
+//             return 160;
+//         // Thumb
+//         case KC_E:
+//             return 120;
+//         // Pinky
+//         case KC_R:
+//         case KC_COMM:
+//         case KC_UNDS:
+//         case KC_6:
+//         case G(KC_6):
+//         case KC_7:
+//         case G(KC_7):
+//         case C(KC_R):
+//         case C(KC_X):
+//             return 135;
+//         // Ring
+//         case KC_J:
+//         case KC_C:
+//         case KC_S:
+//         case KC_V:
+//         case KC_U:
+//         case KC_DOT:
+//         case KC_I:
+//         case KC_RPRN:
+//         case KC_Q:
+//         case QU:
+//         case KC_4:
+//         case G(KC_4):
+//         case KC_5:
+//         case G(KC_5):
+//         case G(KC_J):
+//         case G(KC_R):
+//         case C(KC_A):
+//         case C(KC_C):
+//         case C(KC_S):
+//         case C(KC_V):
+//             return 105;
+//         // Middle
+//         case KC_Y:
+//         case KC_T:
+//         case KC_G:
+//         case KC_O:
+//         case KC_A:
+//         case KC_LPRN:
+//         case KC_Z:
+//         case KC_0:
+//         case G(KC_0):
+//         case KC_1:
+//         case G(KC_1):
+//         case C(KC_W):
+//         case C(KC_T):
+//         case C(KC_G):
+//             return 100;
+//         // Slow index
+//         case KC_P:
+//         case KC_X:
+//         case C(KC_E):
+//             return 105;
+//         // Index
+//         default:
+//             return 100;
+//     }
+// }
 
 // https://github.com/andrewjrae/kyria-keymap#userspace-leader-sequences
 void *leader_toggles_func(uint16_t keycode) {
@@ -655,14 +655,14 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_roll(keycode, record)) {
         return false;
     }
-    if (!process_tap_hold(keycode, record)) {
-        // Extra register here to allow fast rolls without waiting for tap hold,
-        // (which will also overwrite this).
-        if (record->event.pressed) {
-            register_key_to_repeat(keycode);
-        }
-        return false;
-    }
+    // if (!process_tap_hold(keycode, record)) {
+    //     // Extra register here to allow fast rolls without waiting for tap hold,
+    //     // (which will also overwrite this).
+    //     if (record->event.pressed) {
+    //         register_key_to_repeat(keycode);
+    //     }
+    //     return false;
+    // }
 
     switch (keycode) {
         case ESC_SYM:
@@ -754,7 +754,7 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case REPEAT:
             // Enable fast UI rolls with repeat key
-            end_tap_hold();
+            // end_tap_hold();
             update_repeat_key(record);
             return false;
         case REV_REP:
@@ -793,6 +793,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return res;
 }
 
-void matrix_scan_user(void) {
-    tap_hold_matrix_scan();
-}
+// void matrix_scan_user(void) {
+//     tap_hold_matrix_scan();
+// }
