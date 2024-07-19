@@ -366,6 +366,7 @@ bool tap_hold(uint16_t keycode) {
         case KC_DQUO:
         case KC_LABK:
         case KC_RABK:
+        case KC_COMM:
         case KC_DOT:
         case KC_PERC:
         case GRV:
@@ -458,6 +459,12 @@ void tap_hold_send_hold(uint16_t keycode) {
     disable_caps_word();
 
     switch (keycode) {
+        case KC_COMM:
+            tap_code16(KC_QUES);
+            return;
+        case KC_DOT:
+            tap_code16(KC_EXLM);
+            return;
         case KC_LABK:
         case KC_RABK:
         case KC_UNDS:
@@ -465,7 +472,6 @@ void tap_hold_send_hold(uint16_t keycode) {
             double_tap(keycode);
             return;
         case KC_DQUO:
-        case KC_DOT:
         case KC_0:
             triple_tap(keycode);
             return;
@@ -536,7 +542,6 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
             return 120;
         // Pinky
         case KC_R:
-        case KC_COMM:
         case KC_UNDS:
         case KC_6:
         case G(KC_6):
@@ -573,7 +578,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_G:
         case KC_O:
         case KC_A:
-        case KC_LPRN:
+        case KC_COMM:
         case KC_Z:
         case KC_0:
         case G(KC_0):
@@ -586,6 +591,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         // Slow index
         case KC_P:
         case KC_X:
+        case KC_LPRN:
         case C(KC_E):
             return 105;
         // Index
