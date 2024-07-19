@@ -397,7 +397,7 @@ bool tap_hold(uint16_t keycode) {
         case G(KC_E):
         case G(KC_R):
         case G(KC_C):
-        case KC_A ... KC_Z:
+        // case KC_A ... KC_Z:
         case QU:
         case SC:
         case CLOSE_WIN:
