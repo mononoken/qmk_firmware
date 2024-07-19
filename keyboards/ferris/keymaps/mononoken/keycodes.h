@@ -74,6 +74,8 @@ enum custom_keycodes {
 #define S_TAB S(KC_TAB)
 #define SC_TAB S(C(KC_TAB))
 
+#define SG_T S(G(KC_T)) // Open last closed tab in browser
+
 #define MY_LALT OSM(MOD_LALT)
 
 #define SHRT OSL(_SHRT)
