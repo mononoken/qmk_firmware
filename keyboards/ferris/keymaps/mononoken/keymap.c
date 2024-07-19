@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       SG_T,    SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
       xxxxxxx, KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                 _______, _______,       WNAV,    _______
+                                 _______, _______,      WNAV,    _______
     ),
     [_WNAV] = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -161,16 +161,6 @@ void tap_escape(void) {
 
 void tap_caps_lock(void) {
     tap_code(swap_caps_escape ? KC_ESC : KC_CAPS);
-}
-
-void enable_gaming(void) {
-    /* autoshift_disable(); */
-    /* layer_on(_GAME); */
-}
-void disable_gaming(void) {
-    /* autoshift_enable(); */
-    /* layer_off(_GAME); */
-    /* layer_off(_GAME2); */
 }
 
 void tap_space_shift(uint16_t key, bool key_down) {
@@ -711,7 +701,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_NUM);
             layer_off(_SYM);
             stop_leading();
-            // disable_gaming();
             return false;
         case TILD:
             register_key_to_repeat(TILD);

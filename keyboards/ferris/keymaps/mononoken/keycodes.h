@@ -82,9 +82,6 @@ enum custom_keycodes {
 #define FUN OSL(_FUN)
 #define NUM MO(_NUM)
 #define WNAV MO(_WNAV)
-#define TG_WNAV TG(_WNAV)
-
-#define GAME2 OSL(_GAME2)
 
 #define SYM_LFT ALGR(KC_Y)    // ← y
 #define SYM_DWN ALGR(KC_U)    // ↓ u
