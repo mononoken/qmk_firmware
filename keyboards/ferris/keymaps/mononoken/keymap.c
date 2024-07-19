@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
       CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
       xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
-                                 NUM,     _______,      CANCEL,  _______
+                                 _______, _______,      CANCEL,  _______
     ),
     [_NAV]  = LAYOUT(
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
       G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
       G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, _______,
-                                 _______, _______,      CANCEL,  NUM
+                                 _______, _______,      CANCEL,  _______
     ),
     [_FUN]  = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPLY, KC_MPRV, KC_MNXT, KC_MUTE,

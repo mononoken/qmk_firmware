@@ -80,7 +80,6 @@ enum custom_keycodes {
 #define SYM OSL(_SYM)
 #define SHRT OSL(_SHRT)
 #define FUN OSL(_FUN)
-#define NUM MO(_NUM)
 #define WNAV MO(_WNAV)
 
 #define SYM_LFT ALGR(KC_Y)    // ← y
