@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______,      _______, _______
     ),
     [_SPEC] = LAYOUT(
-      KC_TILD, SYM_LQO, _______, SYM_RQO, _______,      _______, _______, _______, KC_CIRC, KC_DIAE,
+      KC_TILD, SYM_LQO, _______, SYM_RQO, _______,      _______, _______, _______, KC_CIRC, _______,
       _______, SYM_LDQ, _______, SYM_RDQ, _______,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
       _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
                                  FUN,     _______,      _______, _______
