@@ -541,39 +541,40 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_E:
             return 120;
         // Pinky
-        case KC_R:
         case KC_UNDS:
+        case KC_R:
         case KC_6:
-        case G(KC_6):
+        // case A(KC_6):
+        case KC_SLSH:
+        case KC_Y:
         case KC_7:
-        case G(KC_7):
-        case C(KC_R):
-        case C(KC_X):
+        // case A(KC_7):
+        // case A(KC_R):
+        // case A(KC_V):
+        // case A(KC_Y):
             return 135;
         // Ring
-        case KC_J:
         case KC_C:
         case KC_S:
-        case KC_V:
+        case KC_W:
         case KC_U:
-        case KC_DOT:
         case KC_I:
-        case KC_RPRN:
+        case KC_DOT:
         case KC_Q:
         case QU:
         case KC_4:
-        case G(KC_4):
+        // case A(KC_4):
         case KC_5:
-        case G(KC_5):
-        case G(KC_J):
-        case G(KC_R):
-        case C(KC_A):
-        case C(KC_C):
-        case C(KC_S):
-        case C(KC_V):
+        // case A(KC_5):
+        // case A(KC_J):
+        // case A(KC_R):
+        // case C(KC_A):
+        // case C(KC_C):
+        // case C(KC_S):
+        // case C(KC_V):
             return 105;
         // Middle
-        case KC_Y:
+        case KC_F:
         case KC_T:
         case KC_G:
         case KC_O:
@@ -581,18 +582,21 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_COMM:
         case KC_Z:
         case KC_0:
-        case G(KC_0):
+        // case A(KC_0):
         case KC_1:
-        case G(KC_1):
-        case C(KC_W):
-        case C(KC_T):
-        case C(KC_G):
+        // case A(KC_1):
+        // case C(KC_W):
+        // case C(KC_T):
+        // case C(KC_G):
             return 100;
         // Slow index
+        case KC_B:
         case KC_P:
-        case KC_X:
         case KC_LPRN:
-        case C(KC_E):
+        case KC_X:
+        case KC_M:
+        case KC_RPRN:
+        // case C(KC_E):
             return 105;
         // Index
         default:
