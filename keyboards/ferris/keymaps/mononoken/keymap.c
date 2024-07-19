@@ -187,18 +187,18 @@ void double_tap_space(uint16_t keycode) {
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch (index) {
         // Home-row and other tight combos
-        case ctrl_combo_l:
+        // case ctrl_combo_l:
         case escape_sym:
         case tab:
-        case del:
-        case dquo:
+        // case del:
+        // case dquo:
         case coln_sym:
-        case ctrl_combo_r:
-        case quot:
+        // case ctrl_combo_r:
+        // case quot:
         case ent:
         // case vsp:
-        case gui_combo_l:
-        case gui_combo_r:
+        // case gui_combo_l:
+        // case gui_combo_r:
             return COMBO_TERM;
         // Vertical combos, very relaxed
         // case small_left_arrow:
