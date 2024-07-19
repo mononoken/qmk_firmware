@@ -2,7 +2,6 @@
 
 #include QMK_KEYBOARD_H
 
-#include "keymap_swedish.h"
 #include "quantum.h"
 #include "quantum/action.h"
 #include "quantum/quantum_keycodes.h"
@@ -10,7 +9,6 @@
 
 enum layers {
     _BASE = 0,
-    _SWE,
     _NUM,
     _NAV,
     _WNAV,
@@ -62,8 +60,6 @@ enum custom_keycodes {
     CANCEL, // Cancel SYMWORD and NUMWORD
     CLEAR,  // Clear all WORD, one-shots and reset to BASE
 
-    TG_SWE,
-
     // Instant leader key
     LEADER,
 
@@ -81,7 +77,7 @@ enum custom_keycodes {
 #define ESC_SYM LT(_SYM, KC_ESC)
 #define TAB_MOD LT(_MODS, KC_TAB)
 
-#define COLN_SYM LT(_SYM, SE_COLN)
+#define COLN_SYM LT(_SYM, KC_COLN)
 
 #define C_TAB C(KC_TAB)
 #define S_TAB S(KC_TAB)
@@ -98,11 +94,11 @@ enum custom_keycodes {
 
 #define GAME2 OSL(_GAME2)
 
-#define SYM_LFT ALGR(SE_Y)    // ← y
-#define SYM_DWN ALGR(SE_U)    // ↓ u
-#define SYM_RHT ALGR(SE_I)    // → i
-#define SYM_UP ALGR(S(SE_U))  // ↑ U
-#define SYM_LDQ ALGR(SE_V)    // “ v
-#define SYM_RDQ ALGR(SE_B)    // ” b
-#define SYM_LQO ALGR(S(SE_V)) // ‘ V
-#define SYM_RQO ALGR(S(SE_B)) // ’ B
+#define SYM_LFT ALGR(KC_Y)    // ← y
+#define SYM_DWN ALGR(KC_U)    // ↓ u
+#define SYM_RHT ALGR(KC_I)    // → i
+#define SYM_UP ALGR(S(KC_U))  // ↑ U
+#define SYM_LDQ ALGR(KC_V)    // “ v
+#define SYM_RDQ ALGR(KC_B)    // ” b
+#define SYM_LQO ALGR(S(KC_V)) // ‘ V
+#define SYM_RQO ALGR(S(KC_B)) // ’ B

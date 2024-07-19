@@ -18,7 +18,7 @@ bool process_roll(uint16_t keycode, const keyrecord_t *record) {
     if (record->event.pressed) {
         uint16_t override = roll_override(lastkey, keycode);
         if (overridden_key == KC_NO // Can only start a new override when the last one has finished.
-                && override != KC_NO && override != keycode 
+                && override != KC_NO && override != keycode
                 && timer_elapsed(timer) < ROLL_OVERRIDE_TERM) {
             // Found a key we should override as a matching pair was detected within the time treshold.
             overridden_key = keycode;
@@ -49,11 +49,11 @@ bool process_roll(uint16_t keycode, const keyrecord_t *record) {
 __attribute__ ((weak))
 uint16_t roll_override(uint16_t lastkey, uint16_t keycode) {
     // Add overrides like this:
-    /* if (lastkey == REPEAT && keycode == SE_U) { */
-    /*     return SE_A; */
+    /* if (lastkey == REPEAT && keycode == KC_U) { */
+    /*     return KC_A; */
     /* } */
-    /* if (lastkey == SE_U && keycode == REPEAT) { */
-    /*     return SE_I; */
+    /* if (lastkey == KC_U && keycode == REPEAT) { */
+    /*     return KC_I; */
     /* } */
 
     return KC_NO;

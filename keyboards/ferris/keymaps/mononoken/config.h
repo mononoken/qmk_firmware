@@ -52,7 +52,7 @@
 #define DEFAULT_XCASE_SEPARATOR SE_MINS
 #define XCASE_DELIMITER_KEY SE_UNDS
 
-// Cannot import "keymap_swedish.h" as it sometimes generates extremely weird errors.
+// idk
 #define LEADER_ESC_KEY KC_E
 
 // Not supported without flto

@@ -1,5 +1,4 @@
 #include "repeat.h"
-#include "keymap_swedish.h"
 #include "keycodes.h"
 
 uint16_t last_keycode = KC_NO;
@@ -42,13 +41,13 @@ void update_key(uint16_t keycode, keyrecord_t *record) {
 void update_repeat_key(keyrecord_t *record) {
     switch (last_keycode) {
         case GRV:
-            tap_undead_key(record->event.pressed, SE_GRV);
+            tap_undead_key(record->event.pressed, KC_GRV);
             break;
         case TILD:
-            tap_undead_key(record->event.pressed, SE_TILD);
+            tap_undead_key(record->event.pressed, KC_TILD);
             break;
         case CIRC:
-            tap_undead_key(record->event.pressed, SE_CIRC);
+            tap_undead_key(record->event.pressed, KC_CIRC);
             break;
         default:
             update_key(last_keycode, record);
@@ -69,14 +68,14 @@ void update_reverse_repeat_key(keyrecord_t *record) {
     update_reverse_key_pairs(C(KC_N), C(KC_P), record);
     update_reverse_key_pairs(C(KC_F), C(KC_B), record);
     update_reverse_key_pairs(C(KC_U), C(KC_D), record);
-    update_reverse_key_pairs(C(SE_G), C(S(SE_G)), record);
+    update_reverse_key_pairs(C(KC_G), C(S(KC_G)), record);
     update_reverse_key_pairs(KC_PGUP, KC_PGDN, record);
-    update_reverse_key_pairs(SE_ASTR, SE_HASH, record);
-    update_reverse_key_pairs(SE_LCBR, SE_RCBR, record);
-    update_reverse_key_pairs(G(SE_K), G(SE_J), record);
-    update_reverse_key_pairs(C(SE_O), C(SE_I), record);
+    update_reverse_key_pairs(KC_ASTR, KC_HASH, record);
+    update_reverse_key_pairs(KC_LCBR, KC_RCBR, record);
+    update_reverse_key_pairs(G(KC_K), G(KC_J), record);
+    update_reverse_key_pairs(C(KC_O), C(KC_I), record);
 
     update_reverse_key_pairs(S(KC_W), S(KC_B), record);
-    update_reverse_key_pairs(SE_U, C(SE_R), record);
+    update_reverse_key_pairs(KC_U, C(KC_R), record);
 }
 
