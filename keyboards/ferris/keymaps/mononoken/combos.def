@@ -40,7 +40,6 @@ COMB(leader,            LEADER,         KC_L, KC_RPRN)
 
 // Mixed home row + other
 COMB(scln,              KC_SCLN,        KC_T, KC_D)
-COMB(win_alt,           WIN_ALT,        KC_L, KC_A)
 
 // Vertical top left
 SUBS(small_left_arrow,  "<-",           KC_Y, KC_T)

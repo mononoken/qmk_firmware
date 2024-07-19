@@ -62,12 +62,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ENT, xxxxxxx, xxxxxxx, KC_PGDN, KC_END,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 _______, _______,     WNAV,    _______
     ),
-    [_WIN]  = LAYOUT(
-      _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
-      _______, S_TAB,   _______, KC_TAB,  _______,      _______, _______, _______, _______, _______,
-      _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
-                                 _______, _______,      _______, _______
-    ),
     // Important that the symbols on the base layer have the same positions as these symbols
     [_SYM]  = LAYOUT(
       TILD,    KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   CIRC,    KC_DOT,
@@ -279,7 +273,6 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case coln_sym:
         case dquo:
         case lalt:
-        case win_alt:
             return false;
         default:
             return true;
@@ -792,18 +785,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                     tap16_repeatable(KC_ENT);
                 }
                 disable_num_word();
-            }
-            return false;
-        case WIN_ALT:
-            // Always start by sending Alt Tab to goto the next window with only a combo tap.
-            // We can then do Tab/S-Tab to continue moving around the windows if we want to.
-            if (record->event.pressed) {
-                register_code(KC_LALT);
-                tap_code16(KC_TAB);
-                layer_on(_WIN);
-            } else {
-                layer_off(_WIN);
-                unregister_code(KC_LALT);
             }
             return false;
         case LEADER:
