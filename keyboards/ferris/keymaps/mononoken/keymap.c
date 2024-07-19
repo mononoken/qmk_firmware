@@ -79,13 +79,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
       G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
       G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, _______,
-                                 _______, _______,      _______, NUM
+                                 _______, _______,      CANCEL,  NUM
     ),
     [_FUN]  = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPLY, KC_MPRV, KC_MNXT, KC_MUTE,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
       xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx,
-                                 _______, _______,      _______, _______
+                                 _______, _______,      CANCEL,  _______
     )
 };
 
@@ -196,19 +196,18 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case ctrl_combo_r:
         case quot:
         case ent:
-        case vsp:
+        // case vsp:
         case gui_combo_l:
         case gui_combo_r:
-        case dlr:
             return COMBO_TERM;
         // Vertical combos, very relaxed
-        case small_left_arrow:
-        case lt_eq:
-        case large_right_arrow:
-        case small_right_arrow:
-        case pipe_to:
-        case sp:
-        case gt_eq:
+        // case small_left_arrow:
+        // case lt_eq:
+        // case large_right_arrow:
+        // case small_right_arrow:
+        // case pipe_to:
+        // case sp:
+        // case gt_eq:
             return COMBO_TERM + 55;
         // Regular combos, slightly relaxed
         default:
@@ -224,19 +223,6 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case qu_comb:
         case z_comb:
         case num:
-        case comb_perc:
-        case comb_grv:
-        case comb_hash:
-        case comb_pipe:
-        case comb_ques:
-        case comb_exlm:
-        case comb_ampr:
-        case comb_labk:
-        case comb_rabk:
-        case comb_lcbr:
-        case comb_lbrc:
-        case comb_at:
-        case comb_0:
         case rev_rep:
         case eql:
         case gui_combo_l:
