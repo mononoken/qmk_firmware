@@ -50,6 +50,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,
                                  SHRT,    MT_SPC,       KC_E,    SPEC
     ),
+    // Important that the symbols on the base layer have the same positions as these symbols
+    [_SYM]  = LAYOUT(
+      TILD,    KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   CIRC,    KC_DOT,
+      KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,      GRV,     KC_QUES, KC_LBRC, KC_RBRC, REPEAT,
+      KC_COMM, KC_LABK, KC_RABK, KC_PERC, xxxxxxx,      KC_SLSH, KC_AMPR, KC_LPRN, KC_RPRN, KC_UNDS,
+                                 _______, _______,      CANCEL, _______
+    ),
     [_NUM]  = LAYOUT(
       KC_UNDS, KC_PLUS, KC_ASTR, _______, xxxxxxx,      KC_X,    _______, AT_U,    REPEAT,  _______,
       KC_6,    KC_4,    KC_0,    KC_2,    _______,      _______, KC_3,    KC_1,    KC_5,    KC_7,
@@ -58,16 +65,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV]  = LAYOUT(
       G(KC_J), KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
-      KC_PGUP, SC_TAB,  DN_CTRL, C_TAB,   G(KC_K),      xxxxxxx, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-      KC_ENT,  xxxxxxx, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, SC_TAB,  DN_CTRL, C_TAB,   G(KC_K),      xxxxxxx, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
+      KC_ENT,  KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 _______, _______,       WNAV,    _______
     ),
-    // Important that the symbols on the base layer have the same positions as these symbols
-    [_SYM]  = LAYOUT(
-      TILD,    KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   CIRC,    KC_DOT,
-      KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,      GRV,     KC_QUES, KC_LBRC, KC_RBRC, REPEAT,
-      KC_COMM, KC_LABK, KC_RABK, KC_PERC, xxxxxxx,      KC_SLSH, KC_AMPR, KC_LPRN, KC_RPRN, KC_UNDS,
-                                 _______, _______,      CANCEL, _______
+
+    [_WNAV] = LAYOUT(
+      G(KC_J), G(KC_C), xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
+      G(KC_6), G(KC_4), G(KC_0), G(KC_2), G(KC_K),      xxxxxxx, G(KC_3), G(KC_1), G(KC_5), G(KC_7),
+      xxxxxxx, xxxxxxx, xxxxxxx, G(KC_8), xxxxxxx,      xxxxxxx, G(KC_9), G(KC_H), G(KC_L), xxxxxxx,
+                                 _______, G(KC_SPC),    _______, _______
     ),
     [_MODS] = LAYOUT(
       _______, _______, _______, _______, _______,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -81,24 +88,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_B),      _______, _______, _______, _______, _______,
                                  _______, _______,      _______, FUN
     ),
-    [_WNAV] = LAYOUT(
-      G(KC_J), G(KC_C), xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
-      G(KC_6), G(KC_4), G(KC_0), G(KC_2), G(KC_K),      xxxxxxx, G(KC_3), G(KC_1), G(KC_5), G(KC_7),
-      xxxxxxx, xxxxxxx, xxxxxxx, G(KC_8), xxxxxxx,      xxxxxxx, G(KC_9), G(KC_H), G(KC_L), xxxxxxx,
-                                 _______, G(KC_SPC),    _______, _______
-    ),
-    [_FUN]  = LAYOUT(
-      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-      KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
-      xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx,
-                                 _______, _______,      _______, _______
-    ),
     [_SPEC] = LAYOUT(
       KC_TILD, SYM_LQO, _______, SYM_RQO, _______,      _______, _______, _______, KC_CIRC, _______,
       _______, SYM_LDQ, _______, SYM_RDQ, _______,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
       _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
                                  FUN,     _______,      _______, _______
     )
+    [_FUN]  = LAYOUT(
+      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
+      xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx,
+                                 _______, _______,      _______, _______
+    ),
 };
 
 // Keyboard utils
