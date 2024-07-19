@@ -186,6 +186,9 @@ void double_tap_space(uint16_t keycode) {
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch (index) {
+        // Tighter combos
+        case ent:
+            return COMBO_TERM - 20;
         // Home-row and other tight combos
         // case ctrl_combo_l:
         case escape_sym:
@@ -195,7 +198,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case coln_sym:
         // case ctrl_combo_r:
         // case quot:
-        case ent:
         // case vsp:
         // case gui_combo_l:
         // case gui_combo_r:
@@ -243,7 +245,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     }
 }
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo) {
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     // FIXME this doesn't seem to work?
     return true;
 }
@@ -252,7 +254,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo) {
 
 #ifdef TAPPING_TERM_PER_KEY
 
-#    define THUMB_TERM 20
+#    define THUMB_TERM 40 // 20
 #    define INDEX_TERM -20
 #    define MIDDLE_TERM 0
 #    define RING_TERM 80
