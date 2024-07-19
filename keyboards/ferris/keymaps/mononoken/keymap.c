@@ -50,17 +50,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
                                  SHRT,    MT_SPC,       KC_E,    SPEC
     ),
+    [_NUM]  = LAYOUT(
+      _______, KC_PLUS, KC_ASTR, KC_MINS, xxxxxxx,      KC_X,    xxxxxxx, AT_U,    REPEAT,  _______,
+      KC_6,    KC_4,    KC_0,    KC_2,    xxxxxxx,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      KC_PERC, xxxxxxx, NUM_G,   KC_8,    _______,      _______, KC_9,    KC_COMM, KC_DOT,  xxxxxxx,
+                                 _______, _______,      CANCEL,  _______
+    ),
     // Important that the symbols on the base layer have the same positions as these symbols
     [_SYM]  = LAYOUT(
       KC_UNDS, KC_PLUS, KC_ASTR, KC_MINS, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
-      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_BSLS,      KC_QUES, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_QUES,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
       xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
-                                 _______, _______,      CANCEL,  _______
-    ),
-    [_NUM]  = LAYOUT(
-      KC_UNDS, KC_PLUS, KC_ASTR, _______, xxxxxxx,      KC_X,    _______, AT_U,    REPEAT,  _______,
-      KC_6,    KC_4,    KC_0,    KC_2,    _______,      _______, KC_3,    KC_1,    KC_5,    KC_7,
-      KC_PERC, _______, NUM_G,   KC_8,    _______,      KC_SLSH, KC_9,    KC_COMM, KC_DOT,  xxxxxxx,
                                  _______, _______,      CANCEL,  _______
     ),
     [_NAV]  = LAYOUT(

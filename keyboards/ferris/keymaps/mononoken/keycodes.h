@@ -9,8 +9,8 @@
 
 enum layers {
     _BASE = 0,
-    _SYM,
     _NUM,
+    _SYM,
     _NAV,
     _WNAV,
     _MODS,
