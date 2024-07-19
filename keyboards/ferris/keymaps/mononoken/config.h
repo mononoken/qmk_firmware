@@ -49,8 +49,8 @@
 // All combos are specified from the base layer, saves space
 #define COMBO_ONLY_FROM_LAYER 0
 
-#define DEFAULT_XCASE_SEPARATOR SE_MINS
-#define XCASE_DELIMITER_KEY SE_UNDS
+#define DEFAULT_XCASE_SEPARATOR KC_MINS
+#define XCASE_DELIMITER_KEY KC_UNDS
 
 // idk
 #define LEADER_ESC_KEY KC_E

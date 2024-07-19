@@ -67,8 +67,6 @@ COMB(comb_3,            KC_3,           MT_SPC, KC_N)
 COMB(comb_1,            KC_1,           MT_SPC, KC_A)
 COMB(comb_5,            KC_5,           MT_SPC, KC_I)
 COMB(comb_7,            KC_7,           MT_SPC, REPEAT)
-// é
-COMB(comb_e_acut,       E_ACUT,         KC_E, KC_K)
 
 // Symbols with same side thumb
 // Upper

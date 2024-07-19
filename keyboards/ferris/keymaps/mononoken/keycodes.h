@@ -37,9 +37,6 @@ enum custom_keycodes {
     SC,
     AT_U,
 
-    // É
-    E_ACUT,
-
     // Custom keycodes for instant processing for NUMWORD
     NUM_G,
 

@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SPEC] = LAYOUT(
       KC_TILD, SYM_LQO, _______, SYM_RQO, _______,      _______, _______, _______, KC_CIRC, KC_DIAE,
-      _______, SYM_LDQ, _______, SYM_RDQ, KC_ACUT,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
+      _______, SYM_LDQ, _______, SYM_RDQ, _______,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
       _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
                                  FUN,     _______,      _______, _______
     )
@@ -266,11 +266,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case comb_lbrc:
         case comb_at:
         case comb_0:
-        case comb_e_acut:
         case rev_rep:
-        case arng:
-        case adia:
-        case odia:
         case eql:
         case gui_combo_l:
         case gui_combo_r:
@@ -328,9 +324,6 @@ bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
             return false;
         case KC_A ... KC_Z:
         case KC_1 ... KC_0:
-        case KC_ARNG:
-        case KC_ADIA:
-        case KC_ODIA:
         case QU:
         case SC:
         case KC_MINS:
@@ -450,13 +443,9 @@ bool tap_hold(uint16_t keycode) {
         case G(KC_R):
         case G(KC_C):
         case KC_A ... KC_Z:
-        case KC_ARNG:
-        case KC_ADIA:
-        case KC_ODIA:
         case QU:
         case SC:
-        case E_ACUT:
-        case CLOKC_WIN:
+        case CLOSE_WIN:
         case C(KC_A):
         case C(KC_C):
         case C(KC_W):
@@ -496,10 +485,6 @@ void tap_hold_send_tap(uint16_t keycode) {
             } else {
                 tap16_repeatable(keycode);
             }
-            return;
-        case E_ACUT:
-            tap_code16(KC_ACUT);
-            tap_code16(KC_E);
             return;
         case CLOSE_WIN:
             tap_code16(C(KC_W));
@@ -570,10 +555,6 @@ void tap_hold_send_hold(uint16_t keycode) {
         case SC:
             send_string("Sc");
             return;
-        case E_ACUT:
-            tap_code16(KC_ACUT);
-            tap_code16(S(KC_E));
-            return;
         case CLOSE_WIN:
             tap16_repeatable(S(G(KC_C)));
             return;
@@ -602,7 +583,6 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_R:
         case KC_COMM:
         case KC_UNDS:
-        // case UNDS_ODIA:
         case KC_6:
         case G(KC_6):
         case KC_7:
@@ -619,7 +599,6 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_DOT:
         case KC_I:
         case KC_RPRN:
-        // case RPRN_ADIA:
         case KC_Q:
         case QU:
         case KC_4:
@@ -640,7 +619,6 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         case KC_O:
         case KC_A:
         case KC_LPRN:
-        // case LPRN_ARNG:
         case KC_Z:
         case KC_0:
         case G(KC_0):
