@@ -28,7 +28,7 @@
 #    define TAPPING_TERM 170
 #else
 // Only for thumbs
-#    define TAPPING_TERM 220
+#    define TAPPING_TERM 240 // 220
 #endif
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
@@ -43,7 +43,7 @@
 
 // Combos
 #undef COMBO_TERM
-#define COMBO_TERM 35
+#define COMBO_TERM 64 // 35
 #define COMBO_MUST_TAP_PER_COMBO
 #define COMBO_TERM_PER_COMBO
 // All combos are specified from the base layer, saves space
