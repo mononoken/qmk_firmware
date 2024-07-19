@@ -64,17 +64,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______,      CANCEL,  _______
     ),
     [_NAV]  = LAYOUT(
-      G(KC_J), KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
-      xxxxxxx, SC_TAB,  DN_CTRL, C_TAB,   G(KC_K),      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
-      KC_ENT,  KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
+      xxxxxxx, KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 _______, _______,       WNAV,    _______
     ),
-
     [_WNAV] = LAYOUT(
-      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
+      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       A(KC_6), A(KC_4), A(KC_0), A(KC_2), A(KC_K),      xxxxxxx, A(KC_3), A(KC_1), A(KC_5), A(KC_7),
-      xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx,      xxxxxxx, G(KC_9), G(KC_H), G(KC_L), xxxxxxx,
-                                 _______, G(KC_SPC),    _______, _______
+      xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+                                 _______, _______,      _______, _______
     ),
     [_SHRT] = LAYOUT(
       C(KC_Q), C(KC_W), C(KC_E), C(KC_R), C(KC_T),      _______, _______, _______, _______, _______,
@@ -87,13 +86,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, SYM_LDQ, _______, SYM_RDQ, _______,      KC_GRV,  SYM_LFT, SYM_DWN, SYM_UP,  SYM_RHT,
       _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______,
                                  FUN,     _______,      _______, _______
-    )
+    ),
     [_FUN]  = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
       xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx,
                                  _______, _______,      _______, _______
-    ),
+    )
 };
 
 // Keyboard utils
@@ -360,7 +359,6 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
         case OS_CTRL:
         case OS_ALT:
         case OS_GUI:
-        case TAB:
             return true;
         default:
             return false;
