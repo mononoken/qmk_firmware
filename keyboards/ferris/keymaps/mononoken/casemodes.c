@@ -175,7 +175,7 @@ bool process_case_modes(uint16_t keycode, const keyrecord_t *record) {
         if (use_default_xcase_separator(keycode, record)) {
             enable_xcase_with(DEFAULT_XCASE_SEPARATOR);
         } else if (record->event.pressed) {
-            if (keycode > QK_MODS_MAX || IS_MOD(keycode)) {
+            if (keycode > QK_MODS_MAX || IS_MODIFIER_KEYCODE(keycode)) {
                 // let special keys and normal modifiers go through
                 return true;
             } else {

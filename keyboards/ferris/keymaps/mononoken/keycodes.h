@@ -3,6 +3,8 @@
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+#include "quantum/action.h"
+#include "quantum/quantum_keycodes.h"
 #include "oneshot.h"
 
 enum layers {
@@ -22,7 +24,7 @@ enum layers {
 
 enum custom_keycodes {
   // Multiple chars
-  QU = SAFE_RANGE,
+  QU,
 
     // Vim
   SAVE_VIM,
