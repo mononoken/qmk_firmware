@@ -45,17 +45,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                              SHRT,    MT_SPC,       KC_E,    SPEC
     // ),
     [_BASE] = LAYOUT(
-      KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_MINS,
+      KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_SLSH,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
-      KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,
+      KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
                                  SHRT,    MT_SPC,       KC_E,    SPEC
     ),
     // Important that the symbols on the base layer have the same positions as these symbols
     [_SYM]  = LAYOUT(
-      TILD,    KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   CIRC,    KC_DOT,
-      KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_BSLS,      GRV,     KC_QUES, KC_LBRC, KC_RBRC, REPEAT,
-      KC_COMM, KC_LABK, KC_RABK, KC_PERC, xxxxxxx,      KC_SLSH, KC_AMPR, KC_LPRN, KC_RPRN, KC_UNDS,
-                                 _______, _______,      CANCEL, _______
+      KC_UNDS, KC_PLUS, KC_ASTR, KC_MINS, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_BSLS,      KC_QUES, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
+                                 _______, _______,      CANCEL,  _______
     ),
     [_NUM]  = LAYOUT(
       KC_UNDS, KC_PLUS, KC_ASTR, _______, xxxxxxx,      KC_X,    _______, AT_U,    REPEAT,  _______,
