@@ -65,22 +65,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV]  = LAYOUT(
       G(KC_J), KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
-      xxxxxxx, SC_TAB,  DN_CTRL, C_TAB,   G(KC_K),      xxxxxxx, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
+      xxxxxxx, SC_TAB,  DN_CTRL, C_TAB,   G(KC_K),      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
       KC_ENT,  KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
                                 _______, _______,       WNAV,    _______
     ),
 
     [_WNAV] = LAYOUT(
-      G(KC_J), G(KC_C), xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
-      G(KC_6), G(KC_4), G(KC_0), G(KC_2), G(KC_K),      xxxxxxx, G(KC_3), G(KC_1), G(KC_5), G(KC_7),
-      xxxxxxx, xxxxxxx, xxxxxxx, G(KC_8), xxxxxxx,      xxxxxxx, G(KC_9), G(KC_H), G(KC_L), xxxxxxx,
+      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
+      A(KC_6), A(KC_4), A(KC_0), A(KC_2), A(KC_K),      xxxxxxx, A(KC_3), A(KC_1), A(KC_5), A(KC_7),
+      xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx,      xxxxxxx, G(KC_9), G(KC_H), G(KC_L), xxxxxxx,
                                  _______, G(KC_SPC),    _______, _______
-    ),
-    [_MODS] = LAYOUT(
-      _______, _______, _______, _______, _______,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-      _______, _______, _______, _______, _______,      xxxxxxx, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
-      _______, _______, _______, _______, _______,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, MY_RALT,
-                                 _______, _______,      _______, _______
     ),
     [_SHRT] = LAYOUT(
       C(KC_Q), C(KC_W), C(KC_E), C(KC_R), C(KC_T),      _______, _______, _______, _______, _______,
@@ -212,7 +206,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         // Home-row and other tight combos
         case ctrl_combo_l:
         case escape_sym:
-        case tab_mod:
+        case tab:
         case del:
         case dquo:
         case coln_sym:
@@ -270,7 +264,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case shift_combo_r:
         case close_win:
         case escape_sym:
-        case tab_mod:
+        case tab:
         case coln_sym:
         case dquo:
         case lalt:
@@ -366,7 +360,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
         case OS_CTRL:
         case OS_ALT:
         case OS_GUI:
-        case TAB_MOD:
+        case TAB:
             return true;
         default:
             return false;

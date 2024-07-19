@@ -15,7 +15,7 @@ COMB(rev_rep,           REV_REP,        KC_U, KC_DOT)
 COMB(ctrl_combo_l,      OS_CTRL,        KC_S, KC_T)
 COMB(escape_sym,        ESC_SYM,        KC_T, KC_H)
 COMB(dquo,              KC_DQUO,        KC_S, KC_H)
-COMB(tab_mod,           TAB_MOD,        KC_S, KC_T, KC_H)
+COMB(tab,               KC_TAB,         KC_S, KC_T, KC_H)
 COMB(del,               KC_DEL,         KC_H, KC_K)
 // Right home row
 COMB(coln_sym,          COLN_SYM,       KC_N, KC_A)

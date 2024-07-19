@@ -13,7 +13,6 @@ enum layers {
     _SYM,
     _NAV,
     _WNAV,
-    _MODS,
     _SHRT,
     _SPEC,
     _FUN,
@@ -68,7 +67,6 @@ enum custom_keycodes {
 #define DN_CTRL LCTL_T(KC_DOWN)
 
 #define ESC_SYM LT(_SYM, KC_ESC)
-#define TAB_MOD LT(_MODS, KC_TAB)
 
 #define COLN_SYM LT(_SYM, KC_COLN)
 
