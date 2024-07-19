@@ -37,10 +37,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
      * Base Layer: Modified RSTHD
      */
+
+    // [_TREE] = LAYOUT(
+    //   KC_J,    KC_C,    KC_Y,    KC_F,    KC_P,         KC_X,    KC_W,    KC_O,    KC_U,    KC_DOT,
+    //   KC_R,    KC_S,    KC_T,    KC_H,    KC_K,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
+    //   KC_COMM, KC_V,    KC_G,    KC_D,    KC_B,         KC_SLSH, KC_L,    KC_LPRN, KC_RPRN, KC_UNDS,
+    //                              SHRT,    MT_SPC,       KC_E,    SPEC
+    // ),
     [_BASE] = LAYOUT(
-      KC_J,    KC_C,    KC_Y,    KC_F,    KC_P,         KC_X,    KC_W,    KC_O,    KC_U,    KC_DOT,
-      KC_R,    KC_S,    KC_T,    KC_H,    KC_K,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
-      KC_COMM, KC_V,    KC_G,    KC_D,    KC_B,         KC_SLSH, KC_L,    KC_LPRN, KC_RPRN, KC_UNDS,
+      KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_MINS,
+      KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
+      KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,
                                  SHRT,    MT_SPC,       KC_E,    SPEC
     ),
     [_NUM]  = LAYOUT(
@@ -80,14 +87,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_B),      _______, _______, _______, _______, _______,
                                  _______, _______,      _______, FUN
     ),
-    /*
-    [_SHRT] = LAYOUT(
-      C(KC_A), C(KC_C), C(KC_W), C(KC_F), C(KC_E),      _______, _______, _______, _______, _______,
-      C(KC_R), C(KC_S), C(KC_T), C(KC_H), xxxxxxx,      _______, _______, _______, _______, _______,
-      C(KC_X), C(KC_V), C(KC_G), C(KC_D), C(KC_B),      _______, _______, _______, _______, _______,
-                                 _______, _______,      _______, FUN
-    ),
-    */
     [_WNAV] = LAYOUT(
       G(KC_J), G(KC_C), xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, G(KC_W), G(KC_E), G(KC_R), xxxxxxx,
       G(KC_6), G(KC_4), G(KC_0), G(KC_2), G(KC_K),      xxxxxxx, G(KC_3), G(KC_1), G(KC_5), G(KC_7),
