@@ -223,7 +223,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case qu_comb:
         case z_comb:
         case num:
-        case rev_rep:
+        // case rev_rep:
         case eql:
         case gui_combo_l:
         case gui_combo_r:

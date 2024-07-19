@@ -11,7 +11,7 @@ COMB(eql,               KC_EQL,         KC_M, KC_N)
 COMB(backsp,            KC_BSPC,        KC_U, KC_SLSH)
 COMB(ctrl_w2,           C(KC_W),        KC_W, KC_O, KC_U)
 // FIX_ME remove this
-COMB(rev_rep,           REV_REP,        KC_O, KC_U)
+// COMB(rev_rep,           REV_REP,        KC_O, KC_U)
 
 // Left home row
 COMB(escape_sym,        ESC_SYM,        KC_W, KC_T)
