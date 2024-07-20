@@ -76,7 +76,7 @@ enum custom_keycodes {
 
 #define MY_LALT OSM(MOD_LALT)
 
-#define SYM OSL(_SYM)
+#define NUM OSL(_NUM)
 #define SHRT OSL(_SHRT)
 #define FUN OSL(_FUN)
 #define WNAV MO(_WNAV)

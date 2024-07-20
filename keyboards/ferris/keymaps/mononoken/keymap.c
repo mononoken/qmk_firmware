@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_SLSH,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
-                                 SHRT,    MT_SPC,       KC_E,    SYM
+                                 SHRT,    MT_SPC,       KC_E,    NUM
     ),
     [_NUM]  = LAYOUT(
       _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
@@ -218,7 +218,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case q_comb:
         case qu_comb:
         case z_comb:
-        case num:
+        case numword:
         // case rev_rep:
         case eql:
         case gui_combo_l:
