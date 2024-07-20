@@ -403,22 +403,22 @@ bool tap_hold(uint16_t keycode) {
         case KC_EQL:
         case KC_UNDS:
         case KC_0:
-        case G(KC_0):
-        case G(KC_1):
-        case G(KC_2):
-        case G(KC_3):
-        case G(KC_4):
-        case G(KC_5):
-        case G(KC_6):
-        case G(KC_7):
-        case G(KC_8):
-        case G(KC_9):
-        case G(KC_K):
-        case G(KC_J):
-        case G(KC_W):
-        case G(KC_E):
-        case G(KC_R):
-        case G(KC_C):
+        case A(KC_0):
+        case A(KC_1):
+        case A(KC_2):
+        case A(KC_3):
+        case A(KC_4):
+        case A(KC_5):
+        case A(KC_6):
+        case A(KC_7):
+        case A(KC_8):
+        case A(KC_9):
+        case A(KC_K):
+        case A(KC_J):
+        case A(KC_W):
+        case A(KC_E):
+        case A(KC_R):
+        case A(KC_C):
         // case KC_A ... KC_Z:
         case QU:
         case SC:
