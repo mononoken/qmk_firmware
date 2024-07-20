@@ -79,9 +79,10 @@ enum custom_keycodes {
 
 #define MY_LALT OSM(MOD_LALT)
 
-/*#define LSYM OSL(_LSYM)*/
-/*#define RSYM OSL(_RSYM)*/
+#define LSYM OSL(_LSYM)
+#define RSYM OSL(_RSYM)
 #define SYM OSL(_SYM)
+#define NUM OSL(_NUM)
 #define MOD OSL(_MOD)
 #define SHRT OSL(_SHRT)
 #define FUN OSL(_FUN)

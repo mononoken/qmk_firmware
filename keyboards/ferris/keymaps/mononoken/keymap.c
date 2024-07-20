@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_SLSH,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
-                                 SHRT,    MT_SPC,       KC_E,    MOD
+                                 LSYM,    MT_SPC,       KC_E,    RSYM
     ),
     [_NUM]  = LAYOUT(
       _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
@@ -56,18 +56,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
                                  _______, _______,      CANCEL,  _______
     ),
-    // [_LSYM]  = LAYOUT(
-    //   KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
-    //   CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
-    //   xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
-    //                              _______, _______,      CANCEL,  _______
-    // ),
-    // [_RSYM]  = LAYOUT(
-    //   _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
-    //   KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
-    //   KC_PERC, xxxxxxx, NUM_G,   KC_8,    KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
-    //                              _______, _______,      CANCEL,  _______
-    // ),
+    [_LSYM]  = LAYOUT(
+      KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
+                                 _______, _______,      CANCEL,  NUM
+    ),
+    [_RSYM]  = LAYOUT(
+      _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
+      KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      KC_PERC, xxxxxxx, NUM_G,   KC_8,    KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
+                                 NUM,     _______,      CANCEL,  _______
+    ),
     [_NAV]  = LAYOUT(
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       SG_T,    SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
@@ -86,18 +86,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_PERC, xxxxxxx, NUM_G,   KC_8,    KC_LPRN,      _______, _______, _______, _______, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     ),
-    [_SHRT] = LAYOUT(
-      G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
-      G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
-      G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
-                                 _______, _______,      CANCEL,  _______
-    ),
     // [_SHRT] = LAYOUT(
-    //   G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
-    //   G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
-    //   G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, MY_RALT,
+    //   G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
+    //   G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+    //   G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
     //                              _______, _______,      CANCEL,  _______
     // ),
+    [_SHRT] = LAYOUT(
+      G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
+      G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
+      G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, MY_RALT,
+                                 _______, _______,      CANCEL,  _______
+    ),
     [_FUN]  = LAYOUT(
       xxxxxxx, KC_VOLU, KC_VOLD, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPRV, KC_MPLY, KC_MUTE, KC_MNXT,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
@@ -661,6 +661,9 @@ void *leader_start_func(uint16_t keycode) {
 }
 
 bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // #ifdef CONSOLE_ENABLE
+    //     uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
+    // #endif
     // Error: Too many arguments for format. Meh!
     // #ifdef CONSOLE_ENABLE
     //     if (record->event.pressed) {
