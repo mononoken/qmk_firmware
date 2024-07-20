@@ -100,7 +100,7 @@ bool is_caps_swapped(void) {
 bool tap_undead_key(bool key_down, uint16_t code) {
     if (key_down) {
         tap_code16(code);
-        tap_code16(KC_SPACE);
+        // tap_code16(KC_SPACE);
     }
     return false;
 }

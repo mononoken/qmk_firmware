@@ -81,11 +81,11 @@ enum custom_keycodes {
 #define FUN OSL(_FUN)
 #define WNAV MO(_WNAV)
 
-#define SYM_LFT ALGR(KC_Y)    // ← y
-#define SYM_DWN ALGR(KC_U)    // ↓ u
-#define SYM_RHT ALGR(KC_I)    // → i
-#define SYM_UP ALGR(S(KC_U))  // ↑ U
-#define SYM_LDQ ALGR(KC_V)    // “ v
-#define SYM_RDQ ALGR(KC_B)    // ” b
-#define SYM_LQO ALGR(S(KC_V)) // ‘ V
-#define SYM_RQO ALGR(S(KC_B)) // ’ B
+/*#define SYM_LFT ALGR(KC_Y)    // ← y*/
+/*#define SYM_DWN ALGR(KC_U)    // ↓ u*/
+/*#define SYM_RHT ALGR(KC_I)    // → i*/
+/*#define SYM_UP ALGR(S(KC_U))  // ↑ U*/
+/*#define SYM_LDQ ALGR(KC_V)    // “ v*/
+/*#define SYM_RDQ ALGR(KC_B)    // ” b*/
+/*#define SYM_LQO ALGR(S(KC_V)) // ‘ V*/
+/*#define SYM_RQO ALGR(S(KC_B)) // ’ B*/
