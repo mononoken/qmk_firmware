@@ -493,12 +493,12 @@ void tap_hold_send_hold(uint16_t keycode) {
             double_tap(keycode);
             return;
         case KC_DQUO:
-        case KC_0:
-            triple_tap(keycode);
-            return;
-        case KC_PERC:
-            send_string("%{}");
-            return;
+        // case KC_0:
+        //     triple_tap(keycode);
+        //     return;
+        // case KC_PERC:
+        //     send_string("%{}");
+        //     return;
         case GRV:
             tap_undead_key(true, KC_GRV);
             tap_undead_key(true, KC_GRV);
@@ -513,15 +513,15 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_EQL:
             double_tap_space(keycode);
             return;
-        case KC_EXLM:
-            send_string(" != ");
-            return;
-        case KC_QUES:
-            send_string("{:?}");
-            return;
-        case KC_HASH:
-            send_string("{:#?}");
-            return;
+        // case KC_EXLM:
+        //     send_string(" != ");
+        //     return;
+        // case KC_QUES:
+        //     send_string("{:?}");
+        //     return;
+        // case KC_HASH:
+        //     send_string("{:#?}");
+        //     return;
         case KC_LPRN:
             double_parens_left(keycode, KC_RPRN);
             return;
@@ -555,71 +555,71 @@ void tap_hold_send_hold(uint16_t keycode) {
 
 uint16_t tap_hold_timeout(uint16_t keycode) {
     switch (keycode) {
-        // Extra
-        case CLOSE_WIN:
-            return 160;
-        // Thumb
-        case KC_E:
-            return 120;
-        // Pinky
-        case KC_UNDS:
-        case KC_R:
-        case KC_6:
-        // case A(KC_6):
-        case KC_SLSH:
-        case KC_Y:
-        case KC_7:
-        // case A(KC_7):
-        // case A(KC_R):
-        // case A(KC_V):
-        // case A(KC_Y):
-            return 135;
-        // Ring
-        case KC_C:
-        case KC_S:
-        case KC_W:
-        case KC_U:
-        case KC_I:
-        case KC_DOT:
-        case KC_Q:
-        case QU:
-        case KC_4:
-        // case A(KC_4):
-        case KC_5:
-        // case A(KC_5):
-        // case A(KC_J):
-        // case A(KC_R):
-        // case C(KC_A):
-        // case C(KC_C):
-        // case C(KC_S):
-        // case C(KC_V):
-            return 105;
-        // Middle
-        case KC_F:
-        case KC_T:
-        case KC_G:
-        case KC_O:
-        case KC_A:
-        case KC_COMM:
-        case KC_Z:
-        case KC_0:
-        // case A(KC_0):
-        case KC_1:
-        // case A(KC_1):
-        // case C(KC_W):
-        // case C(KC_T):
-        // case C(KC_G):
-            return 100;
-        // Slow index
-        case KC_B:
-        case KC_P:
-        case KC_LPRN:
-        case KC_X:
-        case KC_M:
-        case KC_RPRN:
-        // case C(KC_E):
-            return 105;
-        // Index
+        // // Extra
+        // case CLOSE_WIN:
+        //     return 160;
+        // // Thumb
+        // case KC_E:
+        //     return 120;
+        // // Pinky
+        // case KC_UNDS:
+        // case KC_R:
+        // case KC_6:
+        // // case A(KC_6):
+        // case KC_SLSH:
+        // case KC_Y:
+        // case KC_7:
+        // // case A(KC_7):
+        // // case A(KC_R):
+        // // case A(KC_V):
+        // // case A(KC_Y):
+        //     return 135;
+        // // Ring
+        // case KC_C:
+        // case KC_S:
+        // case KC_W:
+        // case KC_U:
+        // case KC_I:
+        // case KC_DOT:
+        // case KC_Q:
+        // case QU:
+        // case KC_4:
+        // // case A(KC_4):
+        // case KC_5:
+        // // case A(KC_5):
+        // // case A(KC_J):
+        // // case A(KC_R):
+        // // case C(KC_A):
+        // // case C(KC_C):
+        // // case C(KC_S):
+        // // case C(KC_V):
+        //     return 105;
+        // // Middle
+        // case KC_F:
+        // case KC_T:
+        // case KC_G:
+        // case KC_O:
+        // case KC_A:
+        // case KC_COMM:
+        // case KC_Z:
+        // case KC_0:
+        // // case A(KC_0):
+        // case KC_1:
+        // // case A(KC_1):
+        // // case C(KC_W):
+        // // case C(KC_T):
+        // // case C(KC_G):
+        //     return 100;
+        // // Slow index
+        // case KC_B:
+        // case KC_P:
+        // case KC_LPRN:
+        // case KC_X:
+        // case KC_M:
+        // case KC_RPRN:
+        // // case C(KC_E):
+        //     return 105;
+        // // Index
         default:
             return 100;
     }
