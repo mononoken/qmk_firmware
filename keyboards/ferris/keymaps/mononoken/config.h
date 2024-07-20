@@ -25,7 +25,7 @@
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM_PER_KEY
 #ifdef TAPPING_TERM_PER_KEY
-#    define TAPPING_TERM 200 // 170
+#    define TAPPING_TERM 170
 #else
 // Only for thumbs
 #    define TAPPING_TERM 240 // 220
@@ -39,7 +39,7 @@
 // Apply the modifier on keys that are tapped during a short hold of a modtap
 #define PERMISSIVE_HOLD
 // Immediately turn on layer if key is pressed quickly
-#define HOLD_ON_OTHER_KEY_PRESS
+// #define HOLD_ON_OTHER_KEY_PRESS
 
 // Combos
 #undef COMBO_TERM
