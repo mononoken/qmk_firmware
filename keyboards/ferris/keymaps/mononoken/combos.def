@@ -15,10 +15,10 @@ COMB(ctrl_w2,           C(KC_W),        KC_W, KC_O, KC_U)
 
 // Left home row
 COMB(escape_sym,        ESC_SYM,        KC_W, KC_T)
-COMB(coln_sym,          COLN_SYM,       KC_T, KC_D)
+COMB(coln_sym,          KC_COLN,       KC_T, KC_D)
 COMB(tab,               KC_TAB,         KC_S, KC_T, KC_H)
 // Right home row
-COMB(scln,              KC_SCLN,        KC_A, KC_DOT)
+COMB(scln_sym,          SCLN_SYM,       KC_A, KC_DOT)
 COMB(ent,               KC_ENT,         KC_N, KC_A, KC_I)
 COMB(save_vim,          SAVE_VIM,       KC_N, KC_A, KC_I, REPEAT)
 // Mixed

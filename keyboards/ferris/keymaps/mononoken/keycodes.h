@@ -66,8 +66,7 @@ enum custom_keycodes {
 #define DN_CTRL LCTL_T(KC_DOWN)
 
 #define ESC_SYM LT(_SYM, KC_ESC)
-
-#define COLN_SYM LT(_SYM, KC_COLN)
+#define SCLN_SYM LT(_SYM, KC_SCLN)
 
 #define C_TAB C(KC_TAB)
 #define S_TAB S(KC_TAB)

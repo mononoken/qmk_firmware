@@ -189,6 +189,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         // case del:
         // case dquo:
         case coln_sym:
+        case scln_sym:
         // case ctrl_combo_r:
         // case quot:
         // case vsp:
@@ -230,6 +231,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case escape_sym:
         case tab:
         case coln_sym:
+        case scln_sym:
         case dquo:
         case lalt:
             return false;
@@ -742,9 +744,9 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap16_repeatable(KC_U);
             }
             return false;
-        case COLN_SYM:
+        case SCLN_SYM:
             if (record->tap.count && record->event.pressed) {
-                tap16_repeatable(KC_COLN);
+                tap16_repeatable(KC_SCLN);
                 return false;
             }
             break;
