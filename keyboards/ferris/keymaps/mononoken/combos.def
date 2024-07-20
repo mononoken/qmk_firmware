@@ -24,18 +24,18 @@ COMB(save_vim,          SAVE_VIM,       KC_N, KC_A, KC_I, REPEAT)
 COMB(capsword,          CAPSWORD,       KC_S, KC_T, KC_A, KC_I)
 
 // Left bottom row
-COMB(gui_combo_l,       OS_GUI,         KC_V, KC_W)
 // FIX_ME change this
 // COMB(vsp,               VIM_VS,         KC_V, KC_G)
-COMB(ctrl_combo_l,      OS_CTRL,        KC_G, KC_D)
-COMB(shift_combo_l,     OS_SHFT,        KC_W, KC_G)
+COMB(ctrl_combo_l,      OS_CTRL,        KC_W, KC_G)
+COMB(shift_combo_l,     OS_SHFT,        KC_V, KC_W)
+COMB(gui_combo_l,       OS_GUI,         KC_G, KC_D)
 COMB(lalt,              MY_LALT,        KC_W, KC_D)
 COMB(close_win,         CLOSE_WIN,      KC_W, KC_G, KC_D)
 // Right bottom row
-SUBS(el_str_int,        "#{}"SS_TAP(X_LEFT),  KC_SLSH, KC_L)
-COMB(ctrl_combo_r,      OS_CTRL,        KC_L, KC_COMM)
-COMB(shift_combo_r,     OS_SHFT,        KC_COMM, KC_DOT)
-COMB(gui_combo_r,       OS_GUI,         KC_DOT, KC_Y)
+SUBS(el_str_int,        "${}"SS_TAP(X_LEFT),  KC_SLSH, KC_L)
+COMB(ctrl_combo_r,      OS_CTRL,        KC_COMM, KC_DOT)
+COMB(shift_combo_r,     OS_SHFT,        KC_DOT, KC_Y)
+COMB(gui_combo_r,       OS_GUI,         KC_L, KC_COMM)
 COMB(leader,            LEADER,         KC_L, KC_DOT)
 
 // Vertical top left
