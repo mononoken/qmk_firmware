@@ -56,7 +56,8 @@ COMB(quot,              KC_QUOT,        KC_H, KC_D)
 COMB(dquo,              KC_DQUO,        KC_N, KC_L)
 
 // Thumbs
-COMB(numword,           NUMWORD,        SHRT, NUM)
+COMB(numword,           NUMWORD,        LSYM, RSYM)
+COMB(shrt,              SHRT,           LSYM, MT_SPC)
 
 
 // Specials

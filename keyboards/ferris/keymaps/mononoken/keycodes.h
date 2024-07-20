@@ -11,6 +11,8 @@ enum layers {
     _BASE = 0,
     _NUM,
     _SYM,
+    _LSYM,
+    _RSYM,
     _NAV,
     _WNAV,
     _SHRT,
@@ -76,7 +78,8 @@ enum custom_keycodes {
 
 #define MY_LALT OSM(MOD_LALT)
 
-#define NUM OSL(_NUM)
+#define LSYM OSL(_LSYM)
+#define RSYM OSL(_RSYM)
 #define SHRT OSL(_SHRT)
 #define FUN OSL(_FUN)
 #define WNAV MO(_WNAV)

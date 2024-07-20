@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_SLSH,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
       KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_RPRN, KC_L,    KC_COMM, KC_DOT,  KC_Y,
-                                 SHRT,    MT_SPC,       KC_E,    NUM
+                                 LSYM,    MT_SPC,       KC_E,    RSYM
     ),
     [_NUM]  = LAYOUT(
       _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
@@ -56,11 +56,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
                                  _______, _______,      CANCEL,  _______
     ),
+    [_LSYM]  = LAYOUT(
+      KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
+                                 _______, _______,      CANCEL,  _______
+    ),
+    [_RSYM]  = LAYOUT(
+      _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_SLSH,
+      KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      KC_PERC, xxxxxxx, NUM_G,   KC_8,    KC_LPRN,      KC_RPRN, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
+                                 _______, _______,      CANCEL,  _______
+    ),
     [_NAV]  = LAYOUT(
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       SG_T,    SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
       xxxxxxx, KC_PGUP, xxxxxxx, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
-                                 _______, _______,      WNAV,    _______
+                                 SHRT,    _______,      WNAV,    _______
     ),
     [_WNAV] = LAYOUT(
       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
@@ -77,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FUN]  = LAYOUT(
       xxxxxxx, KC_VOLU, KC_VOLD, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPRV, KC_MPLY, KC_MUTE, KC_MNXT,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
-      xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      xxxxxxx, KC_F9,   xxxxxxx, xxxxxxx, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     )
 };
