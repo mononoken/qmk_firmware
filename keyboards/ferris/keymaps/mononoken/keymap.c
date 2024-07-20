@@ -615,9 +615,9 @@ void *leader_toggles_func(uint16_t keycode) {
         case KC_S:
             layer_invert(_SYM);
             return NULL;
-        case KC_C:
-            swap_caps_esc();
-            return NULL;
+        // case KC_C:
+        //     swap_caps_esc();
+        //     return NULL;
         default:
             return NULL;
     }
@@ -632,6 +632,9 @@ void *leader_start_func(uint16_t keycode) {
             return NULL;
         case ESC_SYM:
             tap_code16(C(S(KC_ESC)));
+            return NULL;
+        case KC_A:
+            layer_invert(_FUN);
             return NULL;
         default:
             return NULL;
@@ -698,6 +701,7 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CANCEL:
             layer_off(_NUM);
             layer_off(_SYM);
+            layer_off(_FUN);
             stop_leading();
             return false;
         case TILD:
