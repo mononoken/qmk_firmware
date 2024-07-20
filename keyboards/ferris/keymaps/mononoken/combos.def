@@ -25,18 +25,18 @@ COMB(save_vim,          SAVE_VIM,       KC_N, KC_A, KC_I, REPEAT)
 COMB(capsword,          CAPSWORD,       KC_S, KC_T, KC_A, KC_I)
 
 // Left bottom row
-COMB(ctrl_combo_l,      OS_CTRL,        KC_V, KC_W)
+COMB(gui_combo_l,       OS_GUI,         KC_V, KC_W)
 // FIX_ME change this
 // COMB(vsp,               VIM_VS,         KC_V, KC_G)
-COMB(gui_combo_l,       OS_GUI,         KC_G, KC_D)
+COMB(ctrl_combo_l,      OS_CTRL,        KC_G, KC_D)
+COMB(shift_combo_l,     OS_SHFT,        KC_W, KC_G)
 COMB(lalt,              MY_LALT,        KC_W, KC_D)
 COMB(close_win,         CLOSE_WIN,      KC_W, KC_G, KC_D)
-COMB(shift_combo_l,     OS_SHFT,        KC_W, KC_G)
 // Right bottom row
 SUBS(el_str_int,        "#{}"SS_TAP(X_LEFT),  KC_RPRN, KC_L)
-COMB(ctrl_combo_r,      OS_CTRL,        KC_DOT, KC_Y)
+COMB(ctrl_combo_r,      OS_CTRL,        KC_L, KC_COMM)
 COMB(shift_combo_r,     OS_SHFT,        KC_COMM, KC_DOT)
-COMB(gui_combo_r,       OS_GUI,         KC_L, KC_COMM)
+COMB(gui_combo_r,       OS_GUI,         KC_DOT, KC_Y)
 COMB(leader,            LEADER,         KC_L, KC_DOT)
 
 // Vertical top left
@@ -56,8 +56,7 @@ COMB(quot,              KC_QUOT,        KC_H, KC_D)
 COMB(dquo,              KC_DQUO,        KC_N, KC_L)
 
 // Thumbs
-COMB(numword,           NUMWORD,        LSYM, RSYM)
-COMB(shrt,              SHRT,           LSYM, MT_SPC)
+COMB(numword,           NUMWORD,        SHRT, MOD)
 
 
 // Specials
