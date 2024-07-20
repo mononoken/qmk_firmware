@@ -254,7 +254,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
 
 #ifdef TAPPING_TERM_PER_KEY
 
-#    define THUMB_TERM 40 // 20
+#    define THUMB_TERM 80 // 20
 #    define INDEX_TERM -20
 #    define MIDDLE_TERM 0
 #    define RING_TERM 80
