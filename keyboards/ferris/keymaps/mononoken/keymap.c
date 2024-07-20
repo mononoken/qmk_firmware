@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FUN]  = LAYOUT(
       xxxxxxx, KC_VOLU, KC_VOLD, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPRV, KC_MPLY, KC_MUTE, KC_MNXT,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
-      xxxxxxx, xxxxxxx, xxxxxxx, KC_F8,   xxxxxxx,      KC_F13,  KC_F9,   xxxxxxx, xxxxxxx, MY_RALT,
+      xxxxxxx, KC_BRMU, KC_BRMD, KC_F8,   xxxxxxx,      KC_F13,  KC_F9,   xxxxxxx, xxxxxxx, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     )
 };
