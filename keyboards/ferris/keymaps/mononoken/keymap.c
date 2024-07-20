@@ -423,20 +423,20 @@ bool tap_hold(uint16_t keycode) {
         case QU:
         case SC:
         case CLOSE_WIN:
-        case C(KC_A):
-        case C(KC_C):
-        case C(KC_W):
-        case C(KC_F):
-        case C(KC_E):
-        case C(KC_R):
-        case C(KC_S):
-        case C(KC_T):
-        case C(KC_H):
-        case C(KC_X):
-        case C(KC_V):
-        case C(KC_G):
-        case C(KC_D):
-        case C(KC_B):
+        // case C(KC_A):
+        // case C(KC_C):
+        // case C(KC_W):
+        // case C(KC_F):
+        // case C(KC_E):
+        // case C(KC_R):
+        // case C(KC_S):
+        // case C(KC_T):
+        // case C(KC_H):
+        // case C(KC_X):
+        // case C(KC_V):
+        // case C(KC_G):
+        // case C(KC_D):
+        // case C(KC_B):
             return true;
         default:
             return false;
@@ -464,7 +464,7 @@ void tap_hold_send_tap(uint16_t keycode) {
             }
             return;
         case CLOSE_WIN:
-            tap_code16(C(KC_W));
+            tap_code16(G(KC_W));
             tap_code(KC_Q);
             /* tap_escape(); */
             /* tap_code16(KC_COLN); */
