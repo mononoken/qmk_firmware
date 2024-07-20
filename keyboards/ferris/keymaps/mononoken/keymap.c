@@ -419,10 +419,11 @@ bool tap_hold(uint16_t keycode) {
         case A(KC_E):
         case A(KC_R):
         case A(KC_C):
-        // case KC_A ... KC_Z:
+        case KC_A ... KC_Z:
         case QU:
         case SC:
         case CLOSE_WIN:
+        case KC_TAB: // Allows for S(TAB) which reverse tabs in most programs.
         // case C(KC_A):
         // case C(KC_C):
         // case C(KC_W):
