@@ -2,7 +2,7 @@
 COMB(q_comb,            KC_Q,           KC_UNDS, KC_C)
 COMB(qu_comb,           QU,             KC_C, KC_F)
 COMB(z_comb,            KC_Z,           KC_F, KC_K)
-COMB(ctrl_w,            C(KC_W),        KC_C, KC_F, KC_K)
+// COMB(ctrl_w,            C(KC_W),        KC_C, KC_F, KC_K)
 COMB(clear,             CLEAR,          KC_K, KC_B)
 // Right top row
 COMB(del,               KC_DEL,         KC_X, KC_J)
