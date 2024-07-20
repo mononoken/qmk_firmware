@@ -464,12 +464,12 @@ void tap_hold_send_tap(uint16_t keycode) {
             }
             return;
         case CLOSE_WIN:
-            tap_code16(G(KC_W));
+            // tap_code16(G(KC_W));
+            // tap_code(KC_Q);
+            tap_code16(KC_ESC);
+            tap_code16(KC_COLN);
             tap_code(KC_Q);
-            /* tap_escape(); */
-            /* tap_code16(KC_COLN); */
-            /* tap_code(KC_Q); */
-            /* tap_code(KC_ENT); */
+            tap_code(KC_ENT);
             return;
         default:
             tap16_repeatable(keycode);
