@@ -382,64 +382,98 @@ void process_oneshot_key(uint16_t keycode, keyrecord_t *record) {
 // Tap hold
 
 bool tap_hold(uint16_t keycode) {
-    switch (keycode) {
-        case KC_DQUO:
-        case KC_LABK:
-        case KC_RABK:
-        case KC_COMM:
-        case KC_DOT:
-        case KC_PERC:
-        case GRV:
-        case KC_AT:
-        case KC_PIPE:
-        case KC_EXLM:
-        case KC_AMPR:
-        case KC_QUES:
-        case KC_HASH:
-        case KC_LPRN:
-        case KC_LCBR:
-        case KC_LBRC:
-        case KC_EQL:
-        case KC_UNDS:
-        case KC_0:
-        case A(KC_0):
-        case A(KC_1):
-        case A(KC_2):
-        case A(KC_3):
-        case A(KC_4):
-        case A(KC_5):
-        case A(KC_6):
-        case A(KC_7):
-        case A(KC_8):
-        case A(KC_9):
-        case A(KC_K):
-        case A(KC_J):
-        case A(KC_W):
-        case A(KC_E):
-        case A(KC_R):
-        case A(KC_C):
-        case KC_A ... KC_Z:
-        case QU:
-        case SC:
-        case CLOSE_WIN:
-        case KC_TAB: // Allows for S(TAB) which reverse tabs in most programs.
-        // case C(KC_A):
-        // case C(KC_C):
-        // case C(KC_W):
-        // case C(KC_F):
-        // case C(KC_E):
-        // case C(KC_R):
-        // case C(KC_S):
-        // case C(KC_T):
-        // case C(KC_H):
-        // case C(KC_X):
-        // case C(KC_V):
-        // case C(KC_G):
-        // case C(KC_D):
-        // case C(KC_B):
-            return true;
-        default:
-            return false;
+    // Prvent tap hold on layers except for whitelisted keys
+    if (layer_state_is(_NAV)) {
+        switch (keycode) {
+          case KC_H:
+          case KC_L:
+          case A(KC_H):
+          case A(KC_J):
+          case A(KC_K):
+          case A(KC_L):
+              return true;
+          default:
+              return false;
+        }
+    } else if (layer_state_is(_WNAV)) {
+        switch (keycode) {
+          case A(KC_0):
+          case A(KC_1):
+          case A(KC_2):
+          case A(KC_3):
+          case A(KC_4):
+          case A(KC_5):
+          case A(KC_6):
+          case A(KC_7):
+          case A(KC_8):
+          case A(KC_H):
+          case A(KC_J):
+          case A(KC_K):
+          case A(KC_L):
+              return true;
+          default:
+              return false;
+        }
+    } else {
+        switch (keycode) {
+            case KC_DQUO:
+            case KC_LABK:
+            case KC_RABK:
+            case KC_COMM:
+            case KC_DOT:
+            case KC_PERC:
+            case GRV:
+            case KC_AT:
+            case KC_PIPE:
+            case KC_EXLM:
+            case KC_AMPR:
+            case KC_QUES:
+            case KC_HASH:
+            case KC_LPRN:
+            case KC_LCBR:
+            case KC_LBRC:
+            case KC_EQL:
+            case KC_UNDS:
+            case KC_0:
+            case A(KC_0):
+            case A(KC_1):
+            case A(KC_2):
+            case A(KC_3):
+            case A(KC_4):
+            case A(KC_5):
+            case A(KC_6):
+            case A(KC_7):
+            case A(KC_8):
+            case A(KC_9):
+            case A(KC_K):
+            case A(KC_J):
+            case A(KC_W):
+            case A(KC_E):
+            case A(KC_R):
+            case A(KC_C):
+            case KC_A ... KC_Z:
+            case QU:
+            case SC:
+            case CLOSE_WIN:
+            case KC_TAB: // Allows for S(TAB) which reverse tabs in most programs.
+            // case C(KC_A):
+            // case C(KC_C):
+            // case C(KC_W):
+            // case C(KC_F):
+            // case C(KC_E):
+            // case C(KC_R):
+            // case C(KC_S):
+            // case C(KC_T):
+            // case C(KC_H):
+            // case C(KC_X):
+            // case C(KC_V):
+            // case C(KC_G):
+            // case C(KC_D):
+            // case C(KC_B):
+                return true;
+            default:
+                return false;
+        }
     }
 }
 
