@@ -6,17 +6,18 @@ COMB(z_comb,            KC_Z,           KC_F, KC_K)
 COMB(clear,             CLEAR,          KC_K, KC_B)
 // Right top row
 COMB(del,               KC_DEL,         KC_X, KC_J)
-COMB(eql,               KC_EQL,         KC_M, KC_N)
 COMB(backsp,            KC_BSPC,        KC_U, KC_RPRN)
 COMB(ctrl_w2,           C(KC_W),        KC_W, KC_O, KC_U)
 // FIX_ME remove this
 // COMB(rev_rep,           REV_REP,        KC_O, KC_U)
 
 // Left home row
+COMB(mins,              KC_MINS,         KC_H, KC_P)
 COMB(escape_sym,        ESC_SYM,        KC_W, KC_T)
 COMB(coln_sym,          KC_COLN,       KC_T, KC_D)
 COMB(tab,               KC_TAB,         KC_S, KC_T, KC_H)
 // Right home row
+COMB(eql,               KC_EQL,         KC_M, KC_N)
 COMB(scln_sym,          SCLN_SYM,       KC_A, KC_DOT)
 COMB(ent,               KC_ENT,         KC_N, KC_A, KC_I)
 COMB(save_vim,          SAVE_VIM,       KC_N, KC_A, KC_I, REPEAT)
