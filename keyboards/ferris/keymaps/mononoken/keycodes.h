@@ -88,6 +88,22 @@ enum custom_keycodes {
 #define FUN OSL(_FUN)
 #define WNAV MO(_WNAV)
 
+// yabai + skhd shortcuts
+#define YABA_FT LCA(KC_W) // toggle window float
+#define YABA_BL LCA(KC_E) //balance windows
+#define YABA_MX LCA(KC_M) // maximize a window
+// resize windows; + shift for swapping windows
+#define YABA_LT A(KC_H)
+#define YABA_UP A(KC_J)
+#define YABA_DN A(KC_K)
+#define YABA_RT A(KC_L)
+
+// tmux resizing
+#define TMUX_LT LCA(KC_LEFT)
+#define TMUX_DN LCA(KC_DOWN)
+#define TMUX_UP LCA(KC_UP)
+#define TMUX_RT LCA(KC_RGHT)
+
 /*#define SYM_LFT ALGR(KC_Y)    // ← y*/
 /*#define SYM_DWN ALGR(KC_U)    // ↓ u*/
 /*#define SYM_RHT ALGR(KC_I)    // → i*/

@@ -71,13 +71,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV]  = LAYOUT(
       xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       SG_T,    SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
-      xxxxxxx, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,       xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,       xxxxxxx, YABA_LT, YABA_UP, YABA_DN, YABA_RT,
                                  _______, _______,      WNAV,    _______
     ),
     [_WNAV] = LAYOUT(
-      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,      YABA_FT, xxxxxxx, YABA_BL, xxxxxxx, YABA_MX,
       A(KC_6), A(KC_4), A(KC_0), A(KC_2), A(KC_K),      xxxxxxx, A(KC_3), A(KC_1), A(KC_5), A(KC_7),
-      xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, xxxxxxx, xxxxxxx, A(KC_8), xxxxxxx,      xxxxxxx, TMUX_LT, TMUX_DN, TMUX_UP, TMUX_RT,
                                  _______, _______,      _______, _______
     ),
     [_MOD]  = LAYOUT(
