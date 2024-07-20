@@ -621,7 +621,7 @@ uint16_t tap_hold_timeout(uint16_t keycode) {
         //     return 105;
         // // Index
         default:
-            return 100;
+            return TAPPING_TERM;
     }
 }
 
