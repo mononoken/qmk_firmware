@@ -117,12 +117,12 @@ void tap16_repeatable(uint16_t keycode) {
     register_key_to_repeat(keycode);
 }
 
-void swap_caps_esc(void) {
-    swap_caps_escape = !swap_caps_escape;
-#ifdef OLED_DRIVER_ENABLE
-    oled_on();
-#endif
-}
+// swap_caps_esc(void) {
+//     swap_caps_escape = !swap_caps_escape;
+// #ifdef OLED_DRIVER_ENABLE
+//     oled_on();
+// #endif
+// }
 
 void tg_nix(void) {
     linux_mode = !linux_mode;
