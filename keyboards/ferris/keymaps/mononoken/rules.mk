@@ -5,7 +5,7 @@ RGBLIGHT_ENABLE = no        # Keyboard RGB underglow
 VPATH +=  keyboards/gboards/
 
 # Keylogging
-CONSOLE_ENABLE = yes
+CONSOLE_ENABLE = no
 
 # Extra features that are nice but takes space
 WPM_ENABLE = no
