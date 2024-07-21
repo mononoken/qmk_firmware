@@ -86,11 +86,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_PERC, xxxxxxx, NUM_G,   KC_8,    KC_LPRN,      _______, _______, _______, _______, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     ),
-    // [_SHRT] = LAYOUT(
-    //   G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
-    //   G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
-    //   G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
-    //                              _______, _______,      CANCEL,  _______),
     [_SHRT] = LAYOUT(
       G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      xxxxxxx, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
@@ -435,7 +430,8 @@ bool tap_hold(uint16_t keycode) {
             case KC_LBRC:
             case KC_EQL:
             case KC_UNDS:
-            case KC_0:
+            case KC_DLR:
+            case KC_HASH:
             case A(KC_0):
             case A(KC_1):
             case A(KC_2):
@@ -528,9 +524,6 @@ void tap_hold_send_hold(uint16_t keycode) {
             double_tap(keycode);
             return;
         case KC_DQUO:
-        // case KC_0:
-        //     triple_tap(keycode);
-        //     return;
         // case KC_PERC:
         //     send_string("%{}");
         //     return;
@@ -548,14 +541,16 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_EQL:
             double_tap_space(keycode);
             return;
-        // case KC_EXLM:
-        //     send_string(" != ");
-        //     return;
+        case KC_DLR:
+        case KC_HASH:
+            tap_code16(keycode);
+            double_parens_left(KC_LCBR, KC_RCBR);
+            return;
+        case KC_EXLM:
+            send_string(" != ");
+            return;
         // case KC_QUES:
         //     send_string("{:?}");
-        //     return;
-        // case KC_HASH:
-        //     send_string("{:#?}");
         //     return;
         case KC_LPRN:
             double_parens_left(keycode, KC_RPRN);
