@@ -92,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //   G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      KC_RPRN, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
     //                              _______, _______,      CANCEL,  _______),
     [_SHRT] = LAYOUT(
-      G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      _______, _______, _______, _______, _______,
-      G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      _______, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
-      G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      _______, _______, _______, _______, MY_RALT,
+      G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      xxxxxxx, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
+      G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     ),
     [_FUN]  = LAYOUT(
@@ -250,6 +250,8 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case ctrl_combo_r:
         case shift_combo_l:
         case shift_combo_r:
+        case shrt_l:
+        case shrt_r:
         case close_win:
         case escape_sym:
         case tab:
@@ -428,7 +430,6 @@ bool tap_hold(uint16_t keycode) {
             case KC_EXLM:
             case KC_AMPR:
             case KC_QUES:
-            case KC_HASH:
             case KC_LPRN:
             case KC_LCBR:
             case KC_LBRC:
