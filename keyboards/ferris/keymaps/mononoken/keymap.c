@@ -44,22 +44,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  LSYM,    MT_SPC,       KC_E,    RSYM
     ),
     [_NUM]  = LAYOUT(
-      _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  _______,
-      KC_6,    KC_4,    KC_0,    KC_2,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
-      KC_PERC, xxxxxxx, NUM_G,   KC_8,    _______,      _______, KC_9,    KC_COMM, KC_DOT,  xxxxxxx,
+      _______, KC_PLUS, KC_ASTR, KC_K,    xxxxxxx,      _______, KC_J,    AT_U,    REPEAT,  _______,
+      KC_6,    KC_4,    KC_0,    KC_2,    _______,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      KC_PERC, xxxxxxx, NUM_G,   KC_8,    _______,      _______, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
                                  _______, _______,      CANCEL,  _______
     ),
     // Important that the symbols on the base layer have the same positions as these symbols
     [_SYM]  = LAYOUT(
       KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      xxxxxxx, KC_HASH, KC_AT,   REPEAT,  KC_RPRN,
-      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
-      xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_SLSH, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    xxxxxxx,      KC_BSLS, GRV,     KC_LBRC, KC_RBRC, KC_DLR,
+      KC_PERC, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_SLSH, KC_AMPR, KC_COMM, KC_DOT,  KC_PERC,
                                  _______, _______,      CANCEL,  _______
     ),
     [_LSYM]  = LAYOUT(
       KC_UNDS, KC_PLUS, KC_ASTR, KC_EXLM, xxxxxxx,      KC_X,    KC_J,    AT_U,    REPEAT,  KC_RPRN,
-      CIRC,    KC_LCBR, KC_RCBR, TILD,    KC_MINS,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
-      xxxxxxx, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_SLSH, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
+      CIRC,    KC_LCBR, KC_RCBR, TILD,    xxxxxxx,      KC_BSLS, KC_3,    KC_1,    KC_5,    KC_7,
+      KC_PERC, KC_LABK, KC_RABK, KC_PIPE, KC_LPRN,      KC_SLSH, KC_9,    KC_COMM, KC_DOT,  KC_PERC,
                                  _______, _______,      CANCEL,  NUM
     ),
     [_RSYM]  = LAYOUT(
