@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       G(KC_Q), G(KC_W), G(KC_E), G(KC_R), G(KC_T),      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
       G(KC_A), G(KC_S), G(KC_D), G(KC_F), G(KC_G),      xxxxxxx, OS_GUI,  OS_CTRL, OS_SHFT, OS_ALT,
       G(KC_Z), G(KC_X), G(KC_C), G(KC_V), G(KC_B),      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, MY_RALT,
-                                 _______, _______,      CANCEL,  _______
+                                 _______, G(KC_SPC),    CANCEL,  _______
     ),
     [_FUN]  = LAYOUT(
       xxxxxxx, KC_VOLD, KC_VOLU, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPRV, KC_MPLY, KC_MUTE, KC_MNXT,
