@@ -65,3 +65,6 @@
 // These are a bit iffy, as I don't know what they're doing, but it "works fine" according to Discord people
 // #undef LOCKING_SUPPORT_ENABLE
 // #undef LOCKING_RESYNC_ENABLE
+
+// Fixes issue where splitkb does not wake up second half after sleep
+#define USB_SUSPEND_WAKEUP_DELAY 200
