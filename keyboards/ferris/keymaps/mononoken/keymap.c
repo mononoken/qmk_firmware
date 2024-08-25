@@ -617,6 +617,7 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_9:
             tap_code16(C(KC_E));
             tap_code(keycode);
+            disable_num_word();
             return;
         default:
             tap16_repeatable(S(keycode));
