@@ -468,6 +468,21 @@ bool tap_hold(uint16_t keycode) {
             // case C(KC_D):
             // case C(KC_B):
                 return true;
+            case KC_0:
+            case KC_1:
+            case KC_2:
+            case KC_3:
+            case KC_4:
+            case KC_5:
+            case KC_6:
+            case KC_7:
+            case KC_8:
+            case KC_9:
+                if (layer_state_is(_NUM)) {
+                    return true;
+                } else {
+                    return false;
+                }
             default:
                 return false;
         }
