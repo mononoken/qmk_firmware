@@ -517,6 +517,18 @@ void tap_hold_send_tap(uint16_t keycode) {
             tap_code(KC_Q);
             tap_code(KC_ENT);
             return;
+        case KC_0:
+        case KC_1:
+        case KC_2:
+        case KC_3:
+        case KC_4:
+        case KC_5:
+        case KC_6:
+        case KC_7:
+        case KC_8:
+        case KC_9:
+            tap_code(keycode);
+            return;
         default:
             tap16_repeatable(keycode);
     }
@@ -592,6 +604,19 @@ void tap_hold_send_hold(uint16_t keycode) {
             } else {
                 tap16_repeatable(S(keycode));
             }
+            return;
+        case KC_0:
+        case KC_1:
+        case KC_2:
+        case KC_3:
+        case KC_4:
+        case KC_5:
+        case KC_6:
+        case KC_7:
+        case KC_8:
+        case KC_9:
+            tap_code16(C(KC_E));
+            tap_code(keycode);
             return;
         default:
             tap16_repeatable(S(keycode));
