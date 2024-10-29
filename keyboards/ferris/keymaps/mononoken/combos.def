@@ -36,9 +36,9 @@ COMB(shrt_l,            SHRT,           KC_D, KC_LPRN)
 // Right bottom row
 COMB(ctrl_combo_r,      OS_CTRL,        KC_COMM, KC_DOT)
 COMB(shift_combo_r,     OS_SHFT,        KC_DOT, KC_Y)
-COMB(gui_combo_r,       OS_GUI,         KC_L, KC_COMM)
+COMB(gui_combo_r,       OS_GUI,         KC_SLSH, KC_L)
 COMB(leader,            LEADER,         KC_L, KC_DOT)
-COMB(shrt_r,            SHRT,           KC_SLSH, KC_L)
+COMB(shrt_r,            SHRT,           KC_L, KC_COMM)
 
 // Vertical top left
 // FIX_ME do I want to keep these rare symbols?
