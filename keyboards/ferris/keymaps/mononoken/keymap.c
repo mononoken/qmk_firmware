@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  NUM,     _______,      CANCEL,  _______
     ),
     [_NAV]  = LAYOUT(
-      xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+      xxxxxxx, KC_LEFT, KC_UP,   KC_RGHT, KC_HOME,      xxxxxxx, xxxxxxx, A(KC_S), A(KC_G), xxxxxxx,
       SG_T,    SC_TAB,  DN_CTRL, C_TAB,   xxxxxxx,      xxxxxxx, KC_H,    KC_J,    KC_K,    KC_L,
       xxxxxxx, xxxxxxx, KC_PGUP, KC_PGDN, KC_END,       xxxxxxx, YABA_LT, YABA_UP, YABA_DN, YABA_RT,
                                  _______, _______,      WNAV,    _______
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FUN]  = LAYOUT(
       xxxxxxx, KC_VOLD, KC_VOLU, xxxxxxx, xxxxxxx,      xxxxxxx, KC_MPRV, KC_MPLY, KC_MUTE, KC_MNXT,
       KC_F6,   KC_F4,   KC_F10,  KC_F2,   KC_F12,       KC_F11,  KC_F3,   KC_F1,   KC_F5,   KC_F7,
-      xxxxxxx, KC_BRMU, KC_BRMD, KC_F8,   xxxxxxx,      KC_F13,  KC_F9,   xxxxxxx, xxxxxxx, MY_RALT,
+      xxxxxxx, KC_BRMD, KC_BRMU, KC_F8,   xxxxxxx,      KC_F13,  KC_F9,   xxxxxxx, xxxxxxx, MY_RALT,
                                  _______, _______,      CANCEL,  _______
     )
 };
