@@ -69,5 +69,7 @@
 // Fixes issue where splitkb does not wake up second half after sleep
 #define USB_SUSPEND_WAKEUP_DELAY 200
 
+// Fix startup detection of split keyboard
+// TODO: Double check this is still necessary for latest qmk version
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 5000
