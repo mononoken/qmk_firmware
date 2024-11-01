@@ -68,3 +68,6 @@
 
 // Fixes issue where splitkb does not wake up second half after sleep
 #define USB_SUSPEND_WAKEUP_DELAY 200
+
+#define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 5000
