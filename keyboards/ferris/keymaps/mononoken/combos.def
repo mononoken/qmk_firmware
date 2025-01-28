@@ -7,7 +7,7 @@ COMB(clear,             CLEAR,          KC_K, KC_B)
 // Right top row
 COMB(del,               KC_DEL,         KC_X, KC_J)
 COMB(backsp,            KC_BSPC,        KC_U, KC_RPRN)
-COMB(ctrl_w2,           C(KC_W),        KC_W, KC_O, KC_U)
+COMB(ctrl_w2,           C(KC_W),        KC_J, KC_O, KC_U)
 // FIX_ME remove this
 // COMB(rev_rep,           REV_REP,        KC_O, KC_U)
 
