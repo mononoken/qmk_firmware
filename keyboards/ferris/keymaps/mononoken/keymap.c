@@ -239,6 +239,7 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
         case numword:
         // case rev_rep:
         case eql:
+        case ent:
         case gui_combo_l:
         case gui_combo_r:
         case ctrl_combo_l:
@@ -421,6 +422,7 @@ bool tap_hold(uint16_t keycode) {
             case KC_PERC:
             case GRV:
             case KC_AT:
+            case KC_ENT:
             case KC_PIPE:
             case KC_EXLM:
             case KC_AMPR:
