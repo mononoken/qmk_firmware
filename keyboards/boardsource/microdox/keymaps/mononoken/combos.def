@@ -1,0 +1,64 @@
+// Left top row
+COMB(q_comb,            KC_Q,           KC_UNDS, KC_C)
+COMB(qu_comb,           QU,             KC_C, KC_F)
+COMB(z_comb,            KC_Z,           KC_F, KC_K)
+// COMB(ctrl_w,            C(KC_W),        KC_C, KC_F, KC_K)
+COMB(clear,             CLEAR,          KC_K, KC_B)
+// Right top row
+COMB(del,               KC_DEL,         KC_X, KC_J)
+COMB(backsp,            KC_BSPC,        KC_U, KC_Y)
+COMB(ctrl_w2,           C(KC_W),        KC_J, KC_O, KC_U)
+// FIX_ME remove this
+// COMB(rev_rep,           REV_REP,        KC_O, KC_U)
+
+// Left home row
+COMB(mins,              KC_MINS,         KC_H, KC_P)
+COMB(escape_sym,        ESC_SYM,        KC_W, KC_T)
+COMB(coln_sym,          KC_COLN,       KC_T, KC_D)
+COMB(tab,               KC_TAB,         KC_S, KC_T, KC_H)
+// Right home row
+COMB(eql,               KC_EQL,         KC_M, KC_N)
+COMB(scln_sym,          SCLN_SYM,       KC_A, KC_DOT)
+COMB(ent,               KC_ENT,         KC_N, KC_A, KC_I)
+COMB(save_vim,          SAVE_VIM,       KC_N, KC_A, KC_I, REPEAT)
+// Mixed
+COMB(capsword,          CAPSWORD,       KC_S, KC_T, KC_A, KC_I)
+
+// Left bottom row
+// FIX_ME change this
+// COMB(vsp,               VIM_VS,         KC_V, KC_G)
+COMB(ctrl_combo_l,      OS_CTRL,        KC_W, KC_G)
+COMB(shift_combo_l,     OS_SHFT,        KC_V, KC_W)
+COMB(gui_combo_l,       OS_GUI,         KC_G, KC_D)
+COMB(lalt,              OS_ALT,         KC_W, KC_D)
+COMB(close_win,         CLOSE_WIN,      KC_W, KC_G, KC_D)
+COMB(shrt_l,            SHRT,           KC_D, KC_LPRN)
+// Right bottom row
+COMB(ctrl_combo_r,      OS_CTRL,        KC_COMM, KC_DOT)
+COMB(shift_combo_r,     OS_SHFT,        KC_DOT, KC_RPRN)
+COMB(gui_combo_r,       OS_GUI,         KC_SLSH, KC_L)
+COMB(leader,            LEADER,         KC_L, KC_DOT)
+COMB(shrt_r,            SHRT,           KC_L, KC_COMM)
+
+// Vertical top left
+// FIX_ME do I want to keep these rare symbols?
+// SUBS(small_left_arrow,  "<-",           KC_RPRN, KC_T)
+// SUBS(lt_eq,             "<=",           KC_F, KC_H)
+// Vertical top right
+// SUBS(large_right_arrow, "=>",           KC_W, KC_N)
+// SUBS(small_right_arrow, "->",           KC_O, KC_A)
+// SUBS(pipe_to,           "|>",           KC_U, KC_I)
+
+// Vertical bottom left
+COMB(quot,              KC_QUOT,        KC_H, KC_D)
+// COMB(sp,                VIM_SP,         KC_S, KC_V)
+// SUBS(gt_eq,             ">=",           KC_H, KC_D)
+// Vertical bottom right
+COMB(dquo,              KC_DQUO,        KC_N, KC_L)
+
+// Thumbs
+COMB(numword,           NUMWORD,        LSYM, RSYM)
+
+
+// Specials
+// SUBS(https,             "https://",     MT_SPC, KC_SLSH)
