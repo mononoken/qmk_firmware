@@ -584,7 +584,7 @@ void tap_hold_send_hold(uint16_t keycode) {
         //     send_string("{:?}");
         //     return;
         case KC_LPRN:
-            double_parens_left(keycode, KC_RPRN);
+            tap_code16(KC_RPRN);
             return;
         case KC_LCBR:
             double_parens_left(keycode, KC_RCBR);
