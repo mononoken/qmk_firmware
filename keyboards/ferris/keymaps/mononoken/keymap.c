@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * Base Layer: Modified RSTHD/treeman
      */
     [_BASE] = LAYOUT(
-      KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_Y,
+      KC_UNDS, KC_C,    KC_F,    KC_K,    KC_B,         KC_X,    KC_J,    KC_O,    KC_U,    KC_RPRN,
       KC_R,    KC_S,    KC_T,    KC_H,    KC_P,         KC_M,    KC_N,    KC_A,    KC_I,    REPEAT,
-      KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_RPRN,
+      KC_V,    KC_W,    KC_G,    KC_D,    KC_LPRN,      KC_SLSH, KC_L,    KC_COMM, KC_DOT,  KC_Y,
                                  LSYM,    MT_SPC,       KC_E,    RSYM
     ),
     [_NUM]  = LAYOUT(

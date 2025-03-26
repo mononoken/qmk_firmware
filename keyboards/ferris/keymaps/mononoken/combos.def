@@ -6,7 +6,8 @@ COMB(z_comb,            KC_Z,           KC_F, KC_K)
 COMB(clear,             CLEAR,          KC_K, KC_B)
 // Right top row
 COMB(del,               KC_DEL,         KC_X, KC_J)
-COMB(backsp,            KC_BSPC,        KC_U, KC_Y)
+COMB(backsp,            KC_BSPC,        KC_I, REPEAT)
+COMB(backsp_2,          KC_BSPC,        KC_U, KC_Y)
 COMB(ctrl_w2,           C(KC_W),        KC_J, KC_O, KC_U)
 // FIX_ME remove this
 // COMB(rev_rep,           REV_REP,        KC_O, KC_U)
